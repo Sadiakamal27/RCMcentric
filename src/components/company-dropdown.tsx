@@ -19,9 +19,11 @@ export function CompanyDropdown() {
           About Us
         </DropdownMenuItem>
         </Link>
+        <Link href="/Features" target="_blank" rel="noopener noreferrer">
         <DropdownMenuItem className="cursor-pointer hover:bg-gray-50 p-3 text-gray-700 hover:text-blue-600">
           Features
         </DropdownMenuItem>
+        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   )
