@@ -46,13 +46,13 @@ const [isVisible, setIsVisible] = useState(false);
   }, []);
     
   return (
-    <div className="min-h-screen py-16 px-50 bg-white flex items-center mt-20  justify-center">
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold text-gray-800">Expertise in Software</h1>
+    <div className="min-h-screen py-10 sm:py-16 px-2 sm:px-4 bg-white flex items-center mt-10 sm:mt-20 justify-center">
+      <div className="text-center w-full">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-gray-800">Expertise in Software</h1>
         <div className="mt-2">
           <hr className="w-16 mx-auto border-t-2 border-red-500" />
-          <div className="w-full  relative mb-8  ">
-          <div className=" h-64 md:h-auto flex items-center justify-center">
+          <div className="w-full relative mb-8">
+            <div className="h-40 sm:h-64 md:h-auto flex items-center justify-center">
             <video
               ref={videoRef}
               className="w-full h-full object-cover rounded-lg"
@@ -73,23 +73,23 @@ const [isVisible, setIsVisible] = useState(false);
      
       
      
-            <Card className="w-full grid lg:grid-cols-2 bg-blue-100 max-w-3xl mx-auto  overflow-hidden">
+            <Card className="w-full grid grid-cols-1 lg:grid-cols-2 bg-blue-100 max-w-3xl mx-auto overflow-hidden mt-6">
             
-      <CardHeader className="bg-gradient-to-r  to-white/50 p-1">
-        <CardTitle className="text-xl font-semibold ">
+      <CardHeader className="bg-gradient-to-r to-white/50 p-1 text-left">
+        <CardTitle className="text-base sm:text-xl font-semibold ">
           Unite your healthcare workflows and save 40+ hours every week.
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-4 flex items-center justify-between gap-1">
+      <CardContent className="p-2 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-1">
         
-        <div className="flex-1  ">
+        <div className="flex-1 w-full mb-2 sm:mb-0">
           <Input
             type="email"
             placeholder="Work Email"
-            className="w-50 border border-gray-400  focus:border-gray-300 focus:ring-0 focus:outline-none "
+            className="w-full border border-gray-400 focus:border-gray-300 focus:ring-0 focus:outline-none text-sm"
           />
         </div>
-        <Button className="bg-blue-600 text-white hover:bg-blue-700  px-6 py-2">
+        <Button className="bg-blue-600 text-white hover:bg-blue-700 px-4 sm:px-6 py-2 w-full sm:w-auto">
           GET STARTED
         </Button>
       </CardContent>

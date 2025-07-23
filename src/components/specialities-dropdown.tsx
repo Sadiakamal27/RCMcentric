@@ -281,7 +281,7 @@ export function SpecialtiesDropdown() {
 
               {/* View All Button */}
               <div className="pt-1">
-                <Link href="/medical-specialties" passHref>
+                <Link href="/Specialties" target="_blank" rel="noopener noreferrer">
                   <Button className="w-1/2 bg-red-500 hover:bg-red-600 text-white flex items-center justify-center">
                     View All Medical Specialities{" "}
                   </Button>

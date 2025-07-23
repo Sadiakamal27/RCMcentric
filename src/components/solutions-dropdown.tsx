@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { ExternalLink, BarChart3, FileText, Award, Headphones, Settings, ChevronDown } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function SolutionsDropdown() {
   return (
@@ -63,12 +64,15 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
+                <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
+
                   <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
                     Medical Billing Services
                   </h4>
                   <p className="text-gray-600 text-xs mt-0.5">
                     Get your medical billing team to streamline your practice collection.
                   </p>
+                  </Link>
                 </div>
               </div>
 

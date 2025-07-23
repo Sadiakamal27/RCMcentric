@@ -4,33 +4,33 @@ import Link from "next/link";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bg-[#0B1B39] items-center text-white py-6 px-10 ">
-       <div className="max-w-7xl mx-auto flex  flex-row items-center justify-between">
+    <footer className="bg-[#0B1B39] items-center text-white py-6 px-2 sm:px-10 ">
+       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
         {/* Left Section - Contact Us */}
-        <div className="flex items-center space-x-4 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 mb-4 md:mb-0 w-full md:w-auto">
           <Button
             variant="outline"
-            className="bg-transparent text-gray-400 hover:text-white  text-xs px-3 py-1 rounded"
+            className="bg-transparent text-gray-400 hover:text-white text-xs px-3 py-1 rounded w-full md:w-auto"
           >
             <span className="mr-1">📩</span> Contact Us
           </Button>
-          <p className="text-xs  text-gray-400">
+          <p className="text-xs text-gray-400 text-center md:text-left w-full md:w-auto">
             Capitol Ave, San Jose, CA 95127, United States
           </p>
         </div>
 
         {/* Right Section - Get Started Button */}
-        <div className="text-center items-center ">
+        <div className="text-center items-center w-full md:w-auto">
           <Button
             variant="outline"
-            className="bg-blue-600 text-lg w-110 border border-none text-white hover:bg-red-500  px-6 py-2 rounded"
+            className="bg-blue-600 text-lg w-full md:w-110 border border-none text-white hover:bg-red-500 px-6 py-2 rounded"
           >
             Get Started with RCM Centric
           </Button>
-          <p className="text-lg \ text-gray-400 mt-1">or see our plans & pricing</p>
+          <p className="text-lg text-gray-400 mt-1">or see our plans & pricing</p>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto  grid grid-cols-1  md:grid-cols-5  gap-8 mt-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mt-10 sm:mt-16 px-2 sm:px-0">
       {/* RCM Centric */}
         <div>
           <h3 className="text-lg font-semibold mb-2">RCM Centric</h3>
@@ -139,7 +139,7 @@ export default function Footer() {
       
       </div>
       {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row justify-between items-center text-xs border-t border-gray-600 pt-4">
+      <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row justify-between items-center text-xs border-t border-gray-600 pt-4 px-2 sm:px-0">
       <div className="flex space-x-4">
         <Link href="/rcm-centric" className="flex items-center">
           <Image

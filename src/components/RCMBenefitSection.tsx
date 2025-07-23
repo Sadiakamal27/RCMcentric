@@ -46,8 +46,8 @@ export default function RCMBenefitSection() {
   return (
     <>
       {/* Your Existing Chart Section */}
-      <section className="bg-[#0B1B39] text-white py-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="bg-[#0B1B39] text-white py-10 sm:py-20 px-2 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
           <div>
             <h4 className="text-red-400 font-semibold text-lg mb-2">
@@ -73,7 +73,7 @@ export default function RCMBenefitSection() {
               <Legend color="bg-blue-200" label="Net Collection" />
             </div>
 
-            <div className="relative flex w-full h-64">
+            <div className="relative flex w-full h-64 overflow-x-auto">
               <div className="flex flex-col justify-between mr-4 text-sm text-black">
                 {[100, 80, 60, 40, 20, 0].map((num) => (
                   <div
@@ -85,7 +85,7 @@ export default function RCMBenefitSection() {
                 ))}
               </div>
 
-              <div className="flex flex-col justify-between h-full w-full relative">
+              <div className="flex flex-col justify-between h-full w-full min-w-[320px] sm:min-w-0 relative">
                 {[...Array(6)].map((_, idx) => (
                   <div
                     key={idx}
@@ -94,13 +94,13 @@ export default function RCMBenefitSection() {
                   />
                 ))}
 
-                <div className="flex items-end justify-around h-full w-full gap-8 z-10">
+                <div className="flex items-end justify-around h-full w-full gap-4 sm:gap-8 z-10">
                   {chartData.map((group, idx) => (
                     <div
                       key={idx}
                       className="flex flex-col items-center justify-end h-full w-full"
                     >
-                      <div className="flex items-end gap-2 h-full">
+                      <div className="flex items-end gap-1 sm:gap-2 h-full">
                         {group.values.map((bar, i) => (
                           <AnimatedBar
                             key={i}
@@ -123,9 +123,9 @@ export default function RCMBenefitSection() {
       </section>
 
       {/* Main Top Section */}
-      <section className="bg-[#0B1B39] text-white px-5 py-9">
-        <section className="bg-[#0B1B39] text-white px-6 py-6">
-          <div className="max-w-7xl mx-auto text-center grid md:grid-cols-5 gap-4">
+      <section className="bg-[#0B1B39] text-white px-2 sm:px-5 py-6 sm:py-9">
+        <section className="bg-[#0B1B39] text-white px-2 sm:px-6 py-4 sm:py-6">
+          <div className="max-w-7xl mx-auto text-center grid grid-cols-1 md:grid-cols-5 gap-2 sm:gap-4">
             <FeatureBox
               title="Eliminate All Pain Points in Your Practice"
               desc="Working with the doctors’ billing service partner will save your facility significant time and effort."
@@ -150,7 +150,7 @@ export default function RCMBenefitSection() {
         </section>
 
         {/* Calculator Box */}
-        <div className="bg-[#F5F5F5] rounded-md flex items-center justify-between p-6 my-12 max-w-7xl mx-auto">
+        <div className="bg-[#F5F5F5] rounded-md flex flex-col md:flex-row items-center justify-between p-4 sm:p-6 my-8 sm:my-12 max-w-7xl mx-auto">
           {/* Left Section */}
           <div className="flex items-center gap-4 flex-1">
             {/* Icon */}
@@ -192,7 +192,7 @@ export default function RCMBenefitSection() {
         </div>
 
         {/* Centric One Section */}
-        <div className="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap items-center justify-between gap-8 py-12 border-b border-[#1f2c4a]">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap md:flex-nowrap items-center justify-between gap-6 sm:gap-8 py-8 sm:py-12 border-b border-[#1f2c4a]">
           {/* Left Section */}
           <div className="flex-1 max-w-xl">
             <h2 className="text-4xl font-bold text-white mb-2">Centric One</h2>
@@ -270,7 +270,7 @@ function AnimatedBar({
       initial={{ height: 0 }}
       animate={{ height: isInView ? `${height}%` : 0 }}
       transition={{ duration: 1 }}
-      className={`w-10 ${color} transition-all`}
+      className={`w-6 sm:w-10 ${color} transition-all`}
     />
   );
 }

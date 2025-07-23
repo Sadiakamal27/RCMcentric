@@ -23,9 +23,9 @@ function SolutionsAndServices() {
           </p>
         </div>
       </section>
-      <section className="bg-gray-50 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="bg-gray-50 py-10 sm:py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Medical Billing Services */}
             <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300 cursor-pointer group border-none">
               <CardContent className="p-6 text-center">

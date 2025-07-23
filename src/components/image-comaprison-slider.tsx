@@ -76,7 +76,7 @@ export function ImageComparisonSlider({
   return (
     <div
       ref={containerRef}
-      className="relative w-300 h-100 items-center overflow-hidden rounded-lg    cursor-col-resize select-none"
+      className="relative w-full max-w-[95vw] sm:max-w-[600px] h-40 sm:h-[100px] md:h-[180px] lg:h-[220px] xl:h-[320px] items-center overflow-hidden rounded-lg cursor-col-resize select-none mx-auto"
       style={{ maxWidth: "600px" }}
     >
       {/* After Image (Right side - With RCM) */}
