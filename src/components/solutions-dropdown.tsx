@@ -88,12 +88,14 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
+                <Link href="/MedicalCoding" target="_blank" rel="noopener noreferrer">
                   <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
                     Medical Coding Services
                   </h4>
                   <p className="text-gray-600 text-xs mt-0.5">
                     RCM Centric will reduce your compliance risks by accurate coding.
                   </p>
+                  </Link>
                 </div>
               </div>
 
