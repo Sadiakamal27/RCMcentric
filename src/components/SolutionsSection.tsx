@@ -1,6 +1,4 @@
-// NOTE: You must install react-google-recaptcha: npm install react-google-recaptcha
-type RecaptchaValue = string | null;
-
+// components/SolutionsSection.tsx
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
@@ -13,8 +11,13 @@ import {
 } from "@/components/ui/select";
 import ReCaptcha from "react-google-recaptcha";
 
+type RecaptchaValue = string | null;
 
-export default function SolutionsSection() {
+interface SolutionsSectionProps {
+  buttonText?: string; // optional prop with default fallback
+}
+
+export default function SolutionsSection({ buttonText = "Get Solution →" }: SolutionsSectionProps) {
   const [selectedSpecialty, setSelectedSpecialty] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState<RecaptchaValue>(null);
@@ -35,8 +38,6 @@ export default function SolutionsSection() {
 
   return (
     <div className="space-y-4">
-      
-
       <div className="flex flex-col sm:flex-row gap-4 w-full">
         {/* Specialty Select */}
         <Select onValueChange={(value) => setSelectedSpecialty(value)}>
@@ -49,7 +50,6 @@ export default function SolutionsSection() {
             <SelectItem value="orthopedics">Orthopedics</SelectItem>
             <SelectItem value="psychiatry">Psychiatry</SelectItem>
             <SelectItem value="primary-care">Primary Care</SelectItem>
-            {/* More repeated items if needed */}
           </SelectContent>
         </Select>
 
@@ -58,15 +58,13 @@ export default function SolutionsSection() {
           className="bg-red-500 hover:bg-red-600 w-full sm:w-56 rounded-none text-white px-4"
           onClick={handleClick}
         >
-          Get Solution →
+          {buttonText}
         </Button>
 
         {/* Sheet Form */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetContent side="right" className="max-w-md p-0 w-full">
-           
             <div className="p-5 sm:p-9 space-y-4 bg-white rounded-xl m-1 shadow-lg">
-              {/* Logo */}
               <div className="flex justify-center">
                 <img
                   src="/formlogo.jpg"
@@ -74,14 +72,12 @@ export default function SolutionsSection() {
                   className="h-12 w-32 sm:h-15 sm:w-40 mb-2 object-contain"
                 />
               </div>
-              {/* Form */}
               <div className="space-y-4">
                 <h2 className="text-base sm:text-lg font-bold text-center">
                   Get Solution in 24 Hours
                 </h2>
                 <p className="text-xs sm:text-sm text-gray-500 text-center">
-                  Please tell us more about your business and get connected with
-                  an expert.
+                  Please tell us more about your business and get connected with an expert.
                 </p>
                 <form className="space-y-3 sm:space-y-4">
                   <input
@@ -108,6 +104,7 @@ export default function SolutionsSection() {
                     placeholder="Enter your message here (Optional)"
                     className="w-full border border-gray-200 p-3 sm:p-4 rounded text-sm"
                   ></textarea>
+
                   {/* reCAPTCHA widget */}
                   <div className="flex justify-center my-2">
                     <ReCaptcha
