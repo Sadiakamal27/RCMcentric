@@ -1,13 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import SolutionSection from "@/components/SolutionsSection";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import ExpertiseSection from "@/components/ExpertiseSection";
+import { Card, CardContent } from '@/components/ui/card';
+
+
 
 const cardData = [
   {
@@ -32,8 +36,59 @@ const cardData = [
   }
 ];
 
+const benefits = [
+  {
+    number: '1',
+    title: 'Better Cash Flows',
+    description:
+      'Cash flows act as the lifeblood of any organization, and healthcare providers are no different. Our professional revenue cycle management services offer experienced professionals who can expertly handle different types of medical claims on the first submission.',
+  },
+  {
+    number: '2',
+    title: 'Quick Submission',
+    description:
+      'Providers get to experience faster claim submissions on their behalf. Not only that, but we provide technologically advanced solutions from the get-go. In brief, we ensure easy filing of all the details, maintaining a certain speed for reimbursements. Practice beyond financial restrictions.',
+  },
+  {
+    number: '3',
+    title: 'Expert Teams',
+    description:
+      'Our team of expert medical coding consultants is the answer to all the pressing concerns around accurate medical billing and audit. In short, it is precise and to the point. You can expect timely submissions, alongside the proactive handling of insurance companies and patients.',
+  },
+  {
+    number: '4',
+    title: 'Denial Management',
+    description:
+      'The team here at RCM Centric timely reports if they find any problems related to submissions, including errors and omissions. It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.',
+  },
+  {
+    number: '5',
+    title: 'Advanced Reporting',
+    description:
+      'Detailed analysis reports are submitted to physicians and specialists as per their custom requirements to help them make smart business decisions. We also break up each stage of the process as per the needs of clinicians belonging to different specialties.',
+  },
+  {
+    number: '6',
+    title: 'Reduced Costs',
+    description:
+      'Once you decide to outsource medical billing to us, you are about to cut down on the costs drastically. It is the right mix of skills, experience, and resilience that allows us to accelerate your revenue cycle. Let us put a lid on expenses together and scale beyond boundaries.',
+  },
+];
+
 export default function MedicalCodingPage() {
   const [selectedSpecialty, setSelectedSpecialty] = useState("");
+
+
+
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], ['100%', '-100%']);
+
+
 
   return (
     <>
@@ -60,11 +115,11 @@ export default function MedicalCodingPage() {
             </div>
             <p className="text-gray-100 text-base sm:text-lg mb-8">
               RCM Centric provides customized medical coding service solutions for
-               all medical specialists and practices, ensuring accuracy and compliance.
+              all medical specialists and practices, ensuring accuracy and compliance.
             </p>
             <div className="w-full max-w-md lg:mx-0">
               <h3 className="text-base sm:text-xl text-gray-200 mb-2">Find Right Codes By Your Speciality</h3>
-              <SolutionSection />
+              <SolutionSection buttonText="Get Code →" />
             </div>
           </div>
           {/* Right column: Empty */}
@@ -147,13 +202,63 @@ export default function MedicalCodingPage() {
 
             <Link href="/TalktoSales">
               <Button className="border-2 bg-blue-600 text-white rounded-full hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto">
-              Talk To Sales
+                Talk To Sales
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
+
+
+      <section ref={sectionRef} className="relative w-full bg-blue-900 min-h-screen md:h-[400vh] py-20 md:py-26">
+        
+        
+        <div className="sticky top-30 mb-20 flex flex-col md:flex-row items-start min-h-screen md:h-screen">
+          {/* Left Column (Sticky) */}
+          <div className="flex-1 flex flex-col w-full md:w-1/2 justify-center md:justify-start">
+            {/* Image on top */}
+            <div className="flex justify-center mb-6 px-4 md:px-0">
+              <Image
+                src="/Checkup-Apppointmens-1-1.png"
+                alt="Benefits of Outsourcing"
+                width={500}
+                height={400}
+                className="object-contain w-full max-w-xs sm:max-w-md md:max-w-lg"
+              />
+            </div>
+            {/* Text content below */}
+            <div className="text-white px-4 md:px-8 lg:px-30 mt-4 md:mt-10 mb-8 md:mb-0">
+              <div className="mb-2 text-red-400 font-medium text-sm md:text-base">BENEFITS OF OUR SERVICES</div>
+              <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4">Benefits of Outsourcing</h2>
+              <p className="mb-6 text-sm md:text-base leading-relaxed">
+                Here is how medical billing solutions by RCM Centric will assist you as a provider.
+                You will get most of the benefits for free with the services of your choice. We always deliver the best results
+                to boost your monthly collection and streamline the revenue process.
+              </p>
+              <p className="font-bold mb-6 text-sm md:text-base">
+                It's just like outsourcing the results. RCM Centric will be responsible for the delivery and compliance.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column (Scrolling Benefits) */}
+          <div className="w-full md:w-1/2 h-auto md:h-screen px-4 md:px-8 lg:px-20 py-8 md:py-16 overflow-y-auto md:overflow-hidden relative">
+            <motion.div style={{ y: translateY }} className="space-y-8 md:space-y-18">
+              {benefits.map((item, i) => (
+                <div key={i} className="flex flex-col sm:flex-row items-start gap-4 md:gap-8 text-white">
+                  <div className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-blue-950 mb-2 sm:mb-0">{item.number}</div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold mb-2 text-sm md:text-base">{item.title}</h3>
+                    <p className="text-xs md:text-sm leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
 
       <section className="bg-white py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-10">
@@ -170,15 +275,15 @@ export default function MedicalCodingPage() {
           {/* Right: Text */}
           <div className="flex-1">
             <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center md:text-left">
-            Make Appointment
+              Make Appointment
             </h2>
             <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
             <p className="text-gray-700 mb-6 text-center md:text-left">
-            Getting an accurate medical coding can be one of the most impactful experiences that you can have
-             — especially if you’ve been in search of that answer for a while. We can help you get there.            </p>
+              Getting an accurate medical coding can be one of the most impactful experiences that you can have
+              — especially if you’ve been in search of that answer for a while. We can help you get there.            </p>
             <Link href="/TalktoSales">
               <Button className="border-2 bg-blue-600 text-white rounded-full hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto">
-              Schedule Now
+                Schedule Now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
@@ -186,8 +291,13 @@ export default function MedicalCodingPage() {
         </div>
       </section>
 
+
       {/* Expertise Section */}
       <ExpertiseSection />
+
+
+    
+
     </>
   );
 }
