@@ -68,7 +68,7 @@ export default function HomePage() {
               <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left">
           Get a Solution for Your Medical Practice
         </h3>
-                <SolutionSection />
+                <SolutionSection buttonText="Get Solution →" />
               </div>
             </div>
 
@@ -281,6 +281,7 @@ export default function HomePage() {
       {/* Services Description */}
 
       <SolutionsAndServices />
+     
 
       {/* Centric Solution Section */}
       <section className="bg-white py-10 sm:py-16 lg:py-24">
