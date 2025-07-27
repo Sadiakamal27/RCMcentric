@@ -105,9 +105,11 @@ export default function Footer() {
               <li>
                 <Link href="/get-quote" className="hover:underline">Get A Quote</Link>
               </li>
+              
               <li>
-                <Link href="/privacy-policy" className="hover:underline">Privacy Policy</Link>
+                <Link href="/PrivacyPolicy" className="hover:underline">Privacy Policy</Link>
               </li>
+              
               <li>
                 <Link href="/e-communications-consent" className="hover:underline">e-Communications Consent</Link>
               </li>
