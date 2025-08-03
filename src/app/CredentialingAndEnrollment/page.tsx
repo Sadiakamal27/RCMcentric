@@ -4,6 +4,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 
 function page() {
@@ -394,8 +395,8 @@ function page() {
                 </div>
             </section>
 
-
-
+            {/* Testimonial Carousel Section */}
+            <TestimonialCarousel />
 
         </div>
     )
