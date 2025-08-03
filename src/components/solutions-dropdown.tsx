@@ -111,12 +111,14 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
+                <Link href="/CredentialingAndEnrollment" target="_blank" rel="noopener noreferrer">
                   <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
                     Credentialing & Enrollment
                   </h4>
                   <p className="text-gray-600 text-xs mt-0.5">
                     Help you navigate the process of your practice credentialing tasks.
                   </p>
+                  </Link>
                 </div>
               </div>
 
