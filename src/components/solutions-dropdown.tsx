@@ -111,7 +111,7 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/CredentialingAndEnrollment" target="_blank" rel="noopener noreferrer">
+                <Link href="/CredentialingAndEnrollment" >
                   <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
                     Credentialing & Enrollment
                   </h4>
@@ -134,10 +134,13 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
+                <Link href="/PatientHelpDesk">
+
                   <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">Patient Help Desk</h4>
                   <p className="text-gray-600 text-xs mt-0.5">
                     RCM Centric provides dedicated Help desk services for your patient's queries.
                   </p>
+                  </Link>
                 </div>
               </div>
 
