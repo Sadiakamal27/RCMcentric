@@ -6,38 +6,40 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-
+import { Input } from "@/components/ui/input"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Textarea } from "@/components/ui/textarea"
 
 const cardData = [
     {
-        image: '/card1.jpg',
-        title: 'Personalized Support',
-        description: 'We tailor assistance based on your unique healthcare journey.',
-        backContent: 'Our personalized approach ensures that every patient receives customized care plans, tailored communication preferences, and individualized support that matches their specific healthcare needs and circumstances.'
+        image: '/Enhanched-Patient-Experience-03.svg',
+        title: 'Enhanched Patient Experience',
+        description: "We're transforming healthcare to be more empathetic and efficient for every patient.",
+        backContent: "We're transforming healthcare to be more empathetic and efficient for every patient."
     },
     {
-        image: '/card2.jpg',
-        title: 'Trained Professionals',
-        description: 'Get help from real healthcare experts, not bots.',
-        backContent: 'Our team consists of certified healthcare professionals with extensive experience in patient care, medical billing, and healthcare administration. They understand your concerns and provide expert guidance.'
+        image: '/High-First-Contact-Resolution-Rates-02.svg',
+        title: 'High First Contact Resolution Rates',
+        description: 'Get answers and solutions right away, thanks to our efficient support.',
+        backContent: 'Get answers and solutions right away, thanks to our efficient support.'
     },
     {
-        image: '/card3.jpg',
-        title: '24/7 Availability',
-        description: 'Our support is available any time you need it.',
-        backContent: 'Healthcare doesn\'t follow business hours, and neither do we. Our round-the-clock support ensures you can get help whenever you need it, whether it\'s 2 AM or 2 PM.'
+        image: '/Operational-Efficiency-04.svg',
+        title: 'Operational Efficiency',
+        description: 'We continuously refine our operations for maximum effectiveness and minimal waste.',
+        backContent: 'We continuously refine our operations for maximum effectiveness and minimal waste.'
     },
     {
-        image: '/card4.jpg',
-        title: 'Seamless Integration',
-        description: 'Our help desk works with your existing systems.',
-        backContent: 'We integrate seamlessly with your current healthcare management systems, electronic health records, and patient portals, ensuring a smooth and efficient workflow without disruption.'
+        image: '/Increased-Patient-Retention-01.svg',
+        title: 'Increased Patient Retention',
+        description: 'We deliver care that leads to tangible improvements in your health and well-being.',
+        backContent: 'We deliver care that leads to tangible improvements in your health and well-being.'
     },
     {
-        image: '/card5.jpg',
-        title: 'Fast Issue Resolution',
-        description: 'Get answers quickly without unnecessary delays.',
-        backContent: 'Our streamlined processes and experienced team ensure that your issues are resolved quickly and efficiently, minimizing wait times and getting you back to focusing on your health.'
+        image: '/Improved-Health-Outcomes.svg',
+        title: 'Improved Health Outcomes',
+        description: 'We deliver care that leads to tangible improvements in your health and well-being.',
+        backContent: 'We deliver care that leads to tangible improvements in your health and well-being.'
     },
 ];
 
@@ -52,7 +54,7 @@ export default function page() {
     const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
     const [isPaused, setIsPaused] = useState(false);
     const totalCards = cardData.length;
-    const visibleCards = 3;
+    const [visibleCards, setVisibleCards] = useState(3);
     const [isTransitioning, setIsTransitioning] = useState(true);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -64,6 +66,32 @@ export default function page() {
         ...cardData.slice(0, visibleCards), // Clone first few at end
     ];
     const extendedTotalCards = extendedCardData.length;
+
+    // Adjust number of visible cards responsively
+    useEffect(() => {
+        const updateVisibleCards = () => {
+            const width = window.innerWidth;
+            if (width < 640) {
+                setVisibleCards(1);
+            } else if (width < 1024) {
+                setVisibleCards(2);
+            } else {
+                setVisibleCards(3);
+            }
+        };
+
+        updateVisibleCards();
+        window.addEventListener('resize', updateVisibleCards);
+        return () => window.removeEventListener('resize', updateVisibleCards);
+    }, []);
+
+    // When visibleCards changes, reset the index to the true start to avoid jumps
+    useEffect(() => {
+        setIsTransitioning(false);
+        setIndex(visibleCards);
+        const id = setTimeout(() => setIsTransitioning(true), 0);
+        return () => clearTimeout(id);
+    }, [visibleCards]);
 
     const handleCardClick = (cardIndex: number) => {
         // Pause the automatic sliding
@@ -364,26 +392,26 @@ export default function page() {
                             <Image
                                 src="/graph-1.png"
                                 alt="Doctor illustration"
-                                width={500}
+                                width={700}
                                 height={500}
                                 className="rounded-lg object-cover"
                             />
                         </div>
 
                         {/* Right Column - White Box with Card Slider */}
-                        <div className="md:w-1/2 w-full bg-white rounded-md p-6 overflow-hidden relative min-h-[400px]">
+                        <div className="md:w-1/2 w-full bg-white rounded-2xl p-6 overflow-hidden relative min-h-[360px] md:min-h-[380px]">
                             {/* Navigation Arrows */}
                             <button
                                 onClick={handlePrevious}
-                                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+                                className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-1 md:p-2 shadow-lg hover:bg-gray-100 transition-colors"
                             >
-                                <ChevronLeft className="w-5 h-5 text-gray-600" />
+                                <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
                             </button>
                             <button
                                 onClick={handleNext}
-                                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+                                className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-1 md:p-2 shadow-lg hover:bg-gray-100 transition-colors"
                             >
-                                <ChevronRight className="w-5 h-5 text-gray-600" />
+                                <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-gray-600" />
                             </button>
 
                             <div
@@ -396,7 +424,8 @@ export default function page() {
                                 {extendedCardData.map((card, i) => (
                                     <div
                                         key={i}
-                                        className="w-[10%] px-2 flex-shrink-0"
+                                        className="px-2 flex-shrink-0"
+                                        style={{ width: `${100 / extendedTotalCards}%` }}
                                     >
                                         <div
                                             className="relative h-[320px] cursor-grab perspective-1000"
@@ -408,8 +437,8 @@ export default function page() {
                                                     }`}
                                             >
                                                 {/* Front of card */}
-                                                <Card className="h-full  flex flex-col items-center text-center backface-hidden">
-                                                    <CardContent className="pt-4">
+                                                <Card className="h-full border border-none bg-blue-50 flex flex-col items-center text-center backface-hidden">
+                                                    <CardContent className="pt-4 ">
                                                         <Image
                                                             src={card.image}
                                                             alt={card.title}
@@ -418,20 +447,18 @@ export default function page() {
                                                             className="mx-auto mb-4 rounded-md"
                                                         />
                                                         <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
-                                                        <p className="text-gray-600 text-sm">{card.description}</p>
+                                                        <p className="text-gray-600 text-1xl">{card.description}</p>
                                                     </CardContent>
                                                 </Card>
 
                                                 {/* Back of card */}
-                                                <Card className="h-full flex flex-col items-center text-center backface-hidden rotate-y-180 absolute inset-0">
+                                                <Card className="h-full border border-none bg-blue-50 flex flex-col items-center text-center backface-hidden rotate-y-180 absolute inset-0">
                                                     <CardContent className="pt-4 flex flex-col justify-center h-full">
-                                                        <h3 className="text-lg font-semibold mb-4 text-blue-600">
-                                                            {card.title}
-                                                        </h3>
-                                                        <p className="text-gray-600 text-sm leading-relaxed">
+
+                                                        <p className="text-gray-600 text-1xl leading-relaxed">
                                                             {card.backContent}
                                                         </p>
-                                                        <p className="text-xs text-gray-500 mt-4">Click to flip back</p>
+
                                                     </CardContent>
                                                 </Card>
                                             </div>
@@ -440,6 +467,139 @@ export default function page() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-white py-12 mt-8">
+                <div className="flex flex-col md:flex-row gap-10 px-6 max-w-7xl mx-auto">
+
+                    {/* LEFT SIDE */}
+                    <div className="flex-1 ">
+                        <div className="flex items-center gap-2 mb-4">
+                            {/* Icon */}
+                            <div className=" flex items-center justify-center">
+                                <Image
+                                    src="/Our-Services-06.svg"
+                                    alt="Doctor illustration"
+                                    width={60}
+                                    height={60}
+                                    className="rounded-lg object-cover"
+                                />
+                            </div>
+                        </div>
+
+                        <h1 className="text-3xl font-semibold  justify-between p-9px mb-10">
+                            <span className="text-gray-800">  Outsourcing your </span>{" "}
+                            <span className="text-blue-600 font-semibold">Patient Help Desk</span>{" "}
+                            <span className="text-gray-800"> to WeCare Centric save you </span>{" "}
+                            <span className="text-blue-600 font-semibold">Up to 47%</span>{" "}
+                            <span className="text-gray-800"> on your operational costs.</span>
+                        </h1>
+
+                        <ul className="space-y-4 text-gray-600">
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> Centralized scheduling
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> Enhanced practice revenue
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> Reduced no-show rates
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> 100% Patient satisfaction
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> HIPAA Compliance
+                            </li>
+                            <li className="flex items-center gap-3">
+                                <span className="text-blue-500">➜</span> 24/7 Available
+                            </li>
+                        </ul>
+
+                        <Button className="bg-red-400 text-white rounded-sm hover:bg-blue-600 mt-6">
+                            12345
+                        </Button>
+                    </div>
+
+                    {/* RIGHT SIDE FORM */}
+                    <div className="flex-1">
+                        <h2 className="text-2xl text-gray-600 font-semibold mb-6">GET YOUR FREE TRIAL TODAY!</h2>
+
+                        <form className="space-y-4">
+                            {/* Name & Phone */}
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4  ">
+                                <Input
+                                    placeholder="Full Name *"
+                                    className=" h-12 border  border-gray-400   mb-4 rounded-none
+                                 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+                                  text-gray-500 placeholder:text-gray-400"
+                                />
+                                <Input
+                                    className=" h-12 border border-gray-400  mb-4 rounded-none
+                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-700
+                                 text-gray-500 placeholder:text-gray-400"
+                                    placeholder="Phone Number" />
+                            </div>
+
+                            {/* Email & Practice Name */}
+                            <div className="grid grid-cols-1  sm:grid-cols-2 gap-4">
+                                <Input
+                                    className=" h-12  border border-gray-400 rounded-none
+                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+                                 text-gray-500 placeholder:text-gray-400"
+                                    placeholder="Email Address *" />
+                                <Input
+                                    className=" h-12 border border-gray-400 rounded-none
+                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+                                 text-gray-500 placeholder:text-gray-400"
+                                    placeholder="Practice / Business Name *" />
+                            </div>
+
+                            {/* Checkbox Options */}
+                            <div>
+                                <p className=" text-1xl mb-2 mt-10 font-bold text-blue-700">What would you like to know? *</p>
+                                <div className="flex flex-wrap gap-4">
+                                    {["Billing Services", "Credentialing", "Claims Coding", "Pricing", "Other"].map((label) => (
+                                        <label key={label} className="flex items-center gap-2 ">
+                                             <Checkbox id={label} className="rounded-sm border border-gray-400
+                                              data-[state=checked]:bg-white data-[state=checked]:text-blue-500
+                                              focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
+                                            <span>{label}</span>
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Message */}
+                            <div >
+                                <Textarea
+                                    className="h-35 border border-gray-400 rounded-none
+                                          ring-0 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 
+                                          focus:outline-none transition-all duration-200
+                                           text-gray-500 placeholder:text-gray-400"
+                                    placeholder="Type your message here... (Optional)"
+                                    maxLength={25}
+                                />
+
+                                <p className="text-xs text-gray-500 mt-3">0 of 25 max characters.</p>
+                            </div>
+
+                            {/* Privacy */}
+                            <div className="flex items-start gap-2 ">
+                                <Checkbox id="privacy" className=" rounded-sm border border-gray-400
+                                              data-[state=checked]:bg-white data-[state=checked]:text-blue-500
+                                              focus:ring-1 focus:ring-blue-500 focus:border-blue-500 " />
+                                <label htmlFor="privacy" className="text-sm text-gray-700">
+                                    By sending this form, I confirm that I have read and accept the{" "}
+                                    <span className="text-blue-600 underline">Privacy Policy</span>.
+                                </label>
+                            </div>
+
+                            <Button className="bg-blue-600 font-semibold text-white 
+                            hover:text-white hover:bg-red-400 rounded-sm">Submit Now</Button>
+                        </form>
                     </div>
                 </div>
             </section>
