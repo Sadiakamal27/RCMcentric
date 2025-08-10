@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import SolutionsSection from '@/components/SolutionsSection';
 
 
 const features = [
@@ -39,16 +40,21 @@ const features = [
 
 function page() {
 
-    const [ref, isVisible] = useIntersectionObserver({
-        threshold: 0.1, // triggers when 20% visible
+    const [partnerRef, partnerVisible] = useIntersectionObserver({
+        threshold: 0.01, // triggers when just 1% visible
         rootMargin: "0px",
     });
 
-    const [row1Ref, row1Visible] = useIntersectionObserver({ threshold: 0.1 });
-    const [row2Ref, row2Visible] = useIntersectionObserver({ threshold: 0.1 });
-    const [row3Ref, row3Visible] = useIntersectionObserver({ threshold: 0.1 });
-
+    const [row1Ref, row1Visible] = useIntersectionObserver({ threshold: 0.01 });
+    const [row2Ref, row2Visible] = useIntersectionObserver({ threshold: 0.01 });
+    const [row3Ref, row3Visible] = useIntersectionObserver({ threshold: 0.01 });
+    const [benefitsRef, benefitsVisible] = useIntersectionObserver({ threshold: 0.01 });
     
+    // New refs for four-card section animations
+    const [fourCardHeadingRef, fourCardHeadingVisible] = useIntersectionObserver({ threshold: 0.01 });
+    const [fourCardRow1Ref, fourCardRow1Visible] = useIntersectionObserver({ threshold: 0.01 });
+    const [fourCardRow2Ref, fourCardRow2Visible] = useIntersectionObserver({ threshold: 0.01 });
+
 
     return (
 
@@ -70,7 +76,7 @@ function page() {
                 <div className="bg-white min-h-[250px] rounded-2xl shadow-lg p-6 flex flex-col sm:flex-row justify-between items-center gap-6">
                     {features.map((feature, idx) => {
                         const [ref, isVisible] = useIntersectionObserver({
-                            threshold: 0.1,
+                            threshold: 0.01,
                             rootMargin: "0px",
                         });
 
@@ -93,9 +99,9 @@ function page() {
             </section>
 
             <section
-                ref={ref}
+                ref={partnerRef}
                 className={` mt-10 py-8 sm:py-12 transition-all duration-700 
-                          ${isVisible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+                          ${partnerVisible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
             >
                 <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-10">
                     {/* Left: Illustration */}
@@ -209,8 +215,8 @@ function page() {
                 </div>
 
                 <div
-                    ref={ref}
-                    className={`max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-md overflow-hidden flex items-center gap-4 p-4 transition-all duration-500 ease-out transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                    ref={benefitsRef}
+                    className={`max-w-3xl mx-auto mt-8 bg-white rounded-lg shadow-md overflow-hidden flex items-center gap-4 p-4 transition-all duration-500 ease-out transform ${benefitsVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                         }`}
                 >
                     {/* Left Side - Image */}
@@ -247,7 +253,196 @@ function page() {
                 </div>
             </section>
 
+            {/* New Four-Card Section */}
+            <section className="py-16 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div
+                        ref={fourCardHeadingRef}
+                        className={`text-left mb-12 ${fourCardHeadingVisible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-600 mb-4">
+                        Healthcare IT Consulting Services Options
+                        </h2>
+                        <div className="w-20 h-1 bg-red-500  mt-2"></div>
+                    </div>
+                    
+                    <div className="space-y-8">
+                        {/* Row 1: Two cards */}
+                        <div
+                            ref={fourCardRow1Ref}
+                            className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${fourCardRow1Visible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+                        >
+                            {/* Card 1 */}
+                            <Card className="h-full  border-none rounded-xl ">
+                                <CardHeader className="pb-4">
+                                    <CardTitle className="text-xl font-bold text-gray-700 text-left">
+                                    Assessment of the existing IT environment
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-0">
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Analysis of your business needs and workflows</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Review of the IT environment components, data flows between them, etc.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Security and compliance analysis of the IT ecosystem.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>IT environment optimization guidance.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Compliance guidance on HIPAA, HITECH, FDA, GDPR, MDR, IVDR, SAMHSA regulations</span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            {/* Card 2 */}
+                            <Card className="h-full border-none rounded-xl ">
+                                <CardHeader className="pb-4">
+                                    <CardTitle className="text-xl font-bold text-gray-700 text-left">
+                                    IT strategy consulting
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-0">
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Analysis of your business needs and planning of IT initiatives to tackle them.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>An efficient healthcare IT strategy and implementation roadmap to improve IT performance, reliability, ensure seamless workflows.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Software integration planning.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Compliance guidance on HIPAA, HITECH, FDA, GDPR, MDR, IVDR, SAMHSA regulations.</span>
+                                        </li>
+                                        
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        {/* Row 2: Two cards */}
+                        <div
+                            ref={fourCardRow2Ref}
+                            className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${fourCardRow2Visible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+                        >
+                            {/* Card 3 */}
+                            <Card className="h-full  border-none rounded-xl  ">
+                                <CardHeader className="pb-4">
+                                    <CardTitle className="text-xl font-bold text-gray-700 text-left">
+                                    Medical solution consulting
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-0">
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Analysis of your business needs, operational processes, etc.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Technical design of the medical solution and its integrations (with EHR, CRM, revenue management software, etc.).
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Medical software costs estimation and ROI analysis.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Compliance guidance on HIPAA, HITECH, FDA, GDPR, MDR, IVDR, SAMHSA regulations.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Healthcare software implementation.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>User training.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+
+                            {/* Card 4 */}
+                            <Card className="h-full  border-none rounded-xl ">
+                                <CardHeader className="pb-4">
+                                    <CardTitle className="text-xl font-bold text-gray-700 text-left">
+                                    Digital health startup consulting
+
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="pt-0">
+                                    <ul className="space-y-3 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                            <span>Market and business needs analysis.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Healthcare software idea productization.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Healthcare software design (feature list, architecture, tech stack, etc.) Business case design (with cost and ROI estimation).
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Compliance guidance on HIPAA, HITECH, FDA, GDPR, MDR, IVDR, SAMHSA regulations.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>Healthcare software development.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start">
+                                        <span className="w-2 h-2 bg-red-500  mt-2 mr-3 flex-shrink-0"></span>
+                                        <span>After-launch support.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+
            
+
+
 
 
 
