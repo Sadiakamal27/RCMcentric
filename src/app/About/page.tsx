@@ -76,9 +76,8 @@ function AboutPage() {
         {/* Slide-up on entire container */}
         <div
           ref={ref}
-          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${
-            isVisible ? "animate-slide-up-fast" : "slide-up-hidden"
-          }`}
+          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${isVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+            }`}
         >
           {/* Left Content */}
           <div className="w-full md:w-1/2">
@@ -138,9 +137,8 @@ function AboutPage() {
 
       <div ref={imageRef} className="h-full w-full">
         <section
-          className={`bg-white py-0 px-3 transition-all duration-700 ${
-            isImageVisible ? "animate-slide-up-fast" : "opacity-0"
-          }`}
+          className={`bg-white py-0 px-3 transition-all duration-700 ${isImageVisible ? "animate-slide-up-fast" : "opacity-0"
+            }`}
         >
           <div className="max-w-7xl mx-auto">
             <Image
@@ -157,9 +155,8 @@ function AboutPage() {
       <section className="bg-white py-20 px-5">
         <div
           ref={respectRef}
-          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${
-            isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
-          }`}
+          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+            }`}
         >
           <div className="w-full md:w-1/2 text-left">
             <div className="text-9xl font-bold outline-text">1</div>
@@ -187,9 +184,8 @@ function AboutPage() {
         {/* Slide-up on entire container */}
         <div
           ref={integrityRef}
-          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${
-            isIntegrityVisible ? "animate-slide-up-fast" : "slide-up-hidden"
-          }`}
+          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${isIntegrityVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+            }`}
         >
           <div className="w-34 md:w-1/2 bg-white rounded-[40px] p-10 relative flex items-center justify-start">
             <Image
@@ -218,22 +214,20 @@ function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div
             ref={titleRef}
-            className={`transition-all duration-500 ${
-              isTitleVisible
+            className={`transition-all duration-500 ${isTitleVisible
                 ? "animate-slide-up-fast opacity-100"
                 : "opacity-0 translate-y-10"
-            }`}
+              }`}
           >
             <h2 className="text-4xl font-bold text-center mb-6">Our Values</h2>
             <hr className="w-16 mx-auto mb-3 border-t-2 border-red-500" />
           </div>
           <div
             ref={subtitleRef}
-            className={`transition-all duration-500 ${
-              isSubtitleVisible
+            className={`transition-all duration-500 ${isSubtitleVisible
                 ? "animate-slide-up-fast opacity-100"
                 : "opacity-0 translate-y-10"
-            }`}
+              }`}
           >
             <p className="text-center text-gray-600 mb-10">
               Our integrity ensures our credibility and results. Honor your
@@ -244,9 +238,8 @@ function AboutPage() {
           <div
             ref={valuesRef1}
             className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-            gap-6 transition-all duration-500 ${
-              isValuesVisible1 ? "animate-slide-up-fast" : "slide-up-hidden"
-            }`}
+            gap-6 transition-all duration-500 ${isValuesVisible1 ? "animate-slide-up-fast" : "slide-up-hidden"
+              }`}
           >
             <Card className="border-pink-300 p-5 text-center">
               <CardContent className="p-6">
@@ -315,9 +308,8 @@ function AboutPage() {
           </div>
           <div
             ref={valuesRef2}
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-6 transition-all duration-500 ${
-              isValuesVisible2 ? "animate-slide-up-fast" : "slide-up-hidden"
-            }`}
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-6 transition-all duration-500 ${isValuesVisible2 ? "animate-slide-up-fast" : "slide-up-hidden"
+              }`}
           >
             <Card className="border-pink-300 p-4 text-center">
               <CardContent className="p-6">
@@ -385,62 +377,61 @@ function AboutPage() {
           </div>
         </div>
       </section>
-<section className="bg-white py-20 px-5">
-  <div
-    ref={lastref}
-    className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${
-      isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
-    }`}
-  >
-    <div className="w-full md:w-1/2 text-left">
-      
-      <h3 className="text-2xl font-bold mb-4 text-gray-800">How RCM Centric Help Practice’s Grow</h3>
-      
-      <p className="text-gray-600 text-lg">
-        By optimizing revenue cycles, practices gain financial strength, fueling investments in better
-         patient care and expanded services. A focus on efficient billing and reduced errors frees up staff,
-          allowing them to concentrate on patient acquisition and enhanced experiences, driving sustainable growth.
-      </p>
-      <hr className="w-16 h-1 mt-3 bg-pink-600 mb-6" />
-      <ul className="list-none text-lg mt-6 space-y-2">
-        <li className="flex items-start">
-          <span className="text-red-500 mr-2">✔</span> Dedicated account manager for each account
-        </li>
-        <li className="flex items-start">
-          <span className="text-red-500 mr-2">✔</span> On-staff experts in billing, coding, credentialing and A/R
-        </li>
-        <li className="flex items-start">
-          <span className="text-red-500 mr-2">✔</span> Clear and concise reporting platform
-        </li>
-        <li className="flex items-start">
-          <span className="text-red-500 mr-2">✔</span> 24/7 uptime and support
-        </li>
-        <li className="flex items-start">
-          <span className="text-red-500 mr-2">✔</span> HIPAA-compliant and certified team of experts
-        </li>
-      </ul>
-      <Link href="/get-started" target="_blank" rel="noopener noreferrer">
-  <Button className="mt-6 bg-white text-blue-600 border-2 border-blue-600 
+      <section className="bg-white py-20 px-5">
+        <div
+          ref={lastref}
+          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+            }`}
+        >
+          <div className="w-full md:w-1/2 text-left">
+
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">How RCM Centric Help Practice’s Grow</h3>
+
+            <p className="text-gray-600 text-lg">
+              By optimizing revenue cycles, practices gain financial strength, fueling investments in better
+              patient care and expanded services. A focus on efficient billing and reduced errors frees up staff,
+              allowing them to concentrate on patient acquisition and enhanced experiences, driving sustainable growth.
+            </p>
+            <hr className="w-16 h-1 mt-3 bg-pink-600 mb-6" />
+            <ul className="list-none text-lg mt-6 space-y-2">
+              <li className="flex items-start">
+                <span className="text-red-500 mr-2">✔</span> Dedicated account manager for each account
+              </li>
+              <li className="flex items-start">
+                <span className="text-red-500 mr-2">✔</span> On-staff experts in billing, coding, credentialing and A/R
+              </li>
+              <li className="flex items-start">
+                <span className="text-red-500 mr-2">✔</span> Clear and concise reporting platform
+              </li>
+              <li className="flex items-start">
+                <span className="text-red-500 mr-2">✔</span> 24/7 uptime and support
+              </li>
+              <li className="flex items-start">
+                <span className="text-red-500 mr-2">✔</span> HIPAA-compliant and certified team of experts
+              </li>
+            </ul>
+            <Link href="/get-started" target="_blank" rel="noopener noreferrer">
+              <Button className="mt-6 bg-white text-blue-600 border-2 border-blue-600 
   px-7 py-4 rounded-full hover:bg-blue-600 hover:text-white transition-colors">
-    Get Started Today - No Signup Charges <ExternalLink className="w-4 h-4 ml-2" />
-  </Button>
-</Link>
-</div>
-    <div className="w-34 md:w-1/2 bg-white rounded-[40px] p-10 relative flex items-center justify-end">
-      
-      <div className="relative w-full h-96">
-        <Image
-          src="/illustrations-.png"
-          alt="Growth Report"
-          width={550}
-          height={400}
-          className="rounded-lg object-contain"
-        />
+                Get Started Today - No Signup Charges <ExternalLink className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+          <div className="w-34 md:w-1/2 bg-white rounded-[40px] p-10 relative flex items-center justify-end">
+
+            <div className="relative w-full h-96">
+              <Image
+                src="/illustrations-.png"
+                alt="Growth Report"
+                width={550}
+                height={400}
+                className="rounded-lg object-contain"
+              />
+            </div>
+          </div>
         </div>
-    </div>
-  </div>
- 
-</section>
+
+      </section>
 
 
     </>
