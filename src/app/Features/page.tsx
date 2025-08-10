@@ -448,7 +448,7 @@ export default function FeaturesPage() {
                     {/* Left: Text and Button */}
                     <div className="flex-1 max-w-xl text-left">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                            Engage RCM Centric For Your Specialty Billing Needs
+                            Engage WeCare Centric For Your Specialty Billing Needs
                         </h2>
                         <div className="w-24 h-1 bg-red-500 mb-6"></div>
                         <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl">
