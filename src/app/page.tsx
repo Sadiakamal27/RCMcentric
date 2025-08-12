@@ -68,7 +68,10 @@ export default function HomePage() {
               <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left">
           Get a Solution for Your Medical Practice
         </h3>
-                <SolutionSection buttonText="Get Solution →" />
+                <SolutionSection 
+                buttonText=" →  Get Solution"
+                buttonClassName=" text-white bg-red-500 hover:bg-white hover:text-blue-700"
+                />
               </div>
             </div>
 
