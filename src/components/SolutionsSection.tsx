@@ -1,7 +1,7 @@
 // components/SolutionsSection.tsx
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetContent } from "@/components/ui/sheet";
 import {
   Select,
   SelectTrigger,
@@ -14,16 +14,22 @@ import ReCaptcha from "react-google-recaptcha";
 type RecaptchaValue = string | null;
 
 interface SolutionsSectionProps {
-  buttonText?: string; // optional prop with default fallback
+  buttonText?: string; // Optional button label
+  buttonClassName?: string; // Optional extra classes for styling
+  showDropdown?: boolean; // NEW: control whether dropdown appears
 }
 
-export default function SolutionsSection({ buttonText = "Get Solution →" }: SolutionsSectionProps) {
+export default function SolutionsSection({
+  buttonText = "Get Solution →",
+  buttonClassName = "",
+  showDropdown = true
+}: SolutionsSectionProps) {
   const [selectedSpecialty, setSelectedSpecialty] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState<RecaptchaValue>(null);
 
   const handleClick = (e: React.MouseEvent) => {
-    if (!selectedSpecialty) {
+    if (showDropdown && !selectedSpecialty) {
       e.preventDefault();
       alert("Please select a specialty first.");
       setIsOpen(false);
@@ -39,23 +45,26 @@ export default function SolutionsSection({ buttonText = "Get Solution →" }: So
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-4 w-full">
-        {/* Specialty Select */}
-        <Select onValueChange={(value) => setSelectedSpecialty(value)}>
-          <SelectTrigger className="bg-white text-gray-500 w-full rounded-none border-0">
-            <SelectValue placeholder="Select Your Specialty" />
-          </SelectTrigger>
-          <SelectContent className="bg-white max-h-58 overflow-y-auto">
-            <SelectItem value="cardiology">Cardiology</SelectItem>
-            <SelectItem value="dermatology">Dermatology</SelectItem>
-            <SelectItem value="orthopedics">Orthopedics</SelectItem>
-            <SelectItem value="psychiatry">Psychiatry</SelectItem>
-            <SelectItem value="primary-care">Primary Care</SelectItem>
-          </SelectContent>
-        </Select>
+
+        {/* Conditionally render dropdown */}
+        {showDropdown && (
+          <Select onValueChange={(value) => setSelectedSpecialty(value)}>
+            <SelectTrigger className="bg-white text-gray-500 w-full rounded-none border-0">
+              <SelectValue placeholder="Select Your Specialty" />
+            </SelectTrigger>
+            <SelectContent className="bg-white max-h-58 overflow-y-auto">
+              <SelectItem value="cardiology">Cardiology</SelectItem>
+              <SelectItem value="dermatology">Dermatology</SelectItem>
+              <SelectItem value="orthopedics">Orthopedics</SelectItem>
+              <SelectItem value="psychiatry">Psychiatry</SelectItem>
+              <SelectItem value="primary-care">Primary Care</SelectItem>
+            </SelectContent>
+          </Select>
+        )}
 
         {/* Get Solution Button */}
         <Button
-          className="bg-red-500 hover:bg-red-600 w-full sm:w-56 rounded-none text-white px-4"
+          className={`w-full sm:w-56 rounded-none px-4 ${buttonClassName}`}
           onClick={handleClick}
         >
           {buttonText}
