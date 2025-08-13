@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, } from "lucide-react";
+import { ExternalLink,  } from "lucide-react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 
 
@@ -50,7 +51,7 @@ function SolutionsAndServices({
         <div className="max-w-7xl mx-auto px-2 sm:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Medical Billing Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300 cursor-pointer group border-none flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300  group border-none flex flex-col h-full">
               <CardContent className="p-6 flex flex-col text-center flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto mb-4  transition-colors">
                   <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
@@ -81,7 +82,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* Medical Coding Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300 cursor-pointer group border-none flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300  group border-none flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -110,7 +111,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* DME / Ambulatory Billing Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300 border-none cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all duration-300 border-none  group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -139,7 +140,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* Hospital Billing Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300  group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -157,18 +158,20 @@ function SolutionsAndServices({
                   services to hospitals.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/HospitalBilling" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors cursor-pointer"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
 
             {/* Practice Audit Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300  group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -197,7 +200,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* Credentialing & Enrollment */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300  group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -226,7 +229,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* Telehealth Billing Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300  group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
@@ -255,7 +258,7 @@ function SolutionsAndServices({
             </Card>
 
             {/* Patient Help Desk Services */}
-            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 cursor-pointer group flex flex-col h-full">
+            <Card className="bg-white hover:bg-blue-600 hover:shadow-lg transition-all border-none duration-300 group flex flex-col h-full">
               <CardContent className="p-6 text-center flex flex-col flex-grow">
                 <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                   <img
