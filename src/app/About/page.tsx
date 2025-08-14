@@ -76,7 +76,8 @@ function AboutPage() {
         {/* Slide-up on entire container */}
         <div
           ref={ref}
-          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${isVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 
+            ${isVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
           {/* Left Content */}
