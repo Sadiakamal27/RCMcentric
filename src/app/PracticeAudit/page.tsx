@@ -4,13 +4,147 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react"; // Phone icon
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
+
+
+// Type for your card data
+interface CardType {
+    id: number;
+    title: string;
+    description: string;
+    gradient: string;
+    icon: string;
+    backgroundImage: string;
+    bulletPoints: string[];
+}
+
+const cardsData: CardType[] = [
+    {
+        id: 1,
+        title: "Technology Assessment",
+        description: "We evaluate your software systems and infrastructure.",
+        gradient: "from-red-500 to-pink-500",
+        icon: "/AUDIT-ICONS-05.svg",
+        backgroundImage: "/background-1.jpg",
+        bulletPoints: ["Software evaluation", "Integration opportunities", "Automation potential", "Security assessment"],
+    },
+    {
+        id: 2,
+        title: "Compliance Review",
+        description: "We help ensure your operations meet industry standards.",
+        gradient: "from-blue-500 to-indigo-500",
+        icon: "/AUDIT-ICONS-06.svg",
+        backgroundImage: "/background-2.jpg",
+        bulletPoints: ["Policy check", "Regulation updates", "Risk analysis", "Reporting"],
+    },
+    {
+        id: 3,
+        title: "Process Optimization",
+        description: "Streamline workflows to improve efficiency.",
+        gradient: "from-green-500 to-emerald-500",
+        icon: "/AUDIT-ICONS-07.svg",
+        backgroundImage: "/background-3.jpg",
+        bulletPoints: ["Workflow analysis", "Bottleneck removal", "Automation", "Cost savings"],
+    },
+    {
+        id: 4,
+        title: "Cybersecurity Audit",
+        description: "Protect your business from potential threats.",
+        gradient: "from-purple-500 to-pink-500",
+        icon: "/AUDIT-ICONS-08.svg",
+        backgroundImage: "/background-4.jpg",
+        bulletPoints: ["Vulnerability scan", "Threat assessment", "Firewall check", "Data protection"],
+    },
+    {
+        id: 5,
+        title: "Cybersecurity Audit",
+        description: "Protect your business from potential threats.",
+        gradient: "from-purple-500 to-pink-500",
+        icon: "/AUDIT-ICONS-08.svg",
+        backgroundImage: "/background-4.jpg",
+        bulletPoints: ["Vulnerability scan", "Threat assessment", "Firewall check", "Data protection"],
+    },
+];
+
+function CardItem({ card }: { card: CardType }) {
+    return (
+        <div className="flex-[0_0_33.333%] px-4">
+            <div className={`bg-gradient-to-br ${card.gradient} rounded-2xl overflow-hidden shadow-2xl h-96 relative group cursor-pointer`}>
+                <div
+                    className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                    style={{ backgroundImage: `url('${card.backgroundImage}')` }}
+                />
+                <div className="relative z-10 p-6 h-full flex flex-col justify-between">
+                    <div className="text-center">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                            <Image src={card.icon} alt={card.title} width={32} height={32} className="w-8 h-8 object-contain" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
+                    </div>
+                    <div className="text-center">
+                        <p className="text-white/90 text-sm leading-relaxed group-hover:hidden">{card.description}</p>
+                        <div className="hidden group-hover:block text-left">
+                            <div className="space-y-2">
+                                {card.bulletPoints.map((point, i) => (
+                                    <div key={i} className="flex items-center gap-2">
+                                        <Check className="w-4 h-4 text-white" />
+                                        <span className="text-white/90 text-sm">{point}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+
+
+
+
+
 
 function page() {
     const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
     const [sectionref, sectionisVisible] = useIntersectionObserver({ threshold: 0.1 });
     const [section2ref, section2isVisible] = useIntersectionObserver({ threshold: 0.2 });
+    const [lastsectionref, lastsectionisVisible] = useIntersectionObserver({ threshold: 0.2 });
 
+    const sliderRef = useRef<HTMLDivElement>(null);
+    const [currentIndex, setCurrentIndex] = useState(3); // start at first "real" card
+    const slides = [...cardsData.slice(-3), ...cardsData, ...cardsData.slice(0, 3)];
+  
+    useEffect(() => {
+      const slideInterval = setInterval(() => {
+        setCurrentIndex((prev) => prev + 1);
+      }, 3000);
+      return () => clearInterval(slideInterval);
+    }, []);
+  
+    useEffect(() => {
+      const slider = sliderRef.current;
+      if (!slider) return;
+  
+      const slideWidth = 100 / 3; // 3 cards visible
+      slider.style.transition = "transform 0.8s ease-in-out";
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+  
+      // Jump instantly if we’re at clone
+      if (currentIndex === slides.length - 3) {
+        setTimeout(() => {
+          slider.style.transition = "none"; // disable animation
+          setCurrentIndex(3); // reset to first real card
+        }, 900);
+      } else if (currentIndex === 0) {
+        setTimeout(() => {
+          slider.style.transition = "none";
+          setCurrentIndex(slides.length - 6); // jump to last real card
+        }, 900);
+      }
+    }, [currentIndex, slides.length]);
 
 
     return (
@@ -81,7 +215,7 @@ function page() {
 
             <section ref={sectionref}
                 className={`py-12 px-4 md:px-8 bg-gray-100 transition-all duration-1000 ease-out transform 
-        ${sectionisVisible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+        ${sectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -193,7 +327,7 @@ function page() {
             <section
                 ref={section2ref}
                 className={`py-12 px-4 md:px-8 bg-gray-100 transition-all duration-1000 ease-out transform 
-                ${section2isVisible ? "animate-slide-up-fast" : "slide-up-hidden"}`}
+                ${section2isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -242,6 +376,77 @@ function page() {
                         <div className="md:w-1/2 flex justify-center">
                             <Image
                                 src="/Pain-points-illustration-01.png"
+                                alt="Credentialing process"
+                                width={600}
+                                height={600}
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Card Slider Section */}
+            <section className="py-16 bg-white">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Practice Audit Solutions</h2>
+                        <div className="h-[2px] w-16 bg-red-500 mx-auto"></div>
+                        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                            Discover our comprehensive practice audit services designed to optimize your operations
+                        </p>
+                    </div>
+
+                    {/* Slider */}
+                    <div className="relative overflow-hidden">
+                        <div ref={sliderRef} className="flex">
+                            {slides.map((card, i) => (
+                                <CardItem key={`${card.id}-${i}`} card={card} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                ref={lastsectionref}
+                className={`py-12 px-4 md:px-8 bg-gray-100 transition-all duration-1000 ease-out transform 
+                ${lastsectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
+            >
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                        {/* Left Column - Text Content (moved here) */}
+                        <div className="md:w-1/2">
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+                                Outsourcing your {" "}
+                                <span className="text-blue-800  mr-1 ml-1">Practice Audit</span>{" "}
+                                to WeCare Centric Saves you
+                                <span className="text-blue-800  mr-1 ml-1">
+                                    up-to 47%</span>{" "}
+                                on your Operational cost
+                            </h2>
+                            <p className="text-gray-700 mb-4">
+                                Outsourcing your practice audit to RCM Centric can result
+                                in significant cost savings, reducing operational expenses by up to 47%.
+                            </p>
+
+                            <p className=" text-gray-700 mb-4 space-y-2">
+                                Additionally, our audits uncover inefficiencies that might otherwise go unnoticed,
+                                providing tailored solutions that drive both short- and long-term financial improvements.
+                                This not only enhances your practice’s performance but also significantly reduces overhead costs.
+                            </p>
+
+                            <Button
+                                className="bg-red-500 rounded-b-md text-white hover:bg-blue-600 transition-colors duration-300"
+                            >
+                                <Phone size={18} className="mr-2" /> 123 xyz
+                            </Button>
+                        </div>
+
+                        {/* Right Column - Image (moved here) */}
+                        <div className="md:w-1/2 flex justify-center">
+                            <Image
+                                src="/audit-page-last-illustrations-01-1536x1536.webp"
                                 alt="Credentialing process"
                                 width={600}
                                 height={600}
