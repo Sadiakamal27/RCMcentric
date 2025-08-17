@@ -129,12 +129,14 @@ function SolutionsAndServices({
                   Billing and Coding experts.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/DME" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 rounded-2xl cursor-pointer group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
