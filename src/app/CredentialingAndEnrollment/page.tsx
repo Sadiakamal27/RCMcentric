@@ -90,6 +90,7 @@ function page() {
                 </div>
             </section>
 
+
             <section className="py-2 mb-5 bg-gray-100">
                 <div className="max-w-7xl mx-auto px-2 sm:px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
