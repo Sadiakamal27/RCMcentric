@@ -6,7 +6,7 @@ import { Phone } from "lucide-react"; // Phone icon
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-
+import Link from "next/link";
 
 // Type for your card data
 interface CardType {
@@ -210,11 +210,13 @@ function page() {
                         {/* Buttons */}
                         <div className="space-x-4 mt-4">
                             {/* TALK TO SALES */}
+                            <Link href="/TalktoSales" >
                             <Button
                                 className="bg-red-500 text-white hover:bg-blue-600 transition-colors duration-300"
                             >
                                 <Phone size={18} className="mr-2" /> Talk to Sales
                             </Button>
+                            </Link>
 
                             {/* GET IN TOUCH */}
                             <Button
@@ -271,31 +273,31 @@ function page() {
                                 Let’s figure this out First things first to find the problems :
                             </p>
 
-                            <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                            <ul className="list-disc list-inside text-gray-700  mb-4 space-y-2">
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
                                     Limited staff training leading to inefficiencies in daily tasks.
                                 </li>
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
 
                                     Lack of integration between software systems causing workflow disruptions.</li>
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
 
                                     Inadequate patient communication resulting in missed appointments.</li>
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
 
                                     Manual processes creating bottlenecks in administrative tasks.</li>
 
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
 
                                     Poor inventory management leading to stock shortages or surpluses.</li>
 
-                                <li className="flex items-start gap-2">
-                                    <ArrowRight className="w-4 h-4 text-blue-800 flex-shrink-0 mt-1" />
+                                <li className="flex items-start hover:text-gray-800 gap-2">
+                                    <ArrowRight className="w-4 h-4 text-blue-800 hover:text-gray-800 flex-shrink-0 mt-1" />
 
                                     Insufficient data analytics to track and improve practice performance.</li>
                             </ul>
