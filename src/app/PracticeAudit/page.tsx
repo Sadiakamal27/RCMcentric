@@ -22,69 +22,93 @@ interface CardType {
 const cardsData: CardType[] = [
     {
         id: 1,
-        title: "Technology Assessment",
-        description: "We evaluate your software systems and infrastructure.",
-        gradient: "from-red-500 to-pink-500",
-        icon: "/AUDIT-ICONS-05.svg",
-        backgroundImage: "/background-1.jpg",
-        bulletPoints: ["Software evaluation", "Integration opportunities", "Automation potential", "Security assessment"],
+        title: "Improved Practice Health",
+        description: "By identifying and eliminating revenue leaks, audits contribute to the overall financial stability of the practice, promoting practice growth.",
+        gradient: "from-blue-400 to-blue-800",
+        icon: "/practice-health-03.svg",
+        backgroundImage: "/doctor1.jpg",
+        bulletPoints: ["Detects revenue leaks", "Enhances financial stability", "Supports sustainable Strengthens", "overall practice health "],
     },
     {
         id: 2,
-        title: "Compliance Review",
-        description: "We help ensure your operations meet industry standards.",
-        gradient: "from-blue-500 to-indigo-500",
-        icon: "/AUDIT-ICONS-06.svg",
-        backgroundImage: "/background-2.jpg",
-        bulletPoints: ["Policy check", "Regulation updates", "Risk analysis", "Reporting"],
+        title: "Actionable Insights for Decision-Making",
+        description: "Audits provide valuable data and insights that empower practitioners to make informed decisions, optimizing both financial and operational performance.",
+        gradient: "from-blue-400 to-blue-800",
+        icon: "/AUDIT-ICONS-05.svg",
+        backgroundImage: "/doctor2.webp",
+        bulletPoints: ["Delivers valuable data", "Supports informed decisions", "Improves financial outcomes", "Enhances operational efficiency"],
     },
     {
         id: 3,
-        title: "Process Optimization",
-        description: "Streamline workflows to improve efficiency.",
-        gradient: "from-green-500 to-emerald-500",
-        icon: "/AUDIT-ICONS-07.svg",
-        backgroundImage: "/background-3.jpg",
-        bulletPoints: ["Workflow analysis", "Bottleneck removal", "Automation", "Cost savings"],
+        title: "Increased Patient Satisfaction",
+        description: "Efficient billing and claims processes reduce delays, which translates to better service and a smoother experience for patients, improving their satisfaction.",
+        gradient: "from-blue-400 to-blue-800",
+        icon: "/AUDIT-ICONS-06.svg",
+        backgroundImage: "/doctor3.jpg",
+        bulletPoints: ["Faster billing, fewer delays", "Fewer errors, smoother claims", "Clear cost communication", "Higher patient satisfaction"],
     },
     {
         id: 4,
-        title: "Cybersecurity Audit",
-        description: "Protect your business from potential threats.",
-        gradient: "from-purple-500 to-pink-500",
-        icon: "/AUDIT-ICONS-08.svg",
-        backgroundImage: "/background-4.jpg",
-        bulletPoints: ["Vulnerability scan", "Threat assessment", "Firewall check", "Data protection"],
+        title: "Early Identification of Errors",
+        description: "Audits catch errors early in the process, preventing costly mistakes and allowing for corrective actions before they affect revenue or compliance.",
+        gradient: "from-blue-400 to-blue-800",
+        icon: "/Untitled-1-01.svg",
+        backgroundImage: "/doctor4.webp",
+        bulletPoints: ["Detects errors early", "Prevents costly mistakes", "Enables fast corrections", "Protects revenue and compliance"],
     },
     {
         id: 5,
-        title: "Cybersecurity Audit",
-        description: "Protect your business from potential threats.",
-        gradient: "from-purple-500 to-pink-500",
-        icon: "/AUDIT-ICONS-08.svg",
-        backgroundImage: "/background-4.jpg",
-        bulletPoints: ["Vulnerability scan", "Threat assessment", "Firewall check", "Data protection"],
+        title: "Optimization of Workflows",
+        description: "A comprehensive audit evaluates your workflows and identifies inefficiencies, helping streamline processes for improved operational performance.",
+        gradient: "from-blue-400 to-blue-800",
+        icon: "/AUDIT-ICONS-02.svg",
+        backgroundImage: "/doctor5.jpg",
+        bulletPoints: ["Evaluates workflows thoroughly", "Identifies inefficiencies", "Streamlines daily processes", "Boosts operational performance"],
     },
 ];
 
 function CardItem({ card }: { card: CardType }) {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+
     return (
-        <div className="flex-[0_0_33.333%] px-4">
-            <div className={`bg-gradient-to-br ${card.gradient} rounded-2xl overflow-hidden shadow-2xl h-96 relative group cursor-pointer`}>
+        <div className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] px-4">
+            <div
+                className={`bg-gradient-to-br ${card.gradient} rounded-2xl overflow-hidden shadow-2xl h-96 relative group cursor-pointer`}
+                onClick={() => setIsOpen(!isOpen)} // 👈 tap/click toggle
+            >
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-300"
                     style={{ backgroundImage: `url('${card.backgroundImage}')` }}
                 />
-                <div className="relative z-10 p-6 h-full flex flex-col justify-between">
-                    <div className="text-center">
-                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                            <Image src={card.icon} alt={card.title} width={32} height={32} className="w-8 h-8 object-contain" />
+                <div className="relative z-10 p-6 h-full flex flex-col text-left justify-between">
+                    <div className="text-left">
+                        <div className="w-16 h-16 rounded-2xl flex justify-start mb-4 mt-6">
+                            <Image
+                                src={card.icon}
+                                alt={card.title}
+                                width={52}
+                                height={52}
+                                className="w-20 h-20 object-contain"
+                            />
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">{card.title}</h3>
+                        <h3 className="text-2xl font-bold text-white mb-2">{card.title}</h3>
                     </div>
-                    <div className="text-center">
-                        <p className="text-white/90 text-sm leading-relaxed group-hover:hidden">{card.description}</p>
-                        <div className="hidden group-hover:block text-left">
+                    <div className="text-left">
+                        {/* description hidden on hover OR when toggled open */}
+                        <p
+                            className={`text-white/90 text-sm mb-20 leading-relaxed 
+                              ${(isOpen || false) ? "hidden" : "group-hover:hidden"}`}
+                        >
+                            {card.description}
+                        </p>
+
+                        {/* bullet points shown on hover OR when toggled open */}
+                        <div
+                            className={`mb-20 text-left 
+                              ${isOpen ? "block" : "hidden group-hover:block"}`}
+                        >
                             <div className="space-y-2">
                                 {card.bulletPoints.map((point, i) => (
                                     <div key={i} className="flex items-center gap-2">
@@ -112,38 +136,42 @@ function page() {
     const [sectionref, sectionisVisible] = useIntersectionObserver({ threshold: 0.1 });
     const [section2ref, section2isVisible] = useIntersectionObserver({ threshold: 0.2 });
     const [lastsectionref, lastsectionisVisible] = useIntersectionObserver({ threshold: 0.2 });
+    
+
+
+
 
     const sliderRef = useRef<HTMLDivElement>(null);
     const [currentIndex, setCurrentIndex] = useState(3); // start at first "real" card
     const slides = [...cardsData.slice(-3), ...cardsData, ...cardsData.slice(0, 3)];
-  
+
     useEffect(() => {
-      const slideInterval = setInterval(() => {
-        setCurrentIndex((prev) => prev + 1);
-      }, 3000);
-      return () => clearInterval(slideInterval);
+        const slideInterval = setInterval(() => {
+            setCurrentIndex((prev) => prev + 1);
+        }, 3000);
+        return () => clearInterval(slideInterval);
     }, []);
-  
+
     useEffect(() => {
-      const slider = sliderRef.current;
-      if (!slider) return;
-  
-      const slideWidth = 100 / 3; // 3 cards visible
-      slider.style.transition = "transform 0.8s ease-in-out";
-      slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-  
-      // Jump instantly if we’re at clone
-      if (currentIndex === slides.length - 3) {
-        setTimeout(() => {
-          slider.style.transition = "none"; // disable animation
-          setCurrentIndex(3); // reset to first real card
-        }, 900);
-      } else if (currentIndex === 0) {
-        setTimeout(() => {
-          slider.style.transition = "none";
-          setCurrentIndex(slides.length - 6); // jump to last real card
-        }, 900);
-      }
+        const slider = sliderRef.current;
+        if (!slider) return;
+
+        const slideWidth = 100 / 3; // 3 cards visible
+        slider.style.transition = "transform 0.8s ease-in-out";
+        slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+        // Jump instantly if we’re at clone
+        if (currentIndex === slides.length - 3) {
+            setTimeout(() => {
+                slider.style.transition = "none"; // disable animation
+                setCurrentIndex(3); // reset to first real card
+            }, 900);
+        } else if (currentIndex === 0) {
+            setTimeout(() => {
+                slider.style.transition = "none";
+                setCurrentIndex(slides.length - 6); // jump to last real card
+            }, 900);
+        }
     }, [currentIndex, slides.length]);
 
 
@@ -387,14 +415,15 @@ function page() {
             </section>
 
             {/* Card Slider Section */}
-            <section className="py-16 bg-white">
+            <section className="py-36 bg-white">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Practice Audit Solutions</h2>
-                        <div className="h-[2px] w-16 bg-red-500 mx-auto"></div>
-                        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                            Discover our comprehensive practice audit services designed to optimize your operations
-                        </p>
+                        <h1 className="text-sm md:text-base font-semibold text-red-500 tracking-wide uppercase mb-2">
+                            What's In It For You
+                        </h1>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">Benefits For Practicing And Enhancing Patient Satisfaction</h2>
+                        <div className="h-[2px] w-16 bg-gray-900 mx-auto"></div>
+                       
                     </div>
 
                     {/* Slider */}
