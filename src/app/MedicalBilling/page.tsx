@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 
 
-import { Select,SelectTrigger, SelectValue, SelectContent,SelectItem } from "@/components/ui/select";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { useState } from "react";
 import SolutionSection from "@/components/SolutionsSection";
 
@@ -39,7 +39,7 @@ export default function MedicalBillingPage() {
           </p>
           <div className="w-full max-w-md mx-auto lg:mx-0">
             <h3 className="text-base sm:text-xl text-center text-gray-500 sm:text-left mb-2">Find Solution by your speciality</h3>
-            <SolutionSection buttonText="Get Solutions →"  />
+            <SolutionSection buttonText="Get Solutions →" />
           </div>
         </div>
         {/* Right Content - Video */}
@@ -301,81 +301,81 @@ export default function MedicalBillingPage() {
 
       {/* Benefits List */}
       <section className="bg-[#10153a] py-8 sm:py-12">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
-  {/* Benefit 1 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">1</div>
-    <div>
-      <h3 className="font-semibold mb-2">Better Cash Flows</h3>
-      <p className="text-sm">
-        Cash flows act as the lifeblood of any organization, and healthcare providers are no different.
-        Our professional revenue cycle management services offer experienced professionals who can expertly handle
-        different types of medical claims on the first submission.
-      </p>
-    </div>
-  </div>
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-white">
+          {/* Benefit 1 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">1</div>
+            <div>
+              <h3 className="font-semibold mb-2">Better Cash Flows</h3>
+              <p className="text-sm">
+                Cash flows act as the lifeblood of any organization, and healthcare providers are no different.
+                Our professional revenue cycle management services offer experienced professionals who can expertly handle
+                different types of medical claims on the first submission.
+              </p>
+            </div>
+          </div>
 
-  {/* Benefit 2 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">2</div>
-    <div>
-      <h3 className="font-semibold mb-2">Quick Submission</h3>
-      <p className="text-sm">
-        Providers get to experience faster claim submissions on their behalf. Not only that, but we provide technologically advanced solutions from the get-go.
-        In brief, we ensure easy filing of all the details, maintaining a certain speed for reimbursements. Practice beyond financial restrictions.
-      </p>
-    </div>
-  </div>
+          {/* Benefit 2 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">2</div>
+            <div>
+              <h3 className="font-semibold mb-2">Quick Submission</h3>
+              <p className="text-sm">
+                Providers get to experience faster claim submissions on their behalf. Not only that, but we provide technologically advanced solutions from the get-go.
+                In brief, we ensure easy filing of all the details, maintaining a certain speed for reimbursements. Practice beyond financial restrictions.
+              </p>
+            </div>
+          </div>
 
-  {/* Benefit 3 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">3</div>
-    <div>
-      <h3 className="font-semibold mb-2">Expert Teams</h3>
-      <p className="text-sm">
-        Our team of expert medical coding consultants is the answer to all the pressing concerns around accurate medical billing and audit.
-        In short, it is precise and to the point. You can expect timely submissions, alongside the proactive handling of insurance companies and patients.
-      </p>
-    </div>
-  </div>
+          {/* Benefit 3 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">3</div>
+            <div>
+              <h3 className="font-semibold mb-2">Expert Teams</h3>
+              <p className="text-sm">
+                Our team of expert medical coding consultants is the answer to all the pressing concerns around accurate medical billing and audit.
+                In short, it is precise and to the point. You can expect timely submissions, alongside the proactive handling of insurance companies and patients.
+              </p>
+            </div>
+          </div>
 
-  {/* Benefit 4 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">4</div>
-    <div>
-      <h3 className="font-semibold mb-2">Denial Management</h3>
-      <p className="text-sm">
-        The team here at RCM Centric timely reports if they find any problems related to submissions, including errors and omissions.
-        It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.
-      </p>
-    </div>
-  </div>
+          {/* Benefit 4 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">4</div>
+            <div>
+              <h3 className="font-semibold mb-2">Denial Management</h3>
+              <p className="text-sm">
+                The team here at RCM Centric timely reports if they find any problems related to submissions, including errors and omissions.
+                It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.
+              </p>
+            </div>
+          </div>
 
-  {/* Benefit 5 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">5</div>
-    <div>
-      <h3 className="font-semibold mb-2">Advanced Reporting</h3>
-      <p className="text-sm">
-        Detailed analysis reports are submitted to physicians and specialists as per their custom requirements to help them make smart business decisions.
-        We also break up each stage of the process as per the needs of clinicians belonging to different specialties.
-      </p>
-    </div>
-  </div>
+          {/* Benefit 5 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">5</div>
+            <div>
+              <h3 className="font-semibold mb-2">Advanced Reporting</h3>
+              <p className="text-sm">
+                Detailed analysis reports are submitted to physicians and specialists as per their custom requirements to help them make smart business decisions.
+                We also break up each stage of the process as per the needs of clinicians belonging to different specialties.
+              </p>
+            </div>
+          </div>
 
-  {/* Benefit 6 */}
-  <div className="flex flex-col sm:flex-row items-start gap-4">
-    <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">6</div>
-    <div>
-      <h3 className="font-semibold mb-2">Reduced Costs</h3>
-      <p className="text-sm">
-        Once you decide to outsource medical billing to us, you are about to cut down on the costs drastically.
-        It is the right mix of skills, experience, and resilience that allows us to accelerate your revenue cycle.
-        Let us put a lid on expenses together and scale beyond boundaries.
-      </p>
-    </div>
-  </div>
-</div>
+          {/* Benefit 6 */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="text-5xl font-extrabold text-blue-950 mb-2 sm:mb-0">6</div>
+            <div>
+              <h3 className="font-semibold mb-2">Reduced Costs</h3>
+              <p className="text-sm">
+                Once you decide to outsource medical billing to us, you are about to cut down on the costs drastically.
+                It is the right mix of skills, experience, and resilience that allows us to accelerate your revenue cycle.
+                Let us put a lid on expenses together and scale beyond boundaries.
+              </p>
+            </div>
+          </div>
+        </div>
 
 
       </section>
