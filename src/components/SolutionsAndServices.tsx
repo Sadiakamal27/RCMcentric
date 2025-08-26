@@ -71,12 +71,15 @@ function SolutionsAndServices({
                   notice what's going on.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
+
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 cursor-pointer rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
@@ -91,21 +94,24 @@ function SolutionsAndServices({
                     className="w-12 h-12 object-contain"
                   />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 group-hover:text-white mb-3 transition-colors">
+                <h3 className="text-lg font-semibold  text-gray-800 group-hover:text-white mb-3 transition-colors">
                   MEDICAL CODING SERVICES
                 </h3>
-                <p className="text-gray-600 group-hover:text-blue-100 text-sm mb-4 leading-relaxed transition-colors flex-grow">
+                <p className="text-gray-600  group-hover:text-blue-100 text-sm mb-4 leading-relaxed transition-colors flex-grow">
                   Outsourcing your medical coding services to expert coders at
                   RCM Centric enables you to optimize your revenue while
                   reducing compliance risks.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/MedicalCoding" target="_blank" rel="noopener noreferrer">
+
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 cursor-pointer rounded-2xl  group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
@@ -222,12 +228,14 @@ function SolutionsAndServices({
                   credentialing with insurance.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/CredentialingAndEnrollment" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none cursor-pointer group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
@@ -251,12 +259,14 @@ function SolutionsAndServices({
                   with integrated technology.
                 </p>
                 <div className="mt-auto flex justify-center">
+                <Link href="/TeleHealthBilling" target="_blank" rel="noopener noreferrer">  
                 <Button
                   variant="outline"
-                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
+                  className="text-blue-600 rounded-2xl group-hover:bg-white border-none cursor-pointer group-hover:text-blue-600 group-hover:border-white bg-blue-100 transition-colors"
                 >
                   Explore <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
                 </div>
               </CardContent>
             </Card>
