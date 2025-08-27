@@ -76,3 +76,153 @@ body {
     transform: rotateY(180deg);
   }
 }
+/* -------------------------------------------------- */
+/* 🃏 Stacking Card Animation Styling (scoped) */
+/* -------------------------------------------------- */
+
+.stack-section {
+  --card-height: 34vw;      /* smaller card height */
+  --card-margin: 2vw;       /* reduced gap */
+  --card-top-offset: 3em;
+  --numcards: 3;
+  --outline-width: 0px;
+}
+
+/* Center the whole section */
+.stack-section header,
+.stack-section main {
+  width: 80vw;              /* slightly smaller than full screen */
+  margin: 0 auto;
+}
+
+.stack-section header {
+  height: 35vh;
+  display: grid;
+  place-items: center;
+  margin-bottom: 60px;
+}
+
+.stack-section #cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  gap: var(--card-margin);
+  padding-bottom: calc(var(--numcards) * var(--card-top-offset));
+  margin-bottom: var(--card-margin);
+}
+
+.stack-section .card {
+  position: sticky;
+  top:80px;
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+.stack-section .card__content {
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1),
+              0 1em 2em rgba(0, 0, 0, 0.1);
+  background: #fffaf2;
+  color: #131212;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "text img";
+  grid-template-columns: 1.2fr 1fr;   /* text a bit wider than image */
+  align-items: stretch;
+  padding: 2em;
+
+  transform-origin: 50% 0%;
+  will-change: transform;
+}
+
+.stack-section .card__content > div {
+  grid-area: text;
+  width: 100%;             /* take full column */
+  max-width: 500px;        /* allow bigger text area */
+  place-self: center;
+  text-align: left;
+  display: grid;
+  gap: 1.5em;              /* reduced gap */
+  place-items: start;
+}
+
+.stack-section .card__content > figure {
+  grid-area: img;
+  overflow: hidden;
+}
+
+.stack-section .card__content > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.4em;
+}
+
+/* ------------------- */
+/* 📱 Mobile Styles    */
+/* ------------------- */
+@media (max-width: 768px) {
+  .stack-section {
+    --card-height: 70vw;
+  }
+
+  .stack-section .card__content {
+    grid-template-areas:
+      "img"
+      "text";               /* stack vertically */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 1.2em;
+  }
+
+  .stack-section .card__content > div {
+    max-width: 100%;
+    text-align: center;
+    place-items: center;
+  }
+
+  .stack-section .card__content > figure {
+    height: 200px;          /* fixed height for image on mobile */
+  }
+}
+
+/* ------------------- */
+/* 🎞️ Scroll Animation */
+/* ------------------- */
+@supports (animation-timeline: works) {
+  @scroll-timeline cards-element-scrolls-in-body {
+    source: selector(body);
+    scroll-offsets: selector(.stack-section #cards) start 1,
+      selector(.stack-section #cards) start 0;
+    start: selector(.stack-section #cards) start 1;
+    end: selector(.stack-section #cards) start 0;
+    time-range: 4s;
+  }
+
+  .stack-section .card {
+    --index0: calc(var(--index) - 1);
+    --reverse-index: calc(var(--numcards) - var(--index0));
+    --reverse-index0: calc(var(--reverse-index) - 1);
+  }
+
+  .stack-section .card__content {
+    --duration: calc(var(--reverse-index0) * 1s);
+    --delay: calc(var(--index0) * 1s);
+
+    animation: var(--duration) linear scale var(--delay) forwards;
+    animation-timeline: cards-element-scrolls-in-body;
+  }
+
+  @keyframes scale {
+    to {
+      transform: scale(calc(1.1 - (0.1 * var(--reverse-index))));
+    }
+  }
+}
+
+
+
+
+
+
+
