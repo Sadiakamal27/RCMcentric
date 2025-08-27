@@ -425,161 +425,159 @@ function page() {
                 </div>
             </section>
 
-            
+
             {/* New Sticky Scroll Overlapping Cards Section */}
-            <section className="py-24 bg-white relative overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                            Transform Your Billing Experience
-                        </h2>
-                        <div className="h-[2px] w-16 bg-red-500 mx-auto"></div>
-                        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-                            Experience the future of hospital billing with our innovative overlapping card system
+            <section className="stack-section py-12">
+                {/* Section Header */}
+                <header>
+                    <div>
+                        <h1 className="font-[Cormorant_Garamond] font-light text-5xl mb-4">
+                            Stacking Cards Animation
+                        </h1>
+                        <p className="text-lg">
+                            Scroll down to stack the cards. Scroll back up to unstack them.
                         </p>
                     </div>
+                </header>
 
-                    {/* Sticky Cards Container */}
-                    <div className="relative min-h-[800px]">
-                        {/* Card 1 - Revenue Optimization */}
-                        <div className="sticky top-20 mb-8 transform transition-all duration-700 ease-out hover:scale-105 hover:rotate-1">
-                            <Card className="shadow-2xl rounded-3xl border-none overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 hover:from-blue-100 hover:to-indigo-200 transition-all duration-500">
-                                <CardContent className="p-8 lg:p-12">
-                                    <div className="flex flex-col lg:flex-row items-center gap-8">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-4 mb-6">
-                                                <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-2xl font-bold text-gray-800">Revenue Optimization</h3>
-                                                    <p className="text-blue-600 font-medium">Maximize Your Collections</p>
-                                                </div>
-                                            </div>
-                                            <p className="text-gray-700 leading-relaxed text-lg">
-                                                Our advanced algorithms identify revenue leakage points and optimize your billing processes.
-                                                We've helped hospitals increase their collection rates by an average of 25% within the first 6 months.
-                                            </p>
-                                            <div className="mt-6 flex items-center gap-4">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">Real-time Analytics</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">Predictive Insights</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="flex-1 flex justify-center">
-                                            <Image
-                                                src="/revenue1.svg"
-                                                alt="Revenue Optimization"
-                                                width={300}
-                                                height={250}
-                                                className="object-contain drop-shadow-lg"
-                                            />
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
+                {/* Cards */}
+                <main>
+                    <ul id="cards">
+                        {/* Card 1 */}
+                        <li className="card" style={{ ["--index" as any]: 1 }}>
+                            <div className="card__content flex flex-row items-center gap-6 border-t-4 border-blue-500 p-4 md:p-6">
 
-                        {/* Card 2 - Compliance Excellence */}
-                        <div className="sticky top-32 mb-8 transform transition-all duration-700 ease-out hover:scale-105 hover:-rotate-1 ml-8 lg:ml-16">
-                            <Card className="shadow-2xl rounded-3xl border-none overflow-hidden bg-gradient-to-br from-green-50 to-emerald-100 hover:from-green-100 hover:to-emerald-200 transition-all duration-500">
-                                <CardContent className="p-8 lg:p-12">
-                                    <div className="flex flex-col lg:flex-row-reverse items-center gap-8">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-4 mb-6">
-                                                <div className="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-2xl font-bold text-gray-800">Compliance Excellence</h3>
-                                                    <p className="text-green-600 font-medium">Stay Ahead of Regulations</p>
-                                                </div>
-                                            </div>
-                                            <p className="text-gray-700 leading-relaxed text-lg">
-                                                Navigate complex healthcare regulations with confidence. Our compliance-first approach ensures
-                                                your billing practices meet all HIPAA, CMS, and state-specific requirements, protecting you from costly penalties.
-                                            </p>
-                                            <div className="mt-6 flex items-center gap-4">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">HIPAA Compliant</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">CMS Certified</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="flex-1 flex justify-center">
-                                            <Image
-                                                src="/hippa.svg"
-                                                alt="Compliance Excellence"
-                                                width={300}
-                                                height={250}
-                                                className="object-contain drop-shadow-lg"
-                                            />
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
+                                {/* Left Content */}
+                                <div className="flex flex-col gap-3 w-1/2">
+                                    {/* Small Icon/Image */}
+                                    <img
+                                        src="/icons/stack-icon.svg"
+                                        alt="icon"
+                                        className="w-8 h-8 mb-1"
+                                    />
 
-                        {/* Card 3 - Technology Innovation */}
-                        <div className="sticky top-44 transform transition-all duration-700 ease-out hover:scale-105 hover:rotate-1 ml-16 lg:ml-32">
-                            <Card className="shadow-2xl rounded-3xl border-none overflow-hidden bg-gradient-to-br from-purple-50 to-violet-100 hover:from-purple-100 hover:to-violet-200 transition-all duration-500">
-                                <CardContent className="p-8 lg:p-12">
-                                    <div className="flex flex-col lg:flex-row items-center gap-8">
-                                        <div className="flex-1">
-                                            <div className="flex items-center gap-4 mb-6">
-                                                <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                                    </svg>
-                                                </div>
-                                                <div>
-                                                    <h3 className="text-2xl font-bold text-gray-800">Technology Innovation</h3>
-                                                    <p className="text-purple-600 font-medium">AI-Powered Solutions</p>
-                                                </div>
-                                            </div>
-                                            <p className="text-gray-700 leading-relaxed text-lg">
-                                                Leverage cutting-edge AI and machine learning to automate complex billing tasks.
-                                                Our intelligent systems learn from your data patterns to continuously improve accuracy and efficiency.
-                                            </p>
-                                            <div className="mt-6 flex items-center gap-4">
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">AI Automation</span>
-                                                </div>
-                                                <div className="flex items-center gap-2">
-                                                    <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                                                    <span className="text-sm text-gray-600">Machine Learning</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="flex-1 flex justify-center">
-                                            <Image
-                                                src="/technology.png"
-                                                alt="Technology Innovation"
-                                                width={300}
-                                                height={250}
-                                                className="object-contain drop-shadow-lg"
-                                            />
-                                        </div>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </div>
+                                    {/* Heading */}
+                                    <h2 className="font-[Cormorant_Garamond] font-bold text-3xl md:text-4xl">
+                                        Smarter Revenue Cycle Integration
+                                    </h2>
+
+                                    {/* Paragraph */}
+                                    <p className="font-light leading-relaxed text-base md:text-lg text-gray-600">
+                                        Disjointed systems often lead to billing delays and revenue leakage.
+                                        Our billing solution integrates clinical, administrative, and financial
+                                        data into one platform—giving decision-makers real-time visibility across
+                                        the revenue cycle.
+                                    </p>
+
+                                    {/* Button (shadcn) */}
+                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md w-fit">
+                                        Get in Touch
+                                    </button>
+                                </div>
+
+                                {/* Right Side Image */}
+                                <div className="w-1/2 flex justify-center">
+                                    <img
+                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        alt="big-preview"
+                                        className="rounded-lg shadow-md max-h-[240px] object-contain"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+
+
+
+
+                        {/* Card 2 */}
+                        <li className="card" style={{ ["--index" as any]: 1 }}>
+                            <div className="card__content flex flex-col md:flex-row items-center md:items-start gap-6 border-t-4 border-blue-500 p-8">
+
+                                {/* Left Content */}
+                                <div className="flex flex-col gap-4 md:w-1/2">
+                                    {/* Small Icon/Image */}
+                                    <img
+                                        src="/icons/stack-icon.svg"
+                                        alt="icon"
+                                        className="w-10 h-10 mb-2"
+                                    />
+
+                                    {/* Heading */}
+                                    <h2 className="font-[Cormorant_Garamond] font-bold text-4xl">
+                                        Smarter Revenue Cycle Integration
+                                    </h2>
+
+                                    {/* Paragraph */}
+                                    <p className="font-light leading-relaxed text-lg text-gray-600">
+                                        Disjointed systems often lead to billing delays and revenue leakage.
+                                        Our billing solution integrates clinical, administrative, and financial
+                                        data into one platform—giving decision-makers real-time visibility across
+                                        the revenue cycle.
+                                    </p>
+
+                                    {/* Button (shadcn) */}
+                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md w-fit">
+                                        Get in Touch
+                                    </button>
+                                </div>
+
+                                {/* Right Side Image */}
+                                <div className="md:w-1/2 flex justify-center">
+                                    <img
+                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        alt="big-preview"
+                                        className="rounded-lg shadow-md max-h-[280px] object-contain"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+
+
+                        {/* Card 4 */}
+                        <li className="card" style={{ ["--index" as any]: 1 }}>
+                            <div className="card__content flex flex-col md:flex-row items-center md:items-start gap-6 border-t-4 border-blue-500 p-8">
+
+                                {/* Left Content */}
+                                <div className="flex flex-col gap-4 md:w-1/2">
+                                    {/* Small Icon/Image */}
+                                    <img
+                                        src="/icons/stack-icon.svg"
+                                        alt="icon"
+                                        className="w-10 h-10 mb-2"
+                                    />
+
+                                    {/* Heading */}
+                                    <h2 className="font-[Cormorant_Garamond] font-bold text-4xl">
+                                        Smarter Revenue Cycle Integration
+                                    </h2>
+
+                                    {/* Paragraph */}
+                                    <p className="font-light leading-relaxed text-lg text-gray-600">
+                                        Disjointed systems often lead to billing delays and revenue leakage.
+                                        Our billing solution integrates clinical, administrative, and financial
+                                        data into one platform—giving decision-makers real-time visibility across
+                                        the revenue cycle.
+                                    </p>
+
+                                    {/* Button (shadcn) */}
+                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md w-fit">
+                                        Get in Touch
+                                    </button>
+                                </div>
+
+                                {/* Right Side Image */}
+                                <div className="md:w-1/2 flex justify-center">
+                                    <img
+                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        alt="big-preview"
+                                        className="rounded-lg shadow-md max-h-[280px] object-contain"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </main>
             </section>
 
             <section className="py-12 bg-red-400">
