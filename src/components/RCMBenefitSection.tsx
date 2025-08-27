@@ -54,10 +54,10 @@ export default function RCMBenefitSection() {
               Scale Medical Practice Revenue
             </h4>
             <h2 className="text-4xl font-bold mb-4">
-              Here's How RCM Centric Can Benefit Your Practice
+              Here's How WeCare Centric Can Benefit Your Practice
             </h2>
             <p className="text-gray-300 text-lg">
-              For ambitious practices around the United States, RCM Centric
+              For ambitious practices around the United States, WeCare Centric
               makes moving revenue growth as simple, borderless, and
               approachable as the rest of the healthcare technology. Our teams
               are experienced in each medical specialty to streamline your
@@ -200,7 +200,7 @@ export default function RCMBenefitSection() {
               The operating system for healthcare providers
             </p>
             <p className="text-gray-300 text-sm">
-              Run your entire medical practice, clinic, or hospital on RCM
+              Run your entire medical practice, clinic, or hospital on WeCare
               Centric with our unified centric solution, designed to help you
               streamline the collection process and improve revenue.
             </p>
@@ -221,7 +221,7 @@ export default function RCMBenefitSection() {
           <div className="flex-1 text-left mt-10 md:mt-0">
             <div className="text-9xl text-rose-400 mb-2">“</div>
             <p className="text-white text-sm italic mb-4">
-              "RCM Centric has improved our revenue by reducing errors and
+              "WeCare Centric has improved our revenue by reducing errors and
               streamlined the collection process"
             </p>
             <p className="font-semibold text-white">Donna Arkin</p>
