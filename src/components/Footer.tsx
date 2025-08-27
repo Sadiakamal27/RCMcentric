@@ -8,12 +8,14 @@ export default function Footer() {
        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
         {/* Left Section - Contact Us */}
         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 mb-4 md:mb-0 w-full md:w-auto">
+        <Link href="/PatientHelpDesk" target="_blank" rel="noopener noreferrer">
           <Button
             variant="outline"
             className="bg-transparent text-gray-400 hover:text-white text-xs px-3 py-1 rounded w-full md:w-auto"
           >
             <span className="mr-1">📩</span> Contact Us
           </Button>
+          </Link>
           <p className="text-xs text-gray-400 text-center md:text-left w-full md:w-auto">
             Capitol Ave, San Jose, CA 95127, United States
           </p>
@@ -25,7 +27,7 @@ export default function Footer() {
             variant="outline"
             className="bg-blue-600 text-lg w-full md:w-110 border border-none text-white hover:bg-red-500 px-6 py-2 rounded"
           >
-            Get Started with RCM Centric
+            Get Started with WeCare Centric
           </Button>
           <p className="text-lg text-gray-400 mt-1">or see our plans & pricing</p>
         </div>
@@ -33,7 +35,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mt-10 sm:mt-16 px-2 sm:px-0">
       {/* RCM Centric */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">RCM Centric</h3>
+          <h3 className="text-lg font-semibold mb-2">WeCare Centric</h3>
           <ul className="text-xs text-gray-400 space-y-1">
             <li>
               <Link href="/features" className="hover:underline">Features</Link>
@@ -83,7 +85,7 @@ export default function Footer() {
               <Link href="/contact-us" className="hover:underline">Contact Us</Link>
             </li>
             <li>
-              <Link href="/why-rcm-centric" className="hover:underline">Why RCM Centric</Link>
+              <Link href="/why-rcm-centric" className="hover:underline">Why WeCare Centric</Link>
             </li>
           </ul>
         </div>
