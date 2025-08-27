@@ -24,6 +24,7 @@ import OnboardingPage from "@/components/OnBoardingPage";
 import RCMBenefitSection from "@/components/RCMBenefitSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import SolutionSection from "@/components/SolutionsSection";
+import AutoPlayVideo from "@/components/AutoPlayVideo";
 export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
 
