@@ -4,46 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from 'next/image';
+import AutoPlayVideo from './AutoPlayVideo';
 function ExpertiseSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Play video when section comes into view
-          if (videoRef.current) {
-            videoRef.current.play().catch(console.error);
-            setIsVideoPlaying(true);
-          }
-        } else {
-          // Pause video when section leaves view
-          if (videoRef.current) {
-            videoRef.current.pause();
-            setIsVideoPlaying(false);
-          }
-        }
-      },
-      {
-        threshold: 0.3,
-        rootMargin: "-50px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+ 
 
   return (
     <div className="min-h-screen py-10 sm:py-16 px-2 sm:px-4 bg-white flex items-center mt-10 sm:mt-20 justify-center">
@@ -53,18 +16,16 @@ function ExpertiseSection() {
           <hr className="w-16 mx-auto border-t-2 border-red-500" />
           <div className="w-full relative mb-8">
             <div className="w-full aspect-video flex items-center justify-center">
-              <video
-                ref={videoRef}
-                className="w-full h-full object-cover rounded-lg"
-                autoPlay
-                loop
-                muted
-                src="/rcm-billing-software-animation.mp4"
-                preload="metadata"
-              >
-                <source src="/why-choose-rcm-centric.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            <section className="py-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AutoPlayVideo
+                        src="/rcm-billing-software-animation.mp4"
+                        wrapperClassName="flex flex-col items-center"
+                        videoClassName="w-full rounded-lg"
+                    />
+                </div>
+            </section>
+                
             </div>
           </div>
 
