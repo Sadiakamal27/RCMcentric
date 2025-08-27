@@ -3,9 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 
 import React from "react";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 export default function OnboardingPage() {
-const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -46,9 +49,9 @@ const [isVisible, setIsVisible] = useState(false);
   }, []);
 
   return (
-    
 
-  
+
+
     <div className="min-h-screen py-10 sm:py-16 px-2 sm:px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row">
         {/* Left Side - Video */}
@@ -61,7 +64,7 @@ const [isVisible, setIsVisible] = useState(false);
               loop
               muted
               src="/rcm-centric-video-animation-0012.mp4"
-             preload="metadata"
+              preload="metadata"
             >
               <source src="/why-choose-rcm-centric.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -74,7 +77,7 @@ const [isVisible, setIsVisible] = useState(false);
           <h2 className="text-red-600 text-base sm:text-lg font-bold mb-2">WELCOME TO A SMOOTH START</h2>
           <h1 className="text-2xl sm:text-4xl font-bold mb-4">Effortless Onboarding and Seamless Transition</h1>
           <p className="text-gray-700 mb-6 text-sm sm:text-base">
-            At RCM Centric, we understand that switching to a new billing service can seem daunting. That’s why we’ve designed our onboarding and transition process to be as simple and stress-free as possible. Here’s how we ensure an effortless start for your practice:
+            At WeCare Centric, we understand that switching to a new billing service can seem daunting. That’s why we’ve designed our onboarding and transition process to be as simple and stress-free as possible. Here’s how we ensure an effortless start for your practice:
           </p>
           <ul className="list-none mb-6">
             <li className="flex items-center mb-2 text-sm sm:text-base">
@@ -108,12 +111,15 @@ const [isVisible, setIsVisible] = useState(false);
               Quick Start to Improved Efficiency
             </li>
           </ul>
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-full w-full sm:w-fit">
-            Let’s Connect
-          </button>
+          <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-red-500 hover:bg-red-600 rounded-full text-white px-4 sm:px-6 py-2 sm:py-2 text-xs sm:text-sm transform cursor-pointer transition-all duration-200">
+              Let's Connect <ExternalLink className="w-4 h-4 ml-1" />
+            </Button>
+          </Link>
+
         </div>
       </div>
     </div>
- 
+
   );
 }
