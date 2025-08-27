@@ -1,6 +1,18 @@
 import { useEffect, useRef } from "react";
 
-const AutoPlayVideo = () => {
+interface AutoPlayVideoProps {
+  src: string;
+  title?: string;
+  wrapperClassName?: string; // outer container
+  videoClassName?: string;   // video element
+}
+
+const AutoPlayVideo = ({
+  src,
+  title,
+  wrapperClassName = "flex flex-col items-center w-full", 
+  videoClassName = "w-full h-full object-cover rounded-lg shadow-lg",
+}: AutoPlayVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -14,7 +26,7 @@ const AutoPlayVideo = () => {
           videoRef.current.pause();
         }
       },
-      { threshold: 0.5 } // Triggers when 50% of the video is visible
+      { threshold: 0.5 }
     );
 
     if (videoRef.current) {
@@ -29,17 +41,21 @@ const AutoPlayVideo = () => {
   }, []);
 
   return (
-    <div className="rounded-lg h-full flex items-center justify-center">
+    <div className={wrapperClassName}>
+      {title && (
+        <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
+          {title}
+        </h2>
+      )}
       <video
         ref={videoRef}
-        className="w-full h-full object-cover rounded-lg"
-        autoPlay
+        className={videoClassName}
         loop
         muted
-        src="/why-choose-rcm-centric.mp4"
+        playsInline
         preload="metadata"
       >
-        <source src="/why-choose-rcm-centric.mp4" type="video/mp4" />
+        <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
