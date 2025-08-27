@@ -74,20 +74,22 @@ export default function FAQsPage() {
       </div>
 
       {/* Top Categories */}
-      <div className="max-w-5xl mx-auto  py-8 px-4 sm:px-4">
+      <div className="max-w-5xl mx-auto py-8 px-4 sm:px-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Top Categories</h2>
-        <div className="flex flex-col gap-4 sm:flex-row sm:gap-8 items-stretch">
+        <div className="flex flex-col sm:flex-row items-stretch">
           {topCategories.map((cat, idx) => (
             <Card
               key={idx}
-              className="w-full sm:h-full sm:flex-1 border-1 border-gray-300 hover:border-none transition-shadow hover:shadow-lg hover:border-blue-400 hover:bg-blue-700 group flex flex-col items-center text-center p-4 py-2 rounded-2xl h-[300px]"
+              className="w-full sm:flex-1 border-none hover:border-none transition-shadow hover:shadow-lg hover:border-blue-400 hover:bg-blue-700 group flex flex-col items-center text-center p-4 py-2 rounded-2xl h-[300px]"
             >
               <img
                 src={cat.image}
                 alt={cat.title}
                 className="h-12 mb-1 mt-3 transition-all"
               />
-              <div className="font-bold text-base sm:text-lg mb-1 transition-colors group-hover:text-white">{cat.title}</div>
+              <div className="font-bold text-base sm:text-lg mb-1 transition-colors group-hover:text-white">
+                {cat.title}
+              </div>
               <div className="text-gray-500 mb-2 transition-colors group-hover:text-white text-sm sm:text-base line-clamp-2">
                 {cat.desc}
               </div>
@@ -95,17 +97,19 @@ export default function FAQsPage() {
                 href={cat.href}
                 className="inline-flex items-center px-4 sm:px-6 py-2 rounded-full bg-blue-100 text-blue-700 font-semibold transition group-hover:bg-white group-hover:text-blue-700 group-hover:border-white group-hover:border text-sm sm:text-base"
               >
-                <span className="group-hover:text-blue-700">Explore</span> <span className="ml-2 group-hover:text-blue-700">↗</span>
+                <span className="group-hover:text-blue-700">Explore</span>{" "}
+                <span className="ml-2 group-hover:text-blue-700">↗</span>
               </Link>
             </Card>
           ))}
         </div>
       </div>
 
+
       {/* Features and Benefits Link */}
       <div className="py-8 text-center bg-white">
         <span className="font-semibold text-gray-700">
-          New to RCM Centric?{" "}
+          New to WeCare Centric?{" "}
           <span className="inline-block bg-black text-white text-xs px-2 py-1 rounded ml-1 mr-2 align-middle">NEW</span>
         </span>
         <span>
