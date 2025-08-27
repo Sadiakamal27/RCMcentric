@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useIntersectionObserver } from "./../hook/UseIntersectionObserver";
 import AutoPlayVideo from "./AutoPlayVideo";
 
@@ -47,12 +48,16 @@ export default function RCMCentricSection() {
           {/* Left Column */}
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800">Why RCM Centric?</h2>
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800">Why WeCare Centric?</h2>
               <div className="w-24 h-1 bg-red-500"></div>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 Upgrade and simplify your practice to ensure seamless, precise, and efficient service on the go.
               </p>
-              <AutoPlayVideo />
+              <AutoPlayVideo
+                        src="/why-choose-rcm-centric.mp4"
+                        wrapperClassName="flex flex-col items-center"
+                        videoClassName="w-full rounded-lg"
+                    />
             </div>
           </div>
 
@@ -95,9 +100,11 @@ export default function RCMCentricSection() {
                 <h2 className="text-base sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-6 leading-tight">
                   Connect for a free Practice Audit to build out your tailored improvement plan
                 </h2>
+                <Link href="/PatientHelpDesk">
                 <Button className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg transform hover:scale-105 transition-all duration-200">
                   Connect Now <ExternalLink className="w-5 h-5 ml-2" />
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
