@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Check, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function MedicalBillingSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,9 +84,8 @@ export default function MedicalBillingSection() {
                 <span className="relative inline-block">
                   Specialty
                   <div
-                    className={`absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-1000 ease-out ${
-                      isVisible ? "w-full" : "w-0"
-                    }`}
+                    className={`absolute bottom-0 left-0 h-1 bg-blue-500 transition-all duration-1000 ease-out ${isVisible ? "w-full" : "w-0"
+                      }`}
                   />
                 </span>
               </h1>
@@ -102,11 +103,10 @@ export default function MedicalBillingSection() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit}
-                  className={`flex items-center space-x-3 transform transition-all duration-500 ease-out ${
-                    isVisible
-                      ? "translate-x-0 opacity-100"
-                      : "translate-x-[-20px] opacity-0"
-                  }`}
+                  className={`flex items-center space-x-3 transform transition-all duration-500 ease-out ${isVisible
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-[-20px] opacity-0"
+                    }`}
                   style={{ transitionDelay: `${index * 100 + 300}ms` }}
                 >
                   <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -116,19 +116,19 @@ export default function MedicalBillingSection() {
                 </div>
               ))}
             </div>
-
-            {/* CTA Button */}
-            <button
-              className={`bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium flex items-center space-x-2 transition-all duration-300 transform ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
-              }`}
+            <Link href="/Specialities" >
+            <Button
+              className={`bg-blue-600 hover:bg-red-500 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 
+     transition-transform duration-300 
+     
+    ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
               style={{ transitionDelay: "800ms" }}
             >
               <span>View All Specialties</span>
               <ExternalLink className="w-4 h-4" />
-            </button>
+            </Button>
+            </Link>
+
           </div>
 
           {/* Right Video Section */}
@@ -151,11 +151,10 @@ export default function MedicalBillingSection() {
               <div className="absolute inset-0 pointer-events-none">
                 {/* Primary Care */}
                 <div
-                  className={`absolute top-16 right-16 flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg transform transition-all duration-700 ${
-                    isVisible
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-[-20px] opacity-0"
-                  }`}
+                  className={`absolute top-16 right-16 flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg transform transition-all duration-700 ${isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-[-20px] opacity-0"
+                    }`}
                   style={{ transitionDelay: "400ms" }}
                 ></div>
               </div>
