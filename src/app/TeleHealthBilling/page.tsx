@@ -1,7 +1,13 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
+import AutoPlayVideo from "@/components/AutoPlayVideo"
+import { ArrowRight } from "lucide-react"
+
+
 
 
 function page() {
@@ -135,8 +141,7 @@ function page() {
 
             <section className="relative">
                 <div
-                    className="min-h-[60vh] sm:min-h-[50vh] bg-gradient-to-b from-blue-900 to-blue-700
-    text-white flex flex-col justify-center items-center px-3 sm:px-4"
+                    className="min-h-[60vh] sm:min-h-[48vh] bg-gradient-to-b from-blue-900 to-blue-700 text-white flex flex-col justify-center items-center px-3 sm:px-4 pb-6 md:pb-40"
                 >
                     {/* Heading + Description */}
                     <div className="text-center p-4 sm:p-6 max-w-6xl mx-auto">
@@ -150,13 +155,15 @@ function page() {
 
                     {/* Floating 3 cards (first row) */}
                     <div
-                        className="absolute top-[70%] sm:top-[65%] md:top-1/3 left-1/2 transform 
-      -translate-x-1/2 w-[98%] sm:w-[95%] md:w-[90%] max-w-6xl px-2 sm:px-4"
+                        className="relative md:absolute md:top-1/4 md:left-1/2 md:transform md:-translate-x-1/2 w-[98%] sm:w-[95%] md:w-[90%] max-w-6xl px-2 sm:px-4"
                     >
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg shadow-lg border-none w-full">
+                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg border-none w-full">
                                 <CardContent className="flex flex-col items-start text-left">
-                                    <img src="/telehealth-specific-codes-icon-01-1-2048x2048.png" alt="HIPAA Compliant" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                    <img
+                                        src="/telehealth-specific-codes-icon-01-1-2048x2048.png"
+                                        alt="HIPAA Compliant"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
                                     <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Telehealth-Specific Codes</h3>
                                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                                         Telehealth services require distinct CPT and HCPCS codes to identify the type of service provided.
@@ -164,21 +171,29 @@ function page() {
                                     </p>
                                 </CardContent>
                             </Card>
-                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg shadow-lg border-none w-full">
+                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg border-none w-full">
                                 <CardContent className="flex flex-col items-start text-left">
-                                    <img src="/Certfied-Expert-Team-02.svg" alt="Certified Expert Teams" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
-                                    <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Certified Expert Teams</h3>
+                                    <img
+                                        src="/POS-Code-icon-1-01-2048x2048.png"
+                                        alt="Certified Expert Teams"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                    <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Place of Service (POS) Codes</h3>
                                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                        Our experienced team delivers accurate billing and coding support for telehealth.
+                                        POS codes, such as "02" for telehealth; indicate where the service was delivered.
+                                        This helps payers distinguish between in-person and remote services.
                                     </p>
                                 </CardContent>
                             </Card>
-                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg shadow-lg border-none w-full">
+                            <Card className="bg-white text-black p-3 sm:p-4 md:p-6 rounded-lg  border-none w-full">
                                 <CardContent className="flex flex-col items-start text-left">
-                                    <img src="/Help-and-Support-new.svg" alt="24/7 Help & Support" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
-                                    <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">24/7 Help & Support</h3>
+                                    <img
+                                        src="/Medicare-Telehealtcare-Code-2048x1721.png"
+                                        alt="24/7 Help & Support"
+                                        className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                    <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Medicare Telehealth Codes</h3>
                                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                        Get round-the-clock assistance from our telehealth billing experts.
+                                        Medicare has specific billing codes for telehealth services, which include evaluations, consultations, and therapy sessions.
+                                        Accurate use of these codes is crucial for providers to receive reimbursement from Medicare.
                                     </p>
                                 </CardContent>
                             </Card>
@@ -187,32 +202,45 @@ function page() {
                 </div>
 
                 {/* Second row of 3 cards (below, normal flow) */}
-                <div className="mt-80 sm:mt-72 md:mt-60 max-w-6xl mx-auto px-3 sm:px-4">
+                <div className="mt-6 sm:mt-12 md:mt-60 max-w-6xl mx-auto px-3 sm:px-4 mb-10">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border-none w-full">
+                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg border-none w-full">
                             <CardContent className="flex flex-col items-start text-left">
-                                <img src="/Trusted-By-leaders-04.svg" alt="Trusted By Leaders" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
-                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Trusted By Leaders</h3>
+                                <img
+                                    src="/Commercial-Payer-Coding-Guidelines-1-01-2048x2048.png"
+                                    alt="Trusted By Leaders"
+                                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">
+                                    Commercial Payer Coding Guidelines</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                    Top healthcare providers rely on us for telehealth billing solutions.
+                                    Each commercial insurance company may have its own coding guidelines for telehealth services.
+                                    Providers need to stay updated on these to ensure compliance and avoid claim denials.
                                 </p>
                             </CardContent>
                         </Card>
-                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border-none w-full">
+                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg border-none w-full">
                             <CardContent className="flex flex-col items-start text-left">
-                                <img src="/Some-Other.svg" alt="Another Feature" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
-                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Another Feature</h3>
+                                <img
+                                    src="/Telehealth-for-behavioral-health-01-2048x1928.png"
+                                    alt="Another Feature"
+                                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Telehealth for Behavioral Health</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                    Description of the feature goes here to explain the benefit clearly.
+                                    Behavioral health telehealth services have specific codes for therapy and counseling sessions.
+                                    Proper coding ensures compliance with both state and payer regulations.
                                 </p>
                             </CardContent>
                         </Card>
-                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border-none w-full">
+                        <Card className="bg-white text-black p-4 sm:p-6 md:p-8 rounded-lg border-none w-full">
                             <CardContent className="flex flex-col items-start text-left">
-                                <img src="/Some-Other-2.svg" alt="Next Feature" className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
-                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Next Feature</h3>
+                                <img
+                                    src="/Coding-for-RPM-01-2048x2048.png"
+                                    alt="Next Feature"
+                                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-3 sm:mb-4" />
+                                <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2">Coding for Remote Patient Monitoring (RPM)</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                    Another benefit statement to highlight your service or product.
+                                    RPM involves using technology to monitor patient data from a distance and has its own set of billing codes.
+                                    Accurate coding of RPM helps in billing for ongoing patient care and monitoring.
                                 </p>
                             </CardContent>
                         </Card>
@@ -308,6 +336,56 @@ function page() {
                     </div>
                 </div>
             </section>
+
+            <section className="py-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <AutoPlayVideo
+                        src="/claim-process.webm"
+                        wrapperClassName="flex flex-col items-center"
+                        videoClassName="w-full rounded-lg"
+                    />
+                </div>
+            </section>
+
+            <section className="bg-blue-50 py-12 sm:py-12">
+                <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8 md:gap-10">
+                    {/* Left: Illustration */}
+                    <div className="flex-1 flex justify-center mb-8 md:mb-0">
+                        <Image
+                            src="/importance-of-telehealth.svg"
+                            alt="Financial Ecosystem Illustration"
+                            width={500}
+                            height={350}
+                            className="w-full max-w-xs sm:max-w-md md:max-w-lg object-contain"
+                        />
+                    </div>
+                    {/* Right: Text */}
+                    <div className="flex-1">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extralight text-gray-600 mb-2 text-center md:text-left">
+                            <span className="text-blue-700 font-bold">Importance</span>{" "}
+                           <span className="text-gray-700 font-bold"> and Use of Telehealth</span>
+                        </h2>
+                        <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
+                        <p className="text-gray-700 mb-6 text-center md:text-left">
+                        Telehealth plays a vital role in modern healthcare by enhancing access to medical services, 
+                        particularly for patients in remote or underserved areas. It allows for real-time consultations, 
+                        diagnoses, and follow-ups, reducing the need for in-person visits and making healthcare more 
+                        convenient and accessible. Telehealth is particularly important for managing chronic conditions, 
+                        mental health services, and routine check-ups, 
+                        ensuring continuity of care even when face-to-face interactions are not possible. 
+                        <br />
+                        The use of telehealth also promotes cost savings for both providers and patients by 
+                        minimizing travel expenses, reducing overhead costs, and decreasing hospital readmissions.                       </p>
+                        <Link href="/ContactUs">
+                            <Button className="border-2 bg-red-500 text-white rounded-md hover:bg-blue-600 hover:border-blue-600 hover:text-white px-8 py-3 w-full sm:w-auto">
+                                Contact Us
+                                <ArrowRight className="w-4 h-4 ml-2" />
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
 
 
 
