@@ -2,6 +2,38 @@ import React from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+
+
+const topCategories = [
+  {
+    title: "Blog & News",
+    desc: "All tutorials, all tools and Blog posts-explained by experts at WeCare Centric.",
+    image: "/blog.png",
+    href: "/FAQs/MedicalBilling",
+  },
+  {
+    title: "Help & FAQ's",
+    desc: "In our FAQ's you will find the answer to most frequently asked questions.",
+    image: "/conversation-1.png",
+    href: "/FAQs",
+  },
+  {
+    title: "Our Specialties",
+    desc: "We help each specialty with dedicated billing, credentialing and coding teams.",
+    image: "/healthcare.png",
+    href: "/Specialties",
+  },
+  {
+    title: "Talk to Sales",
+    desc: "Talk or schedule with CRM expert to get started with RCM Centric.",
+    image: "/customer-service.png",
+    href: "/TalktoSales",
+  },
+];
+
+
 
 export default function ContactSection() {
   return (
@@ -105,7 +137,7 @@ export default function ContactSection() {
         {/* Right Section - Connect with RCM Centric */}
         <div className="w-full md:w-1/2 bg-white p-15 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-gray-800 mb-5">
-            Connect with RCM Centric
+            Connect with WeCare Centric
           </h2>
           <hr className="w-12 h-0.5 bg-red-500 mb-4" />
           <div className="space-y-4 mt-8">
@@ -266,6 +298,42 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
+        </div>
+
+      </div>
+
+      <div className="container mx-auto py-10 mb-20 px-20 md:px-40">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">Help And Resources</h2>
+        <hr className="w-12 h-0.5 bg-red-500 mb-4" />
+        <div className="flex flex-col sm:flex-row items-stretch">
+          {topCategories.map((cat, idx) => (
+            <Card
+              key={idx}
+              className="w-full sm:flex-1 border-none  transition-shadow group flex flex-col items-center text-center p-4 py-2 rounded-2xl h-[300px]"
+            >
+              <img
+                src={cat.image}
+                alt={cat.title}
+                className="h-12 mb-1 mt-3 transition-all"
+              />
+              <div className="font-bold text-base sm:text-lg mb-1 transition-colors ">
+                {cat.title}
+              </div>
+              <div className="text-gray-500 mb-2 transition-colors  text-sm sm:text-base line-clamp-2">
+                {cat.desc}
+              </div>
+              <Link href={cat.href} target="_blank" rel="noopener noreferrer">
+                <Button
+                  asChild
+                  className="rounded-full bg-blue-100 text-blue-700 hover:text-white hover:bg-blue-700 font-semibold text-sm sm:text-base px-4 sm:px-6 py-2 transition inline-flex items-center"
+                >
+                  <span>
+                    Explore <span className="ml-2">↗</span>
+                  </span>
+                </Button>
+              </Link>
+            </Card>
+          ))}
         </div>
       </div>
     </>
