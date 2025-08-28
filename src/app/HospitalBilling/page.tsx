@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useEffect, useState, useRef } from "react";
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
+import Link from "next/link";
 
 
 function page() {
@@ -431,148 +432,148 @@ function page() {
                 {/* Section Header */}
                 <header>
                     <div>
-                        <h1 className="font-[Cormorant_Garamond] font-light text-5xl mb-4">
-                            Stacking Cards Animation
+                        <h1 className=" text-5xl mb-4 text-center text-gray-700 font-bold">
+                            Results That Move You Forward
                         </h1>
-                        <p className="text-lg">
-                            Scroll down to stack the cards. Scroll back up to unstack them.
+
+
+
+                        <p className="text-lg text-center md:text-center">
+                            Elevate efficiency and outcomes with intelligent,
+                            fully connected health tech systems.
                         </p>
+
                     </div>
+                    <div className="h-[3px] w-46 bg-gray-700 mb-2 mx-auto md:mx-0"></div>
                 </header>
 
                 {/* Cards */}
                 <main>
                     <ul id="cards">
+
                         {/* Card 1 */}
                         <li className="card" style={{ ["--index" as any]: 1 }}>
-                            <div className="card__content flex flex-row items-center gap-6 border-t-4 border-blue-500 p-4 md:p-6">
+                            <div className="card__content flex flex-col md:!flex-row items-center md:items-start gap-6 border-t-4 border-blue-500">
 
-                                {/* Left Content */}
-                                <div className="flex flex-col gap-3 w-1/2">
-                                    {/* Small Icon/Image */}
+                                {/* Left Column */}
+                                <div className="flex flex-col gap-3 ml-10 md:w-1/2">
+                                    {/* Small Icon */}
                                     <img
-                                        src="/icons/stack-icon.svg"
+                                        src="/expert-billing-compliance-icon-01.png"
                                         alt="icon"
-                                        className="w-8 h-8 mb-1"
+                                        className="w-10 h-10"
                                     />
 
                                     {/* Heading */}
-                                    <h2 className="font-[Cormorant_Garamond] font-bold text-3xl md:text-4xl">
-                                        Smarter Revenue Cycle Integration
-                                    </h2>
+                                    <h2 className=" font-medium text-2xl md:text-4xl">
+                                        Expert Billing Compliance Support                                    </h2>
 
                                     {/* Paragraph */}
-                                    <p className="font-light leading-relaxed text-base md:text-lg text-gray-600">
-                                        Disjointed systems often lead to billing delays and revenue leakage.
-                                        Our billing solution integrates clinical, administrative, and financial
-                                        data into one platform—giving decision-makers real-time visibility across
-                                        the revenue cycle.
-                                    </p>
+                                    <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                                        Hospital billing requires strict adherence to changing federal and state regulations. Our team stays ahead of evolving compliance standards, ensuring accurate claims and reduced audit risks. From documentation accuracy to coding precision,
+                                        we help hospitals avoid penalties and maintain operational integrity through consistent
+                                        regulatory alignment.  </p>
 
-                                    {/* Button (shadcn) */}
-                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-md w-fit">
-                                        Get in Touch
-                                    </button>
+
                                 </div>
 
-                                {/* Right Side Image */}
-                                <div className="w-1/2 flex justify-center">
+                                {/* Right Column */}
+                                <div className="md:w-1/2 flex justify-center">
                                     <img
-                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        src="Expert-Billing-Compliance-01-01.png"
                                         alt="big-preview"
-                                        className="rounded-lg shadow-md max-h-[240px] object-contain"
+                                        className="rounded-lg ml-30 max-h-[300px] w-240 object-contain"
                                     />
                                 </div>
+
                             </div>
                         </li>
-
-
-
 
                         {/* Card 2 */}
-                        <li className="card" style={{ ["--index" as any]: 1 }}>
-                            <div className="card__content flex flex-col md:flex-row items-center md:items-start gap-6 border-t-4 border-blue-500 p-8">
+                        <li className="card" style={{ ["--index" as any]: 2 }}>
+                            <div className="card__content flex flex-col md:!flex-row items-center md:items-start gap-6 border-t-4 border-blue-500">
 
-                                {/* Left Content */}
-                                <div className="flex flex-col gap-4 md:w-1/2">
-                                    {/* Small Icon/Image */}
+                                {/* Left Column */}
+                                <div className="flex flex-col gap-3  ml-10 md:w-1/2">
+                                    {/* Small Icon */}
                                     <img
-                                        src="/icons/stack-icon.svg"
+                                        src="/fewer-denials-faster-payment-icon-01.png"
                                         alt="icon"
-                                        className="w-10 h-10 mb-2"
+                                        className="w-10 h-10"
                                     />
 
                                     {/* Heading */}
-                                    <h2 className="font-[Cormorant_Garamond] font-bold text-4xl">
-                                        Smarter Revenue Cycle Integration
+                                    <h2 className=" font-medium text-2xl md:text-4xl">
+                                        Fewer Denials, Faster Payments
                                     </h2>
 
                                     {/* Paragraph */}
-                                    <p className="font-light leading-relaxed text-lg text-gray-600">
-                                        Disjointed systems often lead to billing delays and revenue leakage.
-                                        Our billing solution integrates clinical, administrative, and financial
-                                        data into one platform—giving decision-makers real-time visibility across
-                                        the revenue cycle.
-                                    </p>
+                                    <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+                                        Denied claims drain hospital revenue and delay reimbursements.
+                                        Our proactive claims management system identifies potential errors before submission,
+                                        significantly reducing rework. By addressing root causes and continuously optimizing claim data,
+                                        we enable hospitals to boost first-pass resolution rates and stabilize their revenue flow.    </p>
 
-                                    {/* Button (shadcn) */}
-                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md w-fit">
-                                        Get in Touch
-                                    </button>
+
                                 </div>
 
-                                {/* Right Side Image */}
+                                {/* Right Column */}
                                 <div className="md:w-1/2 flex justify-center">
                                     <img
-                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        src="Fewer-Denials-01.png"
                                         alt="big-preview"
-                                        className="rounded-lg shadow-md max-h-[280px] object-contain"
+                                        className="rounded-lg ml-30 max-h-[300px] w-240 object-contain"
                                     />
                                 </div>
+
                             </div>
                         </li>
 
+                        {/* Card 3 - Only this one has a button */}
+                        <li className="card" style={{ ["--index" as any]: 3 }}>
+                            <div className="card__content flex flex-col md:!flex-row items-center md:items-start gap-6 border-t-4 border-blue-500">
 
-                        {/* Card 4 */}
-                        <li className="card" style={{ ["--index" as any]: 1 }}>
-                            <div className="card__content flex flex-col md:flex-row items-center md:items-start gap-6 border-t-4 border-blue-500 p-8">
-
-                                {/* Left Content */}
-                                <div className="flex flex-col gap-4 md:w-1/2">
-                                    {/* Small Icon/Image */}
+                                {/* Left Column */}
+                                <div className="flex flex-col gap-3  ml-10 md:w-1/2">
+                                    {/* Small Icon */}
                                     <img
-                                        src="/icons/stack-icon.svg"
+                                        src="/icon-smarter-revenue-cycle-01.svg"
                                         alt="icon"
-                                        className="w-10 h-10 mb-2"
+                                        className="w-10 h-10"
                                     />
 
                                     {/* Heading */}
-                                    <h2 className="font-[Cormorant_Garamond] font-bold text-4xl">
+                                    <h2 className=" font-medium text-2xl md:text-4xl">
                                         Smarter Revenue Cycle Integration
                                     </h2>
 
                                     {/* Paragraph */}
-                                    <p className="font-light leading-relaxed text-lg text-gray-600">
+                                    <p className="text-gray-600 leading-relaxed text-base md:text-lg">
                                         Disjointed systems often lead to billing delays and revenue leakage.
-                                        Our billing solution integrates clinical, administrative, and financial
-                                        data into one platform—giving decision-makers real-time visibility across
-                                        the revenue cycle.
-                                    </p>
+                                        Our billing solution integrates clinical, administrative, and financial data into one
+                                        platform—giving decision-makers real-time visibility across the revenue cycle.
+                                        This seamless integration improves coordination, billing accuracy, and timely reimbursements at every step.	   </p>
 
-                                    {/* Button (shadcn) */}
-                                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md w-fit">
+                                    {/* Button (only on last card) */}
+                                    <Link href="/ContactUs" >
+
+                                    <Button
+                                        className="bg-blue-600 hover:bg-red-500 text-white px-5 py-2 rounded-md w-fit mt-2"
+                                    >
                                         Get in Touch
-                                    </button>
+                                    </Button>
+                                    </Link>
                                 </div>
 
-                                {/* Right Side Image */}
+                                {/* Right Column */}
                                 <div className="md:w-1/2 flex justify-center">
                                     <img
-                                        src="https://assets.codepen.io/210284/flower-9.jpg"
+                                        src="Smarter-revenue-cycle-01.png"
                                         alt="big-preview"
-                                        className="rounded-lg shadow-md max-h-[280px] object-contain"
+                                        className="rounded-lg ml-30 max-h-[300px] w-240 object-contain"
                                     />
                                 </div>
+
                             </div>
                         </li>
 
