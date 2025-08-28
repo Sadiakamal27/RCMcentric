@@ -363,19 +363,19 @@ function page() {
                     <div className="flex-1">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extralight text-gray-600 mb-2 text-center md:text-left">
                             <span className="text-blue-700 font-bold">Importance</span>{" "}
-                           <span className="text-gray-700 font-bold"> and Use of Telehealth</span>
+                            <span className="text-gray-700 font-bold"> and Use of Telehealth</span>
                         </h2>
                         <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
                         <p className="text-gray-700 mb-6 text-center md:text-left">
-                        Telehealth plays a vital role in modern healthcare by enhancing access to medical services, 
-                        particularly for patients in remote or underserved areas. It allows for real-time consultations, 
-                        diagnoses, and follow-ups, reducing the need for in-person visits and making healthcare more 
-                        convenient and accessible. Telehealth is particularly important for managing chronic conditions, 
-                        mental health services, and routine check-ups, 
-                        ensuring continuity of care even when face-to-face interactions are not possible. 
-                        <br />
-                        The use of telehealth also promotes cost savings for both providers and patients by 
-                        minimizing travel expenses, reducing overhead costs, and decreasing hospital readmissions.                       </p>
+                            Telehealth plays a vital role in modern healthcare by enhancing access to medical services,
+                            particularly for patients in remote or underserved areas. It allows for real-time consultations,
+                            diagnoses, and follow-ups, reducing the need for in-person visits and making healthcare more
+                            convenient and accessible. Telehealth is particularly important for managing chronic conditions,
+                            mental health services, and routine check-ups,
+                            ensuring continuity of care even when face-to-face interactions are not possible.
+                            <br />
+                            The use of telehealth also promotes cost savings for both providers and patients by
+                            minimizing travel expenses, reducing overhead costs, and decreasing hospital readmissions.                       </p>
                         <Link href="/ContactUs">
                             <Button className="border-2 bg-red-500 text-white rounded-md hover:bg-blue-600 hover:border-blue-600 hover:text-white px-8 py-3 w-full sm:w-auto">
                                 Contact Us
@@ -385,6 +385,119 @@ function page() {
                     </div>
                 </div>
             </section>
+
+
+
+
+            <section className="relative w-full text-center py-20 overflow-hidden">
+                {/* Red background */}
+                <div className="absolute inset-0 bg-red-400 z-0" />
+
+                {/* Blue angled overlays */}
+                <div className="absolute inset-0">
+                    {/* Left blue */}
+                    <div className="absolute top-0 left-0 w-full h-full bg-blue-600 clip-left" />
+                    {/* Right blue */}
+                    <div className="absolute top-0 right-0 w-full h-full bg-blue-600 clip-right" />
+                </div>
+
+                {/* Content */}
+                <div className="relative z-10 max-w-4xl mx-auto px-6">
+                    <p className="uppercase text-sm font-semibold tracking-wider text-gray-200 mb-4">
+                        Looking for expert services?
+                    </p>
+                    <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+                        If you are looking for expert and cost-effective
+                        Telehealth Billing services, Get in touch with us today!
+                    </h2>
+
+                    <Button className="bg-white hover:bg-blue-700 hover:text-white text-gray-700 px-6 py-3 rounded-full text-lg">
+                        Get Started Now
+                    </Button>
+                </div>
+            </section>
+
+
+            <section className="py-12 px-4 md:px-8 bg-white mt-20">
+                {/* Heading */}
+                <div className="max-w-4xl mx-auto text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+                        Streamline Your Telehealth Billing with RCM Centric
+                    </h2>
+                    <p className="mt-4 text-gray-600 text-lg">
+                        Effortlessly manage and process telehealth claims with our specialized
+                        billing services. We ensure accurate, timely submissions and
+                        comprehensive follow-up, so you can focus on patient care. Let us
+                        handle the complexities of telehealth billing while you enjoy a
+                        smoother, more efficient workflow.
+                    </p>
+                    {/* Gray Divider Line */}
+                    <div className="h-[2px] w-56 bg-red-500 mt-6 mb-12 mx-auto"></div>
+                </div>
+
+                {/* Content */}
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    {/* Left Side - Image */}
+                    <div className="flex justify-center">
+                        <img
+                            src="/Webpage-illustrations-and-imags-12-2048x2048.png" // replace with your image path
+                            alt="Telehealth Illustration"
+                            className="max-w-sm w-full"
+                        />
+                    </div>
+
+                    {/* Right Side - Features (no cards, just text) */}
+                    <div className="space-y-6">
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Effortless Claim Management
+                            </h3>
+                            <p className="text-gray-600 mt-2 text-sm">
+                                Simplify your billing workflow with accurate and timely claim
+                                submissions. Our system reduces errors and speeds up
+                                reimbursement, so you can focus on patient care.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Seamless Integration
+                            </h3>
+                            <p className="text-gray-600 mt-2 text-sm">
+                                Integrate our billing solutions smoothly with your telehealth
+                                platform. Enjoy a hassle-free setup and streamline your billing
+                                processes without disruption.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Real-Time Tracking
+                            </h3>
+                            <p className="text-gray-600 mt-2 text-sm">
+                                Keep track of your claims and payments in real time. Our intuitive
+                                tracking system provides up-to-date information, ensuring you stay
+                                informed every step of the way.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-800">
+                                Dedicated Support
+                            </h3>
+                            <p className="text-gray-600 mt-2 text-sm">
+                                Benefit from expert assistance tailored to your needs. Our
+                                dedicated support team is available to address any billing issues
+                                and provide solutions promptly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
 
 
 
