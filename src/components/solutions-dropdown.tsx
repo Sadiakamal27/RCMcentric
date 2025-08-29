@@ -10,10 +10,16 @@ export function SolutionsDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 cursor-pointer">
+        <Button
+          variant="ghost"
+          className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 focus:outline-none focus-visible:ring-0 focus-visible:border-none"
+        >
           <span>Solutions</span>
           <ChevronDown className="w-4 h-4" />
-        </button>
+        </Button>
+
+
+
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-screen max-w-4xl p-0 border-0 shadow-xl" align="start">
         <div className="grid lg:grid-cols-2">
@@ -35,7 +41,7 @@ export function SolutionsDropdown() {
               <div className="text-center space-y-4">
                 <h3 className="text-lg font-bold">A Complete Provider Centric Solution</h3>
                 <p className="text-blue-100 leading-tight text-sm">
-                  Get everything needed for your practice performance under RCM Centric's professional provider centric
+                  Get everything needed for your practice performance under WeCare RCM's professional provider centric
                   solutions.
                 </p>
                 <Button
@@ -64,14 +70,14 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
+                  <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
 
-                  <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
-                    Medical Billing Services
-                  </h4>
-                  <p className="text-gray-600 text-xs mt-0.5">
-                    Get your medical billing team to streamline your practice collection.
-                  </p>
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                      Medical Billing Services
+                    </h4>
+                    <p className="text-gray-600 text-xs mt-0.5">
+                      Get your medical billing team to streamline your practice collection.
+                    </p>
                   </Link>
                 </div>
               </div>
@@ -88,13 +94,13 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/MedicalCoding" target="_blank" rel="noopener noreferrer">
-                  <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
-                    Medical Coding Services
-                  </h4>
-                  <p className="text-gray-600 text-xs mt-0.5">
-                    RCM Centric will reduce your compliance risks by accurate coding.
-                  </p>
+                  <Link href="/MedicalCoding" target="_blank" rel="noopener noreferrer">
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                      Medical Coding Services
+                    </h4>
+                    <p className="text-gray-600 text-xs mt-0.5">
+                      WeCare RCM will reduce your compliance risks by accurate coding.
+                    </p>
                   </Link>
                 </div>
               </div>
@@ -102,7 +108,7 @@ export function SolutionsDropdown() {
               {/* Credentialing & Enrollment */}
               <div className="flex items-start space-x-3 group cursor-pointer  p-2 rounded-lg transition-colors">
                 <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center  transition-colors">
-                   <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
+                  <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                     <img
                       src="/diploma.png"
                       alt="Telehealth Billing Icon"
@@ -111,13 +117,13 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/CredentialingAndEnrollment" >
-                  <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
-                    Credentialing & Enrollment
-                  </h4>
-                  <p className="text-gray-600 text-xs mt-0.5">
-                    Help you navigate the process of your practice credentialing tasks.
-                  </p>
+                  <Link href="/CredentialingAndEnrollment" target="_blank" rel="noopener noreferrer">
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                      Credentialing & Enrollment
+                    </h4>
+                    <p className="text-gray-600 text-xs mt-0.5">
+                      Help you navigate the process of your practice credentialing tasks.
+                    </p>
                   </Link>
                 </div>
               </div>
@@ -125,7 +131,7 @@ export function SolutionsDropdown() {
               {/* Patient Help Desk */}
               <div className="flex items-start space-x-3 group cursor-pointer  p-2 rounded-lg transition-colors">
                 <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center  transition-colors">
-                   <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
+                  <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
                     <img
                       src="/registration.png"
                       alt="Telehealth Billing Icon"
@@ -134,12 +140,12 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/PatientHelpDesk">
+                  <Link href="/PatientHelpDesk" target="_blank" rel="noopener noreferrer">
 
-                  <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">Patient Help Desk</h4>
-                  <p className="text-gray-600 text-xs mt-0.5">
-                    RCM Centric provides dedicated Help desk services for your patient's queries.
-                  </p>
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">Patient Help Desk</h4>
+                    <p className="text-gray-600 text-xs mt-0.5">
+                      WeCare RCM provides dedicated Help desk services for your patient's queries.
+                    </p>
                   </Link>
                 </div>
               </div>
@@ -156,11 +162,11 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                <Link href="/ItSupportServices">    
-                  <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">IT Support Services</h4>
-                  <p className="text-gray-600 text-xs mt-0.5">
-                    Ensure Seamless IT Operations with RCM Centric's Expert IT Support Services.
-                  </p>
+                  <Link href="/ItSupportServices" target="_blank" rel="noopener noreferrer">
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">IT Support Services</h4>
+                    <p className="text-gray-600 text-xs mt-0.5">
+                      Ensure Seamless IT Operations with WeCare RCM's Expert IT Support Services.
+                    </p>
                   </Link>
                 </div>
               </div>
