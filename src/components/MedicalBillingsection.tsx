@@ -116,7 +116,7 @@ export default function MedicalBillingSection() {
                 </div>
               ))}
             </div>
-            <Link href="/Specialities" >
+            <Link href="/Specialties" >
             <Button
               className={`bg-blue-600 hover:bg-red-500 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 
      transition-transform duration-300 
