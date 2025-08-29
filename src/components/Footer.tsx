@@ -113,7 +113,8 @@ export default function Footer() {
               </li>
               
               <li>
-                <Link href="/e-communications-consent" className="hover:underline">e-Communications Consent</Link>
+              <Link href="/E-Consent" target="_blank" rel="noopener noreferrer"
+              className="hover:underline">e-Communications Consent</Link>
               </li>
             </ul>
           </div>
