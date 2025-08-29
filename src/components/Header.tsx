@@ -71,7 +71,7 @@ function Header() {
                     <div className="flex items-center space-x-2">
                       <img src="/Logo-Gif.gif" alt="RCM Centric Logo" className="h-8 w-auto" />
                       <span className="font-bold text-2xl text-gray-800">WeCare</span>
-                      <span className="font-bold text-2xl text-gray-800">Centric</span>
+                      <span className="font-bold text-2xl text-gray-800">RCM</span>
                     </div>
                     <DrawerClose asChild>
                       <button className="text-2xl text-gray-700 focus:outline-none">
@@ -113,7 +113,7 @@ function Header() {
               <SpecialtiesDropdown />
               <div className="text-gray-700 hover:text-red-500 font-bold cursor-pointer">
                 <Link href="/WhyRCM" target="_blank" rel="noopener noreferrer">
-                  Why WeCare Centric
+                  Why WeCare RCM
                 </Link>
               </div>
               <CompanyDropdown />

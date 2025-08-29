@@ -81,7 +81,7 @@ export default function Home() {
         <div className="  bg-gray-100  px-15 mt-10  flex justify-center items-center ">
           <div className="text-center p-30 ">
             <h1 className="text-2xl font-bold  text-left text-gray-800">
-              RCM Centric delivers a seasoned team of Practice Management
+              WeCare RCM delivers a seasoned team of Practice Management
               experts.
             </h1>
             <hr className="w-16 h-1 mt-3 bg-red-500 mb-6" />
