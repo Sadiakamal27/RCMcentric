@@ -119,7 +119,10 @@ export default function MedicalCodingPage() {
             </p>
             <div className="w-full max-w-md lg:mx-0">
               <h3 className="text-base sm:text-xl text-gray-200 mb-2">Find Right Codes By Your Speciality</h3>
-              <SolutionSection buttonText="Get Code →" />
+              <SolutionSection buttonText="Get Code →"
+              buttonClassName=" text-white bg-blue-500 hover:bg-red-500  hover:text-white "
+              selectClassName=" text-gray-600 "
+              />
             </div>
           </div>
           {/* Right column: Empty */}
