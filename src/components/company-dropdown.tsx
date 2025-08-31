@@ -8,7 +8,7 @@ export function CompanyDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 cursor-pointer">
+        <button className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 cursor-pointer focus:outline-none focus-visible:ring-0 focus-visible:border-none">
           <span>Company</span>
           <ChevronDown className="w-4 h-4" />
         </button>
