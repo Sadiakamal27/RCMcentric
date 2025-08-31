@@ -72,6 +72,7 @@ function AboutPage() {
           </p>
         </div>
       </section>
+
       <section className="bg-white py-20 px-5">
         {/* Slide-up on entire container */}
         <div
@@ -116,10 +117,10 @@ function AboutPage() {
           <div className="w-full h-110 md:w-1/2 bg-blue-700 rounded-[40px] p-10 text-white">
             <div className="mb-4">
               <Image
-                src="/aboutlogo.jpg"
+                src="/wcaboutLogo.png"
                 alt="RCM Centric Logo"
-                width={50}
-                height={50}
+                width={60}
+                height={60}
               />
             </div>
             <p className="italic text-lg leading-relaxed text-white">
@@ -378,6 +379,7 @@ function AboutPage() {
           </div>
         </div>
       </section>
+      
       <section className="bg-white py-20 px-5">
         <div
           ref={lastref}
