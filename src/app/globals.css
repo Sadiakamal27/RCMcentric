@@ -164,22 +164,82 @@ body {
 /* ------------------- */
 @media (max-width: 768px) {
   .stack-section {
-    --card-height: 70vw;
+    --card-height: 120vw;    /* Increased height for mobile to prevent overlap */
+    --card-margin: 4vw;     /* Increased margin for better separation */
+    --card-top-offset: 2em; /* Reduced top offset for mobile */
+  }
+
+  .stack-section header,
+  .stack-section main {
+    width: 95vw;             /* Use more screen width on mobile */
+  }
+
+  .stack-section header {
+    height: 25vh;            /* Reduced header height on mobile */
+    margin-bottom: 40px;     /* Reduced bottom margin */
+  }
+
+  .stack-section #cards {
+    padding-bottom: calc(var(--numcards) * var(--card-top-offset) + 4em); /* Extra padding to prevent overlap */
+    margin-bottom: 2em;      /* Increased bottom margin */
+  }
+
+  .stack-section .card {
+    top: 60px;               /* Reduced top position for mobile */
+    position: sticky;
+    padding-top: calc(var(--index) * var(--card-top-offset));
   }
 
   .stack-section .card__content {
-    padding: 1.2em;
+    padding: 1.5em;          /* Increased padding for better mobile spacing */
+    margin-bottom: 1em;      /* Add bottom margin to each card */
   }
 
   .stack-section .card__content > div {
     max-width: 100%;
     text-align: center;
     align-items: center;
+    flex-direction: column;  /* Stack content vertically on mobile */
+    gap: 1em;                /* Reduced gap for mobile */
   }
 
   .stack-section .card__content > div:last-of-type {
     /* Image container on mobile */
-    height: 200px;
+    height: 180px;           /* Slightly reduced height */
+    margin-top: 1em;         /* Add top margin for separation */
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .stack-section {
+    --card-height: 140vw;    /* Even larger height for very small screens */
+    --card-margin: 6vw;     /* Larger margin for very small screens */
+  }
+
+  .stack-section .card__content {
+    padding: 1.2em;          /* Slightly reduced padding for very small screens */
+  }
+
+  .stack-section #cards {
+    padding-bottom: calc(var(--numcards) * var(--card-top-offset) + 6em); /* Extra padding for very small screens */
+  }
+}
+
+/* Ensure proper spacing after stack section to prevent overlap */
+.stack-section {
+  margin-bottom: 4em;        /* Add bottom margin to the entire section */
+}
+
+@media (max-width: 768px) {
+  .stack-section {
+    margin-bottom: 6em;      /* Increased bottom margin on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-section {
+    margin-bottom: 8em;      /* Even larger bottom margin on very small screens */
   }
 }
 
@@ -227,6 +287,55 @@ body {
 .clip-right {
   clip-path: polygon(100% 0, 100% 100%, 85% 100%);
 }
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #9ca3af; /* Tailwind gray-400 */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #6b7280; /* Tailwind gray-500 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6; /* Tailwind gray-100 */
+}
+
+
+
+@keyframes logo-slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-logo-slide {
+  animation: logo-slide 4s ease-in-out infinite;
+}
+
+
 
 
 
