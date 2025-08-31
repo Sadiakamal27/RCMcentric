@@ -39,7 +39,12 @@ export default function MedicalBillingPage() {
           </p>
           <div className="w-full max-w-md mx-auto lg:mx-0">
             <h3 className="text-base sm:text-xl text-center text-gray-500 sm:text-left mb-2">Find Solution by your speciality</h3>
-            <SolutionSection buttonText="Get Solutions →" />
+            <SolutionSection 
+            buttonText="Get Solutions →"
+            buttonClassName=" text-white bg-blue-500 hover:bg-red-500  hover:text-white "
+            selectClassName=" border-gray-400 text-gray-500 "
+             
+            />
           </div>
         </div>
         {/* Right Content - Video */}
@@ -281,7 +286,7 @@ export default function MedicalBillingPage() {
               It’s just like outsourcing the results. RCM Centric will be responsible for the delivery and compliance.
             </p>
             <Link href="/TalktoSales">
-              <Button className="border border-white text-white font-semibold px-8 py-3 rounded transition flex items-center w-full sm:w-auto">
+              <Button className="border border-white text-white font-semibold hover:bg-red-500 hover:outline-none hover:border-none  px-8 py-3 rounded-full transition flex items-center w-full sm:w-auto">
                 Talk To Sales <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
