@@ -44,6 +44,7 @@ export function SolutionsDropdown() {
                   Get everything needed for your practice performance under WeCare RCM's professional provider centric
                   solutions.
                 </p>
+                <Link href="/TalktoSales" >
                 <Button
                   variant="outline"
                   size="sm"
@@ -51,6 +52,7 @@ export function SolutionsDropdown() {
                 >
                   Talk to Sales <ExternalLink className="w-4 h-4 ml-2" />
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
