@@ -109,17 +109,23 @@ function page() {
                             In today's rapidly changing healthcare landscape, managing hospital billing efficiently is critical to ensuring financial stability and uninterrupted patient care. Our hospital billing services are designed to alleviate the administrative burden while maximizing revenue for healthcare facilities. With expertise in medical billing & coding, compliance, and reimbursement processes, we provide tailored solutions that align with the unique needs of hospitals.
                         </p>
                         <div className="space-x-4">
+                        <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
+
                             <Button
-                                className="bg-blue-600 text-white hover:bg-red-500 hover:text-white transition-colors duration-300"
+                                className="bg-blue-600 cursor-pointer text-white hover:bg-red-500 hover:text-white transition-colors duration-300"
                             >
                                 Talk to Sales
                             </Button>
+                            </Link>
+                            <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
+
                             <Button
                                 variant="outline"
-                                className="border-red-500 text-red-500 hover:border-blue-600 hover:text-blue-600 transition-colors duration-300"
+                                className=" cursor-pointer border-red-500 text-red-500 hover:border-blue-600 hover:text-blue-600 transition-colors duration-300"
                             >
                                 Discover More
                             </Button>
+                            </Link>
                         </div>
                     </div>
                     {/* Right column: Image */}
@@ -558,7 +564,7 @@ function page() {
                                     <Link href="/ContactUs" >
 
                                     <Button
-                                        className="bg-blue-600 hover:bg-red-500 text-white px-5 py-2 rounded-md w-fit mt-2"
+                                        className="bg-blue-600 hover:bg-red-500 cursor-pointer text-white px-5 py-2 rounded-md w-fit mt-2"
                                     >
                                         Get in Touch
                                     </Button>
@@ -589,11 +595,14 @@ function page() {
                     <h4 className="text-4xl font-black text-white mb-4">
                         If you are looking for expert and cost-effective Medical Billing services, Get in touch with us today!
                     </h4>
+                    <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
+
                     <Button
-                        className="text-white rounded-full h-10 w-35 font-bold bg-blue-700 hover:bg-white hover:text-blue-700 transition-colors duration-300"
+                        className="text-white cursor-pointer rounded-full h-10 w-35 font-bold bg-blue-700 hover:bg-white hover:text-blue-700 transition-colors duration-300"
                     >
                         Get Started Now
                     </Button>
+                    </Link>
                 </div>
             </section>
 
