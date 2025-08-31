@@ -410,10 +410,11 @@ function page() {
                         If you are looking for expert and cost-effective
                         Telehealth Billing services, Get in touch with us today!
                     </h2>
-
-                    <Button className="bg-white hover:bg-blue-700 hover:text-white text-gray-700 px-6 py-3 rounded-full text-lg">
+                    <Link href="/TalktoSales" >
+                    <Button className="bg-white hover:bg-blue-700 hover:text-white text-gray-700 px-6 py-3 rounded-full text-md">
                         Get Started Now
                     </Button>
+                    </Link>
                 </div>
             </section>
 
