@@ -74,37 +74,37 @@ export default function OnboardingPage() {
 
         {/* Right Side - Content */}
         <div className="w-full md:w-1/2 p-4 sm:p-8 flex flex-col justify-center">
-          <h2 className="text-red-600 text-base sm:text-lg font-bold mb-2">WELCOME TO A SMOOTH START</h2>
-          <h1 className="text-2xl sm:text-4xl font-bold mb-4">Effortless Onboarding and Seamless Transition</h1>
+          <h2 className="text-red-600 text-sm sm:text-sm tracking-wide mb-2">WELCOME TO A SMOOTH START</h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-700 leading-tight mb-4">Effortless Onboarding and Seamless Transition</h1>
           <p className="text-gray-700 mb-6 text-sm sm:text-base">
             At WeCare Centric, we understand that switching to a new billing service can seem daunting. That’s why we’ve designed our onboarding and transition process to be as simple and stress-free as possible. Here’s how we ensure an effortless start for your practice:
           </p>
           <ul className="list-none mb-6">
-            <li className="flex items-center mb-2 text-sm sm:text-base">
+            <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Personalized Onboarding Plan
             </li>
-            <li className="flex items-center mb-2 text-sm sm:text-base">
+            <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Comprehensive Data Migration
             </li>
-            <li className="flex items-center mb-2 text-sm sm:text-base">
+            <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Step-by-Step Guidance
             </li>
-            <li className="flex items-center mb-2 text-sm sm:text-base">
+            <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Seamless Integration
             </li>
-            <li className="flex items-center mb-2 text-sm sm:text-base">
+            <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
@@ -112,7 +112,7 @@ export default function OnboardingPage() {
             </li>
           </ul>
           <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-red-500 hover:bg-red-600 rounded-full text-white px-4 sm:px-6 py-2 sm:py-2 text-xs sm:text-sm transform cursor-pointer transition-all duration-200">
+            <Button className="bg-blue-700 hover:bg-red-600 rounded-full text-white px-4 sm:px-6 py-2 sm:py-2 text-xs sm:text-sm transform cursor-pointer transition-all duration-200">
               Let's Connect <ExternalLink className="w-4 h-4 ml-1" />
             </Button>
           </Link>
