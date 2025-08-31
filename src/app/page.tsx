@@ -59,7 +59,12 @@ export default function HomePage() {
               <div className="mt-6 sm:mt-9">
                 <div className="space-y-4 text-white">
                   <p className="text-sm sm:text-base">
-                    For over 10 years, our <span className="text-red-400 font-semibold">medical billing company in the USA</span> have been helping physicians, clinics, group practices, and hospital-owned physician groups with their medical billing and coding tasks.
+                    For over 10 years, our {" "}
+                    <Link href="/">
+                    <span className="text-red-400 font-semibold">medical billing company in the USA</span>
+                    </Link>
+                    {" "}
+                     have been helping physicians, clinics, group practices, and hospital-owned physician groups with their medical billing and coding tasks.
                     Establish and grow a healthy practice with RCM Centric's advanced healthcare medical billing services & coding, including unique strategy and integrated technology.
                   </p>
                 </div>
@@ -72,6 +77,7 @@ export default function HomePage() {
                 <SolutionSection 
                 buttonText=" →  Get Solution"
                 buttonClassName=" text-white bg-red-500 hover:bg-white hover:text-blue-700"
+                
                 />
               </div>
             </div>
@@ -204,9 +210,9 @@ export default function HomePage() {
                 <p className="text-gray-600 text-sm sm:text-lg leading-relaxed">
                   Are you looking for faster payment processing for your medical
                   billing? Wish to reduce billing overheads on various specialty
-                  billings that you frequently generate? RCM's advanced billing
+                  billings that you frequently generate? WeCare RCM's advanced billing
                   solutions ensure that your billings forge higher net
-                  collections in less time. RCM Centric offers advanced medical
+                  collections in less time. WeCare RCM offers advanced medical
                   billing & coding services for a wide range of healthcare
                   specialties.
                 </p>
@@ -228,7 +234,7 @@ export default function HomePage() {
                 <div className="relative z-10">
                   <Image
                     src="/Product-Screen-Dashboard-rcm-centric.png?height=400&width=600"
-                    alt="RCM Centric Dashboard Interface"
+                    alt="WeCare RCM Dashboard Interface"
                     width={600}
                     height={400}
                     className="w-full h-auto rounded-lg shadow-xl"
@@ -296,7 +302,7 @@ export default function HomePage() {
               A Centric Solution For Your Practice Needs
             </h2>
             <p className="text-gray-600 text-sm sm:text-lg leading-relaxed">
-              At RCM Centric, we recognize that Practices, Facilities, and
+              At WeCare RCM, we recognize that Practices, Facilities, and
               Hospitals must be as flexible as their patients. And that's a <strong>challenge</strong> we readily embrace. So whether you're a
               doctor trying to <strong>streamline your collection</strong> or a
               hospital looking to optimize a patient's <strong>claims capacity</strong>, RCM Centric has the expertise to
@@ -353,9 +359,11 @@ export default function HomePage() {
 
           {/* Call to Action Button */}
           <div className="text-center">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-base sm:text-lg w-full sm:w-auto">
+          <Link href="/TalktoSales" >
+            <Button className="bg-blue-600 hover:bg-red-500 cursor-pointer text-white px-8 py-3 text-base sm:text-md w-full sm:w-auto">
               Talk to an Expert <ExternalLink className="w-5 h-5 ml-2" />
             </Button>
+            </Link>
           </div>
         </div>
       </section>
