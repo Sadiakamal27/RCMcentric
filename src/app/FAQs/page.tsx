@@ -8,41 +8,31 @@ const topCategories = [
     title: "Medical Billing FAQ's",
     desc: "Get answers related to our healthcare medical billing services and process in details.",
     image: "/medical-billing-01.png",
-    href: "/FAQs/MedicalBilling",
+    href: "/MedicalBilling",
   },
   {
     title: "Medical Coding FAQ's",
     desc: "Get answers related to our healthcare medical coding services and process in details.",
     image: "/Medical-coding-02.png",
-    href: "/FAQs/MedicalCoding",
+    href: "/MedicalCoding",
   },
   {
     title: "Credentialing FAQ's",
     desc: "Get answers related to our provider credentialing and enrollment services and process.",
     image: "/Credentialing-03.png",
-    href: "/FAQs/Credentialing",
+    href: "/CredentialingAndEnrollment",
   },
   {
     title: "Patient Desk FAQ's",
     desc: "Get answers related to our PHD (Patient Help Desk) solution for each medical practice.",
     image: "/Patient-help-Desk-04.png",
-    href: "/FAQs/PatientHelpDesk",
+    href: "/PatientHelpDesk",
   },
 ];
 
 const infoCards = [
-  {
-    title: "Blog & Articles",
-    desc: "Read our latest blogs and articles written by healthcare professionals.",
-    image: "/Blogs-and-articles.png",
-    href: "/Blog",
-  },
-  {
-    title: "Live Chat",
-    desc: "Chat with our available agent and get answered to your quick queries.",
-    image: "/Live-Chat.png",
-    href: "/LiveChat",
-  },
+  
+  
   {
     title: "Talk to Sales",
     desc: "Get everything needed for your practice performance under RCM Centric.",
@@ -53,7 +43,7 @@ const infoCards = [
     title: "FAQ's",
     desc: "Find answers of frequently asked questions and get to know our services.",
     image: "/FAQ-01.svg",
-    href: "/FAQ",
+    href: "/FAQs",
   },
 ];
 
