@@ -66,8 +66,8 @@ export default function MedicalBillingSection() {
             {/* Logo */}
             <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center">
               <div className="text-white font-bold text-lg">
-                <div>RCM</div>
-                <div className="text-xs">CENTRIC</div>
+                <div>WeCare</div>
+                <div className="text-xs">RCM</div>
               </div>
             </div>
 
@@ -77,7 +77,7 @@ export default function MedicalBillingSection() {
                 SOLUTIONS BY SPECIALTY
               </p>
 
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+              <h1 className="text-3xl lg:text-4xl font-bold text-gray-700 leading-tight">
                 Customized Billing Solutions
                 <br />
                 For Your Medical{" "}
