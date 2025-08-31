@@ -5,18 +5,7 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 
 const cards = [
-  {
-    title: "Blog & Articles",
-    desc: "Read our latest blogs and articles written by healthcare professionals.",
-    image: "/Blogs-and-articles.png", // Replace with actual path
-    href: "/Blog",
-  },
-  {
-    title: "Live Chat",
-    desc: "Chat with our available agent and get answered to your quick queries.",
-    image: "/Live-Chat.png",
-    href: "/LiveChat",
-  },
+  
   {
     title: "Talk to Sales",
     desc: "Get everything needed for your practice performance under RCM Centric.",
@@ -49,16 +38,7 @@ export default function SupportPage() {
       {/* Top Section */}
       <div className="bg-blue-700 py-16 px-4 text-center relative">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-8">How can we help?</h1>
-        <div className="max-w-xl mx-auto flex items-center shadow overflow-hidden">
-          <input
-            type="text"
-            placeholder="Search all help and learning resources"
-            className="flex-1 h-14 px-6 text-lg outline-none border-none bg-white rounded-l"
-          />
-          <button className="h-14 px-6 bg-gray-100 hover:bg-red-400 rounded-r flex items-center justify-center">
-            <Search className="text-blue-700" />
-          </button>
-        </div>
+        
       </div>
       {/* Features and Benefits Link */}
       <div className="py-8 text-center bg-white">
