@@ -78,9 +78,14 @@ export default function FeaturesPage() {
                 <p className="text-white text-base sm:text-lg mb-6">
                     Our managed healthcare billing services simplify your entire experience, allowing you to stay focused on growing your practice.
                 </p>
-                <button className="bg-red-400 hover:bg-red-500 text-white mb-10 font-bold px-8 py-3 rounded-full text-lg shadow-md transition">
+                <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
+
+                <Button
+                    className="bg-red-400 hover:bg-white hover:text-blue-700 text-white px-8 py-3 rounded-full text-md shadow-md transition mb-10"
+                >
                     GET STARTED NOW
-                </button>
+                </Button>
+                </Link>
             </section>
 
             {/* Features Card Section */}
@@ -457,7 +462,7 @@ export default function FeaturesPage() {
                             complexities & technicalities of moving your practice.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link href="/Pricing">
+                            <Link href="/Pricing" target="_blank" rel="noopener noreferrer">
                                 <Button
                                     className="bg-white border-2 rounded-full border-blue-600 text-blue-600 hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto"
                                 >
