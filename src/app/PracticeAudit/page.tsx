@@ -196,7 +196,10 @@ function page() {
                         </h2>
 
                         {/* Paragraph with vertical red line */}
-                        <div className="flex items-start gap-4 mt-4">
+                        <div 
+                        ref={ref}
+                        className={`flex items-start gap-4 mt-4 transition-all duration-1000 ease-out transform 
+        ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
                             <div className="w-1 h-35 bg-red-500"></div>
                             <p className="text-gray-600 mb-5 max-w-lg">
                                 A thorough audit of your practice can uncover hidden errors and inefficiencies,
@@ -208,7 +211,10 @@ function page() {
                         </div>
 
                         {/* Buttons */}
-                        <div className="space-x-4 mt-4">
+                        <div
+                        ref={ref}
+                        className={`space-x-4 mt-4 transition-all duration-1000 ease-out transform 
+        ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
                             {/* TALK TO SALES */}
                             <Link href="/TalktoSales" >
                             <Button
@@ -219,17 +225,22 @@ function page() {
                             </Link>
 
                             {/* GET IN TOUCH */}
+                            <Link href="/ContactUs" >
                             <Button
                                 variant="outline"
                                 className="bg-white text-gray-700 border-none hover:text-red-500 transition-colors duration-300"
                             >
                                 <span className="mr-2">&gt;&gt;</span> Get in Touch
                             </Button>
+                            </Link>
                         </div>
                     </div>
 
                     {/* Right column: Image */}
-                    <div className="flex-1 flex justify-center">
+                    <div 
+                    ref={ref}
+                    className={`flex-1 flex justify-center transition-all duration-1000 ease-out transform 
+        ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
                         <Image
                             src="/Webpage-illustrations-and-imags-23.png"
                             alt="Billing Illustration"
@@ -248,7 +259,10 @@ function page() {
         ${sectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
             >
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div 
+                    ref={sectionref}
+                    className={`flex flex-col md:flex-row items-center justify-between gap-8 transition-all duration-1000 ease-out transform 
+        ${sectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
                         {/* Left Column - Image */}
                         <div className="md:w-1/2 flex justify-center">
                             <Image
@@ -264,8 +278,14 @@ function page() {
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
                                 Identifying Common Practice Pain Points
                             </h2>
-                            <div className="h-[2px] w-26 bg-red-500 mt-2 mb-4 mx-auto md:mx-0 md:ml-0"></div>
-                            <p className="text-gray-700 mb-4">
+                            <div 
+                            ref={sectionref}
+                            className={`h-[2px] w-26 bg-red-500 mt-2 mb-4 mx-auto md:mx-0 md:ml-0 transition-all duration-1000 ease-out transform 
+        ${sectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}></div>
+                            <p 
+                            ref={sectionref}
+                            className={`text-gray-700 mb-4 transition-all duration-1000 ease-out transform 
+        ${sectionisVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
 
                                 Is your practice bleeding? Or you're leaving something on the table?
                                 We recognize that these issues may appear commonplace; however,
@@ -363,7 +383,10 @@ function page() {
                     <div className="flex flex-col md:flex-row items-center justify-between gap-8">
                         {/* Left Column - Text Content (moved here) */}
                         <div className="md:w-1/2">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
+                            <h2 
+                            ref={section2ref}
+                            className={`text-3xl md:text-4xl font-bold text-gray-700 mb-4 transition-all duration-1000 ease-out transform 
+                ${section2isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}>
                                 Identifying Common Practice Pain Points
                             </h2>
                             <div className="h-[2px] w-26 bg-red-500 mt-2 mb-4 mx-auto md:mx-0 md:ml-0"></div>
@@ -468,7 +491,7 @@ function page() {
                             </p>
 
                             <Button
-                                className="bg-red-500 rounded-b-md text-white hover:bg-blue-600 transition-colors duration-300"
+                                className="bg-blue-700 rounded-b-md text-white hover:bg-red-500 transition-colors duration-300"
                             >
                                 <Phone size={18} className="mr-2" /> 123 xyz
                             </Button>
