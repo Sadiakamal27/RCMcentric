@@ -100,7 +100,7 @@ export default function RCMCentricSection() {
                 <h2 className="text-base sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-6 leading-tight">
                   Connect for a free Practice Audit to build out your tailored improvement plan
                 </h2>
-                <Link href="/ContactUs">
+                <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-8 py-2 sm:py-3 text-sm sm:text-lg transform hover:scale-105 transition-all duration-200">
                   Connect Now <ExternalLink className="w-5 h-5 ml-2" />
                 </Button>
