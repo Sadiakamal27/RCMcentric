@@ -196,7 +196,7 @@ export default function SolutionsSection({
                 <SelectItem value="orthopaedic-surgery">Orthopaedic Surgery</SelectItem>
                 <SelectItem value="orthopaedic-trauma">Orthopaedic Trauma</SelectItem>
                 <SelectItem value="orthopedic-surgery">Orthopedic Surgery</SelectItem>
-                </div>
+              </div>
             </SelectContent>
           </Select>
         )}
@@ -211,67 +211,81 @@ export default function SolutionsSection({
 
         {/* Sheet Form */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetContent side="right" className="max-w-md p-0 w-full">
-            <div className="p-5 sm:p-9 space-y-4 bg-white rounded-xl m-1 shadow-lg">
-              <div className="flex justify-center">
-                <img
-                  src="/wcformlogo.png"
-                  alt="Logo"
-                  className="h-12 w-32 sm:h-15 sm:w-40 mb-2 object-contain"
-                />
-              </div>
-              <div className="space-y-4">
-                <h2 className="text-base sm:text-lg font-bold text-center">
-                  Get Solution in 24 Hours
-                </h2>
-                <p className="text-xs sm:text-sm text-gray-500 text-center">
-                  Please tell us more about your business and get connected with an expert.
-                </p>
-                <form className="space-y-3 sm:space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Full Name *"
-                    className="w-full border border-gray-200 p-2 rounded text-sm"
+          <SheetContent side="right" className="max-w-md w-full p-0">
+            <div className="flex flex-col h-full bg-white rounded-xl m-1 shadow-lg">
+              {/* Scrollable content */}
+              <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-9 space-y-4">
+                {/* Logo */}
+                <div className="flex justify-center">
+                  <img
+                    src="/wcformlogo.png"
+                    alt="Logo"
+                    className="h-10 w-28 sm:h-12 sm:w-36 md:h-15 md:w-40 mb-2 object-contain"
                   />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number *"
-                    className="w-full border border-gray-200 p-2 rounded text-sm"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Work Email *"
-                    className="w-full border border-gray-200 p-2 rounded text-sm"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Practice Name *"
-                    className="w-full border border-gray-200 p-2 rounded text-sm"
-                  />
-                  <textarea
-                    placeholder="Enter your message here (Optional)"
-                    className="w-full border border-gray-200 p-3 sm:p-4 rounded text-sm"
-                  ></textarea>
+                </div>
 
-                  {/* reCAPTCHA widget */}
-                  <div className="flex justify-center my-2">
-                    <ReCaptcha
-                      sitekey="YOUR_RECAPTCHA_SITE_KEY"
-                      onChange={handleRecaptchaChange}
+                {/* Heading */}
+                <div className="space-y-3 sm:space-y-4">
+                  <h2 className="text-base sm:text-lg md:text-xl font-bold text-center">
+                    Get Solution in 24 Hours
+                  </h2>
+                  <p className="text-xs sm:text-sm md:text-base text-gray-500 text-center">
+                    Please tell us more about your business and get connected with an expert.
+                  </p>
+
+                  {/* Form Fields */}
+                  <form className="space-y-3 sm:space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Full Name *"
+                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
                     />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full text-white bg-blue-600"
-                  // disabled={!recaptchaValue}
-                  >
-                    Connect Now
-                  </Button>
-                </form>
+                    <input
+                      type="tel"
+                      placeholder="Phone Number *"
+                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Work Email *"
+                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Practice Name *"
+                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+                    />
+                    <textarea
+                      placeholder="Enter your message here (Optional)"
+                      className="w-full border border-gray-200 px-3 py-2 sm:py-3 rounded text-sm sm:text-base"
+                    ></textarea>
+
+                    {/* reCAPTCHA widget */}
+                    <div className="flex justify-center my-2">
+                      <ReCaptcha
+                        sitekey="6LdktL8rAAAAAL9lgn24ViVPUHOaUPfD_qufGxiG"
+                        onChange={handleRecaptchaChange}
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              {/* Sticky Button */}
+              <div className="p-4 sm:p-6 border-t bg-white">
+                <Button
+                  type="submit"
+                  className="w-full text-white bg-blue-600 hover:bg-blue-700 text-sm sm:text-base py-2 sm:py-3"
+                // disabled={!recaptchaValue}
+                >
+                  Connect Now
+                </Button>
               </div>
             </div>
           </SheetContent>
         </Sheet>
+
+
       </div>
     </div>
   );
