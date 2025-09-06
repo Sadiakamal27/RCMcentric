@@ -25,6 +25,7 @@ import RCMBenefitSection from "@/components/RCMBenefitSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import SolutionSection from "@/components/SolutionsSection";
 import AutoPlayVideo from "@/components/AutoPlayVideo";
+import HpForms from "@/components/Hp-Forms";
 export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -170,15 +171,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Chat Widget */}
-        <div className="fixed bottom-6 left-6 z-50">
-          <Button
-            size="lg"
-            className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg"
-          >
-            <MessageCircle className="w-6 h-6" />
-          </Button>
-        </div>
+       
       </section>
 
       {/* Features Section */}
@@ -359,7 +352,7 @@ export default function HomePage() {
 
           {/* Call to Action Button */}
           <div className="text-center">
-          <Link href="/TalktoSales" >
+          <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
             <Button className="bg-blue-600 hover:bg-red-500 cursor-pointer text-white px-8 py-3 text-base sm:text-md w-full sm:w-auto">
               Talk to an Expert <ExternalLink className="w-5 h-5 ml-2" />
             </Button>
@@ -373,6 +366,12 @@ export default function HomePage() {
       <RCMBenefitSection />
 
       <ExpertiseSection />
+      <HpForms />
+
+
+     
+
+
     </div>
   );
 }
