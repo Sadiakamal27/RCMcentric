@@ -6,13 +6,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
   Play,
-  MessageCircle,
   BarChart3,
   DollarSign,
   CalendarClock,
   Trophy,
   ExternalLink,
-  ShipWheelIcon as Wheelchair,
+ 
   
 } from "lucide-react";
 
@@ -24,8 +23,6 @@ import OnboardingPage from "@/components/OnBoardingPage";
 import RCMBenefitSection from "@/components/RCMBenefitSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import SolutionSection from "@/components/SolutionsSection";
-import AutoPlayVideo from "@/components/AutoPlayVideo";
-import HpForms from "@/components/Hp-Forms";
 export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -366,7 +363,7 @@ export default function HomePage() {
       <RCMBenefitSection />
 
       <ExpertiseSection />
-      <HpForms />
+      
 
 
      
