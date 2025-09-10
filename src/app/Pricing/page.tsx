@@ -1,13 +1,21 @@
-import React from "react";
+"use client"
+import { Button } from "@/components/ui/button";
+import React, { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Loader2 } from "lucide-react";
 
 function page() {
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   return (
     <div>
       <section className="min-h-screen py-12 bg-blue-800  text-white">
         <div className="max-w-7xl mx-auto mb-3 px-1 mt-10 flex flex-col md:flex-row items-center justify-center">
           <div className="mb-8 md:mb-0 md:w-1/2">
             <h2 className="text-3xl font-bold mb-4">Get Pricing Details</h2>
-             <hr className="w-29 h-1 mt-3 bg-white mb-6" />
+            <hr className="w-29 h-1 mt-3 bg-white mb-6" />
             <p className="mb-6 p-1 ">
               For more than 10 years, we've been helping physicians, clinics,
               group practices, and hospital-owned physician groups with their
@@ -17,7 +25,7 @@ function page() {
             </p>
             <div className="relative">
               <img
-                src="/calculator-graphic.jpg"
+                src="/Plan-and-pricing-02.svg"
                 alt="Pricing illustration"
                 className="w-100 h-70 max-w-lg"
               />
@@ -28,106 +36,196 @@ function page() {
               Please enter your practice details to see estimated prices for our
               services
             </p>
+
             <div className="min-h-[400px]">
-            <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    First Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-1 p-2 w-full  focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded "
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Last Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Work Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Work Phone <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Practice Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Job Role <span className="text-red-500">*</span>
-                  </label>
-                  <select className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded" required>
-                    <option value="" >Select Job Role</option>
-                    <option value="doctor">Doctor</option>
-                    <option value="admin">Administrator</option>
-                  </select>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Number of Providers *
-                  </label>
-                  <select className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded" required>
-                    <option value="">Select Number</option>
-                    <option value="1">1</option>
-                    <option value="2-5">2-5</option>
-                    <option value="6-10">6-10</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700">
-                    Monthly Collection *
-                  </label>
-                  <select className="mt-1 p-2 w-full focus:border-gray-300 focus:ring-0 focus:outline-none shadow rounded" required>
-                    <option value="">Select Amount</option>
-                    <option value="0-50k">$0 - $50k</option>
-                    <option value="50k-100k">$50k - $100k</option>
-                    <option value="100k+">$100k+</option>
-                  </select>
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+              <form
+                className="space-y-4"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  setIsSubmitting(true) //show spinner
+                  // 👇 Run built-in validation
+                  if (!form.checkValidity()) {
+                    form.reportValidity(); // shows default browser error messages
+                    return; // stop here
+                  }
+    
+                  const formData = new FormData(form);
+                  const data = Object.fromEntries(formData.entries());
+    
+                  try {
+                    const res = await fetch("/api/send", {   // make sure correct route
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify(data),
+                    });
+    
+                    if (res.ok) {
+                      alert("✅ Your request has been sent successfully!");
+                      form.reset();
+                    } else {
+                      alert("❌ Failed to send. Please try again.");
+                    }
+                  } catch (err) {
+                    console.error(err);
+                    alert("❌ Something went wrong. Try again later.");
+                  }
+                  finally {
+                    // ✅ stop loading AFTER popup has been shown
+                    setIsSubmitting(false)}
+                }}
               >
-                $ View Pricing
-              </button>
-            </form>
+                {/* Hidden field to identify this form */}
+                <input type="hidden" name="formName" value="Pricing Form" />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      First Name <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      name="firstName"
+                      placeholder="Enter First Name"
+                      required
+                      className="border-t-0 border-l-0 border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300 w-full"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Last Name <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      name="lastName"
+                      placeholder="Enter Last Name"
+                      required
+                      className="border-t-0 border-l-0 border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300 w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Work Email <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      name="workEmail"
+                      placeholder="Enter Work Email"
+                      type="email"
+                      required
+                      className=" border-t-0 border-l-0 border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300 w-full"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Work Phone <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      name="workPhone"
+                      placeholder="Enter Work Phone"
+                      type="tel"
+                      required
+                      className="border-t-0 border-l-0 border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300 w-full"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Practice Name <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      name="practiceName"
+                      placeholder="Enter Practice Name"
+                      required
+                      className=" border-t-0 border-l-0 border-r-0 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300 w-full"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Job Role <span className="text-red-500">*</span>
+                    </label>
+                    <Select name="jobRole" required>
+                      <SelectTrigger className="w-full  border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+        focus:outline-none focus:ring-0 focus:ring-offset-0
+        data-[state=open]:ring-0 data-[state=open]:outline-none
+        focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <SelectValue placeholder="Select Job Role" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white w-full mt-2 border-t-0 border-black rounded-none" align="start">
+                        <SelectItem value="physician" className="hover:bg-blue-600 hover:text-white cursor-pointer">Physician / Practice</SelectItem>
+                        <SelectItem value="manager" className="hover:bg-blue-600 hover:text-white cursor-pointer">Practice Manager</SelectItem>
+                        <SelectItem value="admin" className="hover:bg-blue-600 hover:text-white cursor-pointer">Laboratory</SelectItem>
+                        <SelectItem value="consultant" className="hover:bg-blue-600 hover:text-white cursor-pointer">Consultant</SelectItem>
+                        <SelectItem value="hospital" className="hover:bg-blue-600 hover:text-white cursor-pointer">Hospital</SelectItem>
+                        <SelectItem value="billing" className="hover:bg-blue-600 hover:text-white cursor-pointer">Billing Company</SelectItem>
+                        <SelectItem value="other" className="hover:bg-blue-600 hover:text-white cursor-pointer">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Number of Providers <span className="text-red-500">*</span>
+                    </label>
+                    <Select name="numProviders" required>
+                      <SelectTrigger className="w-full  border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+        focus:outline-none focus:ring-0 focus:ring-offset-0
+        data-[state=open]:ring-0 data-[state=open]:outline-none
+        focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <SelectValue placeholder="Select Number of Providers" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white w-full mt-2 border-t-0 border-black rounded-none">
+                        <SelectItem value="1" className="hover:bg-blue-600 hover:text-white cursor-pointer">1 Provider</SelectItem>
+                        <SelectItem value="2-5" className="hover:bg-blue-600 hover:text-white cursor-pointer">2-5 Providers</SelectItem>
+                        <SelectItem value="6-10" className="hover:bg-blue-600 hover:text-white cursor-pointer">6-10 Providers</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700">
+                      Monthly Collection <span className="text-red-500">*</span>
+                    </label>
+                    <Select name="monthlyCollection" required>
+                      <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+        focus:outline-none focus:ring-0 focus:ring-offset-0
+        data-[state=open]:ring-0 data-[state=open]:outline-none
+        focus-visible:ring-0 focus-visible:ring-offset-0">
+                        <SelectValue placeholder="Select Monthly Collection" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white  w-full mt-2 border-t-0 border-black rounded-none">
+                        <SelectItem value="0-50k" className="hover:bg-blue-600 hover:text-white cursor-pointer">$0 - $50k</SelectItem>
+                        <SelectItem value="50k-100k" className="hover:bg-blue-600 hover:text-white cursor-pointer">$50k - $100k</SelectItem>
+                        <SelectItem value="100k+" className="hover:bg-blue-600 hover:text-white cursor-pointer">$100k+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <Button
+              type="submit"
+              className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
+              disabled={isSubmitting} // prevent multiple clicks
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                " $ View Pricing"
+              )}
+            </Button>
+              </form>
+
+
             </div>
+
           </div>
         </div>
       </section>
