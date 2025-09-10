@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
+import Image from "next/image";
 // Chart Data (your code)
 const chartData = [
   {
@@ -154,9 +154,11 @@ export default function RCMBenefitSection() {
           {/* Left Section */}
           <div className="flex items-center gap-4 flex-1">
             {/* Icon */}
-            <img
+            <Image
               src="/dollar.png"
               alt="Cost Calculator Icon"
+              width={40}   // w-10 = 40px
+              height={40}  // h-10 = 40px
               className="w-10 h-10"
             />
 
@@ -183,10 +185,12 @@ export default function RCMBenefitSection() {
 
           {/* Right Image */}
           <div className="flex-1 flex justify-end">
-            <img
+            <Image
               src="/calculator-graphic.jpg"
               alt="Calculator Graphic"
-              className="w-32 h-auto"
+              width={128} // w-32 = 128px
+              height={0} // set any number, Next.js needs a value (can be adjusted)
+              className="h-auto"
             />
           </div>
         </div>
