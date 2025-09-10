@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function MedicalBillingSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -64,11 +65,14 @@ export default function MedicalBillingSection() {
           {/* Left Content */}
           <div className="space-y-8">
             {/* Logo */}
-            <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center">
-              <div className="text-white font-bold text-lg">
-                <div>WeCare</div>
-                <div className="text-xs">RCM</div>
-              </div>
+            <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center">
+              <Image
+                src="/rcmlogo2 wc.png"   // 👈 replace with your actual image file
+                alt="WeCare RCM Logo"
+                width={80}               // matches w-20 (80px)
+                height={80}              // matches h-20 (80px)
+                className="rounded-2xl object-contain"
+              />
             </div>
 
             {/* Header */}
@@ -117,16 +121,16 @@ export default function MedicalBillingSection() {
               ))}
             </div>
             <Link href="/Specialties" target="_blank" rel="noopener noreferrer">
-            <Button
-              className={`bg-blue-600 hover:bg-red-500 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 
+              <Button
+                className={`bg-blue-600 hover:bg-red-500 text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 
      transition-transform duration-300 
      
     ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
-              style={{ transitionDelay: "800ms" }}
-            >
-              <span>View All Specialties</span>
-              <ExternalLink className="w-4 h-4" />
-            </Button>
+                style={{ transitionDelay: "800ms" }}
+              >
+                <span>View All Specialties</span>
+                <ExternalLink className="w-4 h-4" />
+              </Button>
             </Link>
 
           </div>
