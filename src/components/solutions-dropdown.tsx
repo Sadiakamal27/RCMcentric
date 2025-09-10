@@ -12,7 +12,7 @@ export function SolutionsDropdown() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 focus:outline-none focus-visible:ring-0 focus-visible:border-none"
+          className="flex items-center cursor-pointer font-bold space-x-1 text-gray-700 hover:text-red-500 focus:outline-none focus-visible:ring-0 focus-visible:border-none"
         >
           <span>Solutions</span>
           <ChevronDown className="w-4 h-4" />
@@ -44,7 +44,7 @@ export function SolutionsDropdown() {
                   Get everything needed for your practice performance under WeCare RCM's professional provider centric
                   solutions.
                 </p>
-                <Link href="/TalktoSales" >
+                <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="outline"
                   size="sm"
@@ -72,7 +72,7 @@ export function SolutionsDropdown() {
                   </div>
                 </div>
                 <div>
-                  <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
+                    <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer">
 
                     <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
                       Medical Billing Services
