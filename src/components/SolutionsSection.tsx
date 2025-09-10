@@ -1,7 +1,7 @@
 // components/SolutionsSection.tsx
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Select,
   SelectTrigger,
@@ -10,62 +10,98 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import ReCaptcha from "react-google-recaptcha";
+import { Loader2 } from "lucide-react";
 
 type RecaptchaValue = string | null;
 
 interface SolutionsSectionProps {
-  buttonText?: string; // Optional button label
-  buttonClassName?: string; // Optional extra classes for styling
-  showDropdown?: boolean; // Control whether dropdown appears
-  selectClassName?: string; // ✅ New prop for select box styling
+  buttonText?: string;
+  buttonClassName?: string;
+  showDropdown?: boolean;
+  selectClassName?: string;
 }
 
 export default function SolutionsSection({
+
+
   buttonText = "Get Solution →",
   buttonClassName = "text-white bg-blue-500 hover:bg-white hover:text-blue-700 ",
   showDropdown = true,
-  selectClassName = "border text-gray-500", // ✅ default style
+  selectClassName = "border text-gray-500",
 }: SolutionsSectionProps) {
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState<RecaptchaValue>(null);
-
-  const handleClick = (e: React.MouseEvent) => {
-    if (showDropdown && !selectedSpecialty) {
-      e.preventDefault();
-      alert("Please select a specialty first.");
-      setIsOpen(false);
-      return;
-    }
-    setIsOpen(true);
-  };
+  const [loading, setLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleRecaptchaChange = (value: RecaptchaValue) => {
     setRecaptchaValue(value);
   };
 
+  // add inside your component (before return)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSubmitting(true); // ✅ show loader immediately
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const email =
+      (formData.get("email") as string) ||
+      (formData.get("workEmail") as string) ||
+      null;
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          formName: "Solutions Form", // ✅ static name
+        }),
+      });
+
+      const result = await res.json();
+      if (result.success) {
+        alert("✅ Form submitted successfully!");
+        form.reset();
+        setRecaptchaValue(null);
+        setIsOpen(false);
+      } else {
+        alert("❌ Submission failed: " + result.message);
+      }
+    } catch (err) {
+      console.error(err);
+      alert("❌ Something went wrong!");
+    }
+    
+    finally {
+      // ✅ stop loading AFTER popup has been shown
+      setIsSubmitting(false)
+    }
+  }
+
+
+
   return (
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row gap-4 w-full">
-        {/* Conditionally render dropdown */}
         {showDropdown && (
           <Select
             onValueChange={(value) => setSelectedSpecialty(value)}
             value={selectedSpecialty}
+            required
           >
             <SelectTrigger
               className={`bg-white w-full rounded-none  
-                outline-none focus:outline-none focus:ring-0 focus:ring-offset-0 
-    data-[state=open]:ring-0 data-[state=open]:ring-offset-0
-    [&:focus-visible]:ring-0 [&:focus-visible]:ring-offset-0
+                outline-none focus:outline-none focus:ring-0 focus:ring-offset-0
                 ${selectClassName}`}
             >
               <SelectValue placeholder="Select Your Specialty" />
             </SelectTrigger>
-            <SelectContent
-              className="bg-white max-h-60 overflow-y-auto custom-scrollbar !p-0 !m-0"
-              position="popper" // optional: ensures it positions correctly
-            >
+            <SelectContent className="bg-white max-h-60 overflow-y-auto custom-scrollbar !p-0 !m-0">
               <div className="max-h-60 overflow-y-auto custom-scrollbar">
                 <SelectItem value="abdominal-radiology">Abdominal Radiology</SelectItem>
                 <SelectItem value="acupuncture">Acupuncture</SelectItem>
@@ -201,21 +237,24 @@ export default function SolutionsSection({
           </Select>
         )}
 
-        {/* Get Solution Button */}
-        <Button
-          className={`w-full sm:w-56 rounded-none px-4 ${buttonClassName}`}
-          onClick={handleClick}
-        >
-          {buttonText}
-        </Button>
-
-        {/* Sheet Form */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button
+              className={`w-full sm:w-56 rounded-none px-4 ${buttonClassName}`}
+            >
+              {buttonText}
+            </Button>
+          </SheetTrigger>
+
           <SheetContent side="right" className="max-w-md w-full p-0">
-            <div className="flex flex-col h-full bg-white rounded-xl m-1 shadow-lg">
-              {/* Scrollable content */}
+            {/* Accessible description for screen readers */}
+            <p id="sheet-description" className="sr-only">
+              Please fill this form to connect with an expert within 24 hours.
+            </p>
+            <div className="flex flex-col h-full bg-white rounded-xl m-1 shadow-lg"
+              aria-describedby="sheet-description">
+
               <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-9 space-y-4">
-                {/* Logo */}
                 <div className="flex justify-center">
                   <img
                     src="/wcformlogo.png"
@@ -224,7 +263,6 @@ export default function SolutionsSection({
                   />
                 </div>
 
-                {/* Heading */}
                 <div className="space-y-3 sm:space-y-4">
                   <h2 className="text-base sm:text-lg md:text-xl font-bold text-center">
                     Get Solution in 24 Hours
@@ -233,59 +271,68 @@ export default function SolutionsSection({
                     Please tell us more about your business and get connected with an expert.
                   </p>
 
-                  {/* Form Fields */}
-                  <form className="space-y-3 sm:space-y-4">
-                    <input
-                      type="text"
-                      placeholder="Full Name *"
-                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number *"
-                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
-                    />
-                    <input
-                      type="email"
-                      placeholder="Work Email *"
-                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Practice Name *"
-                      className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
-                    />
-                    <textarea
-                      placeholder="Enter your message here (Optional)"
-                      className="w-full border border-gray-200 px-3 py-2 sm:py-3 rounded text-sm sm:text-base"
-                    ></textarea>
+                  {/* Form */}
+                  <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
+  <input
+    type="text"
+    placeholder="Full Name *"
+    className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+  />
+  <input
+    type="tel"
+    placeholder="Phone Number *"
+    className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+  />
+  <input
+    type="email"
+    name="email"   // ✅ add this so we can extract
+    placeholder="Work Email *"
+    required
+    className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+  />
+  <input
+    type="text"
+    placeholder="Practice Name *"
+    className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
+  />
+  <textarea
+    placeholder="Enter your message here (Optional)"
+    className="w-full border border-gray-200 px-3 py-2 sm:py-3 rounded text-sm sm:text-base"
+  ></textarea>
 
-                    {/* reCAPTCHA widget */}
-                    <div className="flex justify-center my-2">
-                      <ReCaptcha
-                        sitekey="6LdktL8rAAAAAL9lgn24ViVPUHOaUPfD_qufGxiG"
-                        onChange={handleRecaptchaChange}
-                      />
-                    </div>
-                  </form>
+  {/* reCAPTCHA widget */}
+  <div className="flex justify-center my-2">
+    <ReCaptcha
+      sitekey="6LdktL8rAAAAAL9lgn24ViVPUHOaUPfD_qufGxiG"
+      onChange={handleRecaptchaChange}
+    />
+  </div>
+
+  {/* Sticky Button inside form */}
+  <div className="p-4 sm:p-6 border-t bg-white">
+    <Button
+      type="submit"
+      className="w-full text-white bg-blue-600 hover:bg-blue-700 text-sm sm:text-base py-2 sm:py-3"
+      disabled={!recaptchaValue || isSubmitting} // ✅ enable only when captcha ok
+      
+    >
+      {isSubmitting ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Connecting...
+                </>
+              ) : (
+                " Connect Now"
+              )}
+    </Button>
+  </div>
+</form>
+
                 </div>
-              </div>
-
-              {/* Sticky Button */}
-              <div className="p-4 sm:p-6 border-t bg-white">
-                <Button
-                  type="submit"
-                  className="w-full text-white bg-blue-600 hover:bg-blue-700 text-sm sm:text-base py-2 sm:py-3"
-                // disabled={!recaptchaValue}
-                >
-                  Connect Now
-                </Button>
               </div>
             </div>
           </SheetContent>
         </Sheet>
-
-
       </div>
     </div>
   );
