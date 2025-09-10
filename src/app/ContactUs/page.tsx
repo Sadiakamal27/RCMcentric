@@ -1,13 +1,16 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { Loader2 } from "lucide-react"
 
 
 const topCategories = [
-  
+
   {
     title: "Help & FAQ's",
     desc: "In our FAQ's you will find the answer to most frequently asked questions.",
@@ -31,6 +34,31 @@ const topCategories = [
 
 
 export default function ContactSection() {
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+
+
+  const [selected, setSelected] = useState<string[]>([])
+
+  const toggleSelection = (value: string) => {
+    setSelected((prev) =>
+      prev.includes(value)
+        ? prev.filter((v) => v !== value)
+        : [...prev, value]
+    )
+  }
+
+  const options = [
+    "Billing Services",
+    "Credentialing",
+    "Claims Coding",
+    "Pricing",
+    "Other",
+  ]
+
+
+
   return (
     <>
       <div className="relative bg-blue-800 text-white  py-20 px-10 md:px-12">
@@ -50,77 +78,146 @@ export default function ContactSection() {
         <div className="w-full md:w-1/2 bg-white p-6 sm:p-10 rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-gray-800 mb-5">Write us below</h2>
           <hr className="w-12 h-0.5 bg-red-500 mb-4" />
-          <form className="space-y-4">
+          <form
+            className="space-y-4"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.currentTarget;
+              setIsSubmitting(true) //show spinner
+              // 👇 Run built-in validation
+              if (!form.checkValidity()) {
+                form.reportValidity(); // shows default browser error messages
+                return; // stop here
+              }
+
+              const formData = new FormData(form);
+              const data = Object.fromEntries(formData.entries());
+
+              try {
+                const res = await fetch("/api/send", {   // make sure correct route
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(data),
+                });
+
+                if (res.ok) {
+                  alert("✅ Your request has been sent successfully!");
+                  form.reset();
+                } else {
+                  alert("❌ Failed to send. Please try again.");
+                }
+              } catch (err) {
+                console.error(err);
+                alert("❌ Something went wrong. Try again later.");
+              }
+              finally {
+                // ✅ stop loading AFTER popup has been shown
+                setIsSubmitting(false)}
+            }}
+          >
+            {/* Hidden field to identify this form */}
+            <input type="hidden" name="formName" value="Contact Form" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4">
               <Input
+                name="fullName"
                 type="text"
                 placeholder="Full Name *"
                 className="w-full border-2 border-gray-300 focus:border-blue-900 focus:ring-0 hover:shadow-lg transition duration-300"
                 required
               />
               <Input
+                name="phoneNumber"
                 type="tel"
                 placeholder="Phone Number"
                 className="w-full border-2 border-gray-300 focus:border-blue-900 focus:ring-0 hover:shadow-lg transition duration-300"
+                required
               />
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Input
+                name="email"
                 type="email"
                 placeholder="Email Address *"
                 className="w-full border-2 border-gray-300 focus:border-blue-900 focus:ring-0 hover:shadow-lg transition duration-300"
                 required
               />
               <Input
+                name="businessName"
                 type="text"
                 placeholder="Practice / Business Name *"
                 className="w-full border-2 border-gray-300 focus:border-blue-900 focus:ring-0 hover:shadow-lg transition duration-300"
                 required
               />
             </div>
+
             <div>
               <label className="text-lg font-bold text-blue-800 mb-2 block">
                 What would you like to know? *
               </label>
+
               <div className="flex flex-wrap gap-4">
-                <label className="flex items-center space-x-2">
-                  <Checkbox id="billing" />
-                  <span className="text-gray-700">Billing Services</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <Checkbox id="credentialing" />
-                  <span className="text-gray-700">Credentialing</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <Checkbox id="claims" />
-                  <span className="text-gray-700">Claims Coding</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <Checkbox id="pricing" />
-                  <span className="text-gray-700">Pricing</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <Checkbox id="other" />
-                  <span className="text-gray-700">Other</span>
-                </label>
+                {options.map((item, index) => {
+                  const checked = selected.includes(item)
+                  return (
+                    <label key={item} className="flex items-center space-x-2">
+                      {/* UI checkbox */}
+                      <Checkbox
+                        id={item}
+                        checked={checked}
+                        onCheckedChange={() => toggleSelection(item)}
+                        required={selected.length === 0 && index === 0}
+                      />
+                      <span className="text-gray-700">{item}</span>
+                    </label>
+                  )
+                })}
               </div>
+
+              {/* ✅ Hidden input that carries selection and enforces required */}
+              <input
+                type="text"
+                name="interest"
+                value={selected.join(", ")}  // comma-separated list
+                required
+                readOnly
+                hidden
+              />
             </div>
+
+
             <Input
+              name="message"
               type="text"
               placeholder="Type your message here... (Optional)"
               className="w-full h-24 border-2 border-gray-300 focus:border-blue-900 focus:ring-0 hover:shadow-lg transition duration-300 resize-none"
             />
             <p className="text-sm text-gray-500">0 of 25 max characters.</p>
-            <div className="flex items-start sm:items-center space-x-2">
-              <Checkbox id="privacy" className="focus:border-blue-800 focus:ring-0" />
-              <label htmlFor="privacy" className="text-sm text-gray-700">
+
+            <div className="flex items-start sm:items-center space-x-2" >
+              <Checkbox required id="privacy" name="privacy" value="accepted" className="focus:border-blue-800 focus:ring-0" />
+              <label htmlFor="privacy" className="text-sm text-gray-700" >
                 By sending this form, I confirm that I have read and accept the Privacy Policy.
               </label>
             </div>
-            <Button className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500">
-              Submit Now
+
+            <Button
+              type="submit"
+              className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
+              disabled={isSubmitting} // prevent multiple clicks
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Submit Now"
+              )}
             </Button>
           </form>
+
         </div>
 
         {/* Right Section - Connect with RCM Centric */}
