@@ -39,48 +39,39 @@ function Header() {
           : "relative"
           } bg-white border-b border-gray-100 px-2 sm:px-4 py-4 transition-all duration-300`}
       >
-
         {/* Mobile Only: Logo, Get Pricing, Hamburger */}
-
         <div className="flex items-center justify-between w-full lg:hidden">
-          {/* Logo */}
-
-
-          <Link href="/" className="">
+          <Link href="/">
             <Image
               src="/wclogomain.png"
               alt="RCM Centric Logo"
-              width={120}    // required
-              height={40}    // required
-              unoptimized    // prevents optimization so GIF animation plays
+              width={120}
+              height={40}
+              priority // Preload logo
               className="h-8 w-auto animate-logo-slide"
             />
           </Link>
-
-          {/* Get Pricing Button */}
-          <Link href="/Pricing" className="">
+          <Link href="/Pricing">
             <Button className="rounded-full bg-red-400 hover:bg-red-500 text-white font-bold px-6 py-2 text-base">
               Get Pricing
             </Button>
           </Link>
-          {/* Hamburger Menu */}
           <Drawer>
             <DrawerTrigger asChild>
               <Button variant="ghost" size="icon" className="focus:outline-none">
                 <Menu className="w-8 h-8 text-blue-900" />
               </Button>
             </DrawerTrigger>
-            <DrawerContent className="bg-[#f3f6f8] p-0 w-full max-w-xs min-h-screen transition-transform duration-150 ease-out">
+            <DrawerContent className="bg-[#f3f6f8] p-0 w-full max-w-xs">
               <div className="flex flex-col h-full">
-                {/* Logo and Close */}
-                <div className="flex items-center justify-between px-4 pt-4 pb-2">
-                  <Link href="/" className="flex items-center space-x-2">
+                {/* Fixed Header with Logo and Close Button */}
+                <div className="flex items-center justify-between px-4 pt-4 pb-2 border-b border-gray-200">
+                  <Link href="/">
                     <Image
                       src="/wclogomain.png"
                       alt="RCM Centric Logo"
                       width={120}
                       height={40}
-                      unoptimized
                       className="h-8 w-auto"
                     />
                   </Link>
@@ -91,86 +82,80 @@ function Header() {
                   </DrawerClose>
                 </div>
 
-                {/* Navigation Links */}
-                <nav className="flex-1 flex flex-col gap-1 px-0">
-  <Link
-    href="/"
-    className={`block px-6 py-2 ${
-      pathname === "/"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Home
-  </Link>
+                {/* Scrollable Navigation */}
+                <nav className="flex-1 overflow-y-auto px-0">
+                  <div className="flex flex-col gap-1 py-2">
+                    <Link
+                      href="/"
+                      className={`block px-6 py-2 ${pathname === "/"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Home
+                    </Link>
 
-  <Link
-    href="/Specialties"
-    className={`block px-6 py-2 ${
-      pathname === "/Specialties"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Specialties
-  </Link>
+                    <Link
+                      href="/Specialties"
+                      className={`block px-6 py-2 ${pathname === "/Specialties"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Specialties
+                    </Link>
 
-  <Link
-    href="/CredentialingAndEnrollment"
-    className={`block px-6 py-2 ${
-      pathname === "/CredentialingAndEnrollment"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Credentialing
-  </Link>
+                    <Link
+                      href="/CredentialingAndEnrollment"
+                      className={`block px-6 py-2 ${pathname === "/CredentialingAndEnrollment"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Credentialing
+                    </Link>
 
-  <Link
-    href="/Pricing"
-    className={`block px-6 py-2 ${
-      pathname === "/Pricing"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Pricing
-  </Link>
+                    <Link
+                      href="/Pricing"
+                      className={`block px-6 py-2 ${pathname === "/Pricing"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Pricing
+                    </Link>
 
-  <Link
-    href="/GetAQuote"
-    className={`block px-6 py-2 ${
-      pathname === "/GetAQuote"
-        ? "font-semibold text-white bg-red-400  hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Get a Free Quote
-  </Link>
+                    <Link
+                      href="/GetAQuote"
+                      className={`block px-6 py-2 ${pathname === "/GetAQuote"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Get a Free Quote
+                    </Link>
 
-  <Link
-    href="/About"
-    className={`block px-6 py-2 ${
-      pathname === "/About"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    About
-  </Link>
+                    <Link
+                      href="/About"
+                      className={`block px-6 py-2 ${pathname === "/About"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      About
+                    </Link>
 
-  <Link
-    href="/ContactUs"
-    className={`block px-6 py-2 ${
-      pathname === "/ContactUs"
-        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-        : "text-black hover:bg-gray-200 cursor-pointer"
-    }`}
-  >
-    Contact Us
-  </Link>
-</nav>
-
+                    <Link
+                      href="/ContactUs"
+                      className={`block px-6 py-2 ${pathname === "/ContactUs"
+                        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+                        : "text-black hover:bg-gray-200 cursor-pointer"
+                        }`}
+                    >
+                      Contact Us
+                    </Link>
+                  </div>
+                </nav>
               </div>
             </DrawerContent>
           </Drawer>
@@ -181,16 +166,16 @@ function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2 mb-2 lg:mb-0">
             <div className="w-36 h-9 rounded flex items-center justify-center">
-            <Link href="/" className="flex items-center space-x-2">
-                    <Image
-                      src="/wclogomain.png"
-                      alt="RCM Centric Logo"
-                      width={120}
-                      height={40}
-                      unoptimized
-                      className="h-8 w-auto animate-logo-slide"
-                    />
-                  </Link>
+              <Link href="/" className="flex items-center space-x-2">
+                <Image
+                  src="/wclogomain.png"
+                  alt="RCM Centric Logo"
+                  width={120}
+                  height={40}
+                  unoptimized
+                  className="h-8 w-auto animate-logo-slide"
+                />
+              </Link>
             </div>
           </div>
           {/* Desktop Navigation */}
