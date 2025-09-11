@@ -2,19 +2,19 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Building2,
   Stethoscope,
   Users,
   Brain,
-  Search,
 } from "lucide-react";
 
 export default function SpecialtiesPage() {
   const primaryCareSpecialties = [
     "Family Medicine",
-    "Internal Medicine", 
+    "Internal Medicine",
     "Pediatrics",
     "Geriatrics",
     "General Practice",
@@ -179,7 +179,7 @@ export default function SpecialtiesPage() {
           </h1>
           <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
           <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-            RCM Centric provides streamlined decision-making across every
+            WeCare RCM provides streamlined decision-making across every
             medical specialty, delivering all the necessary information from
             charge entry to payments right when you need it, without the hassle
             of juggling reports.
@@ -259,9 +259,11 @@ export default function SpecialtiesPage() {
           <div className="flex items-start mb-8 sm:mb-12">
             {/* Icon */}
             <div className="w-8 h-8 sm:w-10 sm:h-10 mr-3 sm:mr-4 flex-shrink-0">
-              <img
+              <Image
                 src="/coding.png"
                 alt="Medical Icon"
+                width={500}      // ✅ set an appropriate width
+                height={500}     // ✅ set an appropriate height
                 className="w-full h-full object-contain"
               />
             </div>
@@ -300,12 +302,12 @@ export default function SpecialtiesPage() {
               </h2>
               <div className="w-24 h-1 bg-red-500"></div>
               <p className="text-base sm:text-lg text-gray-600">
-                RCM Centric is designed to enhance care delivery for independent
+                WeCare RCM is designed to enhance care delivery for independent
                 practices of all specialties. If you don't find your specialty
                 mentioned, please reach out to us to discover how we can assist
                 you.
               </p>
-              <Link href="/ContactUs">
+              <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
                 <Button className="bg-red-600 hover:bg-blue-500 rounded-full text-white px-8 py-3 w-full sm:w-auto">
                   Contact us
                 </Button>
@@ -316,7 +318,7 @@ export default function SpecialtiesPage() {
             <div className="w-full flex justify-center">
               <div className="w-48 h-48 sm:w-80 sm:h-80">
                 <img
-                  src="/female-doctor-on-using-laptop-25.svg"
+                  src="/female-doctor-on-using-laptop-25 (1).svg"
                   alt="Doctor"
                   className="w-full h-full object-contain"
                 />
@@ -330,7 +332,7 @@ export default function SpecialtiesPage() {
       <section className="py-10 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-2 sm:px-4 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            Engage RCM Centric For Your Specialty Billing Needs
+            Engage WeCare RCM For Your Specialty Billing Needs
           </h2>
           <div className="w-24 h-1 bg-red-500 mx-auto mb-6"></div>
           <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
@@ -340,14 +342,14 @@ export default function SpecialtiesPage() {
             and customized solution to our valuable clients.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/TalktoSales">
+            <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
               <Button
                 className="bg-white border-2 border-blue-600 text-blue-600 rounded-full hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto"
               >
                 Let's Talk <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
-            <Link href="/Pricing">
+            <Link href="/Pricing" target="_blank" rel="noopener noreferrer">
               <Button
                 className="bg-white border-2 rounded-full border-blue-600 text-blue-600 hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto"
               >
