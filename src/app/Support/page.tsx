@@ -2,7 +2,6 @@
 
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Search } from "lucide-react";
 
 const cards = [
   
@@ -43,7 +42,7 @@ export default function SupportPage() {
       {/* Features and Benefits Link */}
       <div className="py-8 text-center bg-white">
         <span className="font-semibold text-gray-700">
-          New to RCM Centric?{" "}
+          New to WeCare RCM?{" "}
           <span className="inline-block bg-black text-white text-xs px-2 py-1 rounded ml-1 mr-2 align-middle">NEW</span>
         </span>
         <span>
