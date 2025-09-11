@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 
 function page() {
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { handleSubmit, loading } = useFormSubmit()
 
   return (
     <div>
@@ -40,40 +40,7 @@ function page() {
             <div className="min-h-[400px]">
               <form
                 className="space-y-4"
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = e.currentTarget;
-                  setIsSubmitting(true) //show spinner
-                  // 👇 Run built-in validation
-                  if (!form.checkValidity()) {
-                    form.reportValidity(); // shows default browser error messages
-                    return; // stop here
-                  }
-    
-                  const formData = new FormData(form);
-                  const data = Object.fromEntries(formData.entries());
-    
-                  try {
-                    const res = await fetch("/api/send", {   // make sure correct route
-                      method: "POST",
-                      headers: { "Content-Type": "application/json" },
-                      body: JSON.stringify(data),
-                    });
-    
-                    if (res.ok) {
-                      alert("✅ Your request has been sent successfully!");
-                      form.reset();
-                    } else {
-                      alert("❌ Failed to send. Please try again.");
-                    }
-                  } catch (err) {
-                    console.error(err);
-                    alert("❌ Something went wrong. Try again later.");
-                  }
-                  finally {
-                    // ✅ stop loading AFTER popup has been shown
-                    setIsSubmitting(false)}
-                }}
+                onSubmit={handleSubmit}
               >
                 {/* Hidden field to identify this form */}
                 <input type="hidden" name="formName" value="Pricing Form" />
@@ -210,9 +177,9 @@ function page() {
                 <Button
               type="submit"
               className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
-              disabled={isSubmitting} // prevent multiple clicks
+              disabled={loading} // prevent multiple clicks
             >
-              {isSubmitting ? (
+              {loading ? (
                 <>
                   <Loader2 className="h-5 w-5 animate-spin" />
                   Sending...
@@ -232,5 +199,6 @@ function page() {
     </div>
   );
 }
+import { useFormSubmit } from "@/hook/useFormSubmit";
 
 export default page;
