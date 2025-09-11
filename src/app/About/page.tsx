@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
 import { SuccessSection } from "@/components/SuccessSection";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 
 function AboutPage() {
