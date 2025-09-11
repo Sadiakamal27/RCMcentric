@@ -130,7 +130,7 @@ function AboutPage() {
               patients through our billing and coding experts. We are a team of
               advanced skills to serve each healthcare specialty and hospitals
               to get maximum revenue. Our aim is to make healthcare billing easy
-              and accurate so you won’t lose any single coin and focus on your
+              and accurate so you won&apost lose any single coin and focus on your
               patient’s health that is very important.”
             </p>
           </div>
