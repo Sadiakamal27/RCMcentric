@@ -11,30 +11,20 @@ import Link from "next/link";
 import {
   ExternalLink,
   ChevronDown,
-  Stethoscope,
-  Heart,
-  Syringe,
-  Ear,
-  UserCheck,
-  Brain,
-  SmileIcon as Tooth,
-  Shield,
-  Camera,
-  Bone,
-  Users,
-  MessageSquare,
-  Sparkles,
+
 } from "lucide-react";
-import { div } from "framer-motion/m";
 
 export function SpecialtiesDropdown() {
   return (
     <DropdownMenu  >
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 cursor-pointer">
+        <Button
+          variant="ghost"
+          className="flex items-center font-bold space-x-1 text-gray-700 hover:text-red-500 cursor-pointer"
+        >
           <span>Specialties</span>
-          <ChevronDown className="w-3 h-3 " />
-        </button>
+          <ChevronDown className="w-3 h-3" />
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
         className="w-screen max-w-5xl items-center p-0 border-0 shadow-xl"
@@ -63,13 +53,13 @@ export function SpecialtiesDropdown() {
                   and billing team when you are.
                 </p>
                 <Link href="/TalktoSales" >
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="bg-transparent mt-5  border-white text-white hover:bg-white hover:text-blue-600"
-                >
-                  Talk to Sales <ExternalLink className="w-5 h-5  ml-2" />
-                </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="bg-transparent mt-5  border-white text-white hover:bg-white hover:text-blue-600"
+                  >
+                    Talk to Sales <ExternalLink className="w-5 h-5  ml-2" />
+                  </Button>
                 </Link>
               </div>
             </div>
@@ -84,10 +74,12 @@ export function SpecialtiesDropdown() {
                   <div className="flex items-center space-x-3 group  hover:bg-gray-50 p-1 rounded-lg transition-colors">
                     <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center">
                       <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
-                        <img
+                        <Image
                           src="/a-s.png"
                           alt="Telehealth Billing Icon"
-                          className="w-12 h-12 object-contain"
+                          width={48}   // w-12 = 48px
+                          height={48}  // h-12 = 48px
+                          className="object-contain"
                         />
                       </div>
                     </div>
@@ -99,10 +91,13 @@ export function SpecialtiesDropdown() {
                   <div className="flex items-center space-x-3 group  hover:bg-gray-50 p-1 rounded-lg transition-colors">
                     <div className="w-8 h-8 bg-red-50 rounded-lg flex items-center justify-center">
                       <div className="w-16 h-16  rounded-lg flex items-center justify-center mx-auto   transition-colors">
-                        <img
+
+                        <Image
                           src="/skin.png"
                           alt="Telehealth Billing Icon"
-                          className="w-12 h-12 object-contain"
+                          width={48}   // w-12 = 48px
+                          height={48}  // h-12 = 48px
+                          className="object-contain"
                         />
                       </div>
                     </div>
@@ -119,6 +114,7 @@ export function SpecialtiesDropdown() {
                           alt="Telehealth Billing Icon"
                           className="w-12 h-12 object-contain"
                         />
+                        
                       </div>
                     </div>
                     <span className="text-sm text-gray-700 ">
