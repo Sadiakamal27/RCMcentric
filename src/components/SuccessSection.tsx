@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
+import { ExternalLink } from "lucide-react";
 
 function CounterBox({
   targetNumber,
@@ -69,19 +70,21 @@ export function SuccessSection() {
           </div>
 
           <p className="text-gray-600 mb-6 mt-3">
-            RCM Centric is HIPAA Compliant, a forward-thinking company that builds strong
+            WeCare RCM is HIPAA Compliant, a forward-thinking company that builds strong
              relationships, embraces new approaches to healthcare, understands its client's
               needs, and works hard to get maximum reimbursement and solve practice issues.
           </p>
            <p className="text-gray-600 mb-6">
-            RCM Centric has the resources, billing and coding knowledge, insurance relationships,
+            WeCare RCM has the resources, billing and coding knowledge, insurance relationships,
              and outside service relationships to provide complete solutions with the confidence that 
             their medical practices, hospitals, medical groups, or facilities get expert staff for 
             their billing operations.  </p>
 
-          <Link href="/about" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" className="text-blue-700 font-semibold">
-              Know More
+          <Link href="/ContactUs" target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" 
+            
+            className="text-white font-semibold hover:bg-red-500 bg-blue-700 cursor-pointer">
+              Get In Touch <ExternalLink className="w-4 h-4 ml-2" />
             </Button>
           </Link>
         </div>
