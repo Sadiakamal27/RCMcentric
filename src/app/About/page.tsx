@@ -106,7 +106,7 @@ function AboutPage() {
               words and deeds are true and reliable.
             </p>
 
-            <Link href="/about" target="_blank" rel="noopener noreferrer">
+            <Link href="/About" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="bg-white text-blue-600 border-2 border-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-colors font-semibold">
                 Know More <ExternalLink className="w-4 h-4 ml-2" />
               </Button>
@@ -118,7 +118,7 @@ function AboutPage() {
             <div className="mb-4">
               <Image
                 src="/wcaboutLogo.png"
-                alt="RCM Centric Logo"
+                alt="WeCare RCM Logo"
                 width={60}
                 height={60}
               />
@@ -388,7 +388,7 @@ function AboutPage() {
         >
           <div className="w-full md:w-1/2 text-left">
 
-            <h3 className="text-2xl font-bold mb-4 text-gray-800">How RCM Centric Help Practice’s Grow</h3>
+            <h3 className="text-2xl font-bold mb-4 text-gray-800">How WeCare RCM Help Practice’s Grow</h3>
 
             <p className="text-gray-600 text-lg">
               By optimizing revenue cycles, practices gain financial strength, fueling investments in better
