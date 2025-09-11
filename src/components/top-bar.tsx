@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, Phone, MessageCircle, HelpCircle, Users } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, Phone,  HelpCircle } from "lucide-react"
 import Link from "next/link"
 
 
