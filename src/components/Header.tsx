@@ -70,7 +70,7 @@ function Header() {
                 <Menu className="w-8 h-8 text-blue-900" />
               </Button>
             </DrawerTrigger>
-            <DrawerContent className="bg-[#f3f6f8] p-0 w-full max-w-xs min-h-screen">
+            <DrawerContent className="bg-[#f3f6f8] p-0 w-full max-w-xs min-h-screen transition-transform duration-150 ease-out">
               <div className="flex flex-col h-full">
                 {/* Logo and Close */}
                 <div className="flex items-center justify-between px-4 pt-4 pb-2">
@@ -93,84 +93,84 @@ function Header() {
 
                 {/* Navigation Links */}
                 <nav className="flex-1 flex flex-col gap-1 px-0">
-                <Link href="/" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                      Home
-                    </span>
-                  </Link>
+  <Link
+    href="/"
+    className={`block px-6 py-2 ${
+      pathname === "/"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Home
+  </Link>
 
-                  <Link href="/Specialties" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/Specialties"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                      Specialties
-                    </span>
-                  </Link>
+  <Link
+    href="/Specialties"
+    className={`block px-6 py-2 ${
+      pathname === "/Specialties"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Specialties
+  </Link>
 
-                  <Link href="/CredentialingAndEnrollment" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/CredentialingAndEnrollment"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                     Credentialing
-                    </span>
-                  </Link>
+  <Link
+    href="/CredentialingAndEnrollment"
+    className={`block px-6 py-2 ${
+      pathname === "/CredentialingAndEnrollment"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Credentialing
+  </Link>
 
-                  <Link href="/Pricing & Plans" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/Pricing & Plans"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                     Pricing
-                    </span>
-                  </Link>
-                  
-                  <Link href="/GetAQuote" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/GetAQuote"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                     Get a Free Quote
-                    </span>
-                  </Link>
+  <Link
+    href="/Pricing"
+    className={`block px-6 py-2 ${
+      pathname === "/Pricing"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Pricing
+  </Link>
 
-                  <Link href="/About" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/About"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                    About
-                    </span>
-                  </Link>
+  <Link
+    href="/GetAQuote"
+    className={`block px-6 py-2 ${
+      pathname === "/GetAQuote"
+        ? "font-semibold text-white bg-red-400  hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Get a Free Quote
+  </Link>
 
-                  <Link href="/ContactUs" passHref>
-                    <span
-                      className={`block px-6 py-2 ${pathname === "/ContactUs"
-                          ? "font-semibold text-white bg-red-400 hover:bg-red-500"
-                          : "text-black"
-                        }`}
-                    >
-                    Contact Us
-                    </span>
-                  </Link>
-                 
-                </nav>
+  <Link
+    href="/About"
+    className={`block px-6 py-2 ${
+      pathname === "/About"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    About
+  </Link>
+
+  <Link
+    href="/ContactUs"
+    className={`block px-6 py-2 ${
+      pathname === "/ContactUs"
+        ? "font-semibold text-white bg-red-400 hover:bg-red-500"
+        : "text-black hover:bg-gray-200 cursor-pointer"
+    }`}
+  >
+    Contact Us
+  </Link>
+</nav>
+
               </div>
             </DrawerContent>
           </Drawer>
