@@ -37,16 +37,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mt-10 sm:mt-16 px-2 sm:px-0">
         {/*WeCare RCM  */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">WeCare Centric</h3>
+          <h3 className="text-lg font-semibold mb-2">WeCare RCM</h3>
           <ul className="text-xs text-gray-400 space-y-1">
             <li>
-              <Link href="/Features" className="hover:underline">Features</Link>
+              <Link href="/Features" target="_blank" rel="noopener noreferrer" className="hover:underline">Features</Link>
             </li>
             <li>
-              <Link href="/Pricing" className="hover:underline">Pricing</Link>
+              <Link href="/Pricing" target="_blank" rel="noopener noreferrer" className="hover:underline">Pricing</Link>
             </li>
             <li>
-              <Link href="/Specialties" className="hover:underline">Our Specialties</Link>
+              <Link href="/Specialties" target="_blank" rel="noopener noreferrer" className="hover:underline">Our Specialties</Link>
             </li>
           </ul>
         </div>
@@ -57,19 +57,19 @@ export default function Footer() {
           <ul className="text-xs text-gray-400 space-y-1">
 
             <li>
-              <Link href="/MedicalBilling" className="hover:underline">Medical Billing</Link>
+              <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer" className="hover:underline">Medical Billing</Link>
             </li>
             <li>
-              <Link href="/MedicalCoding" className="hover:underline">Medical Coding</Link>
+              <Link href="/MedicalCoding" target="_blank" rel="noopener noreferrer" className="hover:underline">Medical Coding</Link>
             </li>
             <li>
-              <Link href="/CredentialingAndEnrollment" className="hover:underline">Credentialing & Enrollment</Link>
+              <Link href="/CredentialingAndEnrollment" target="_blank" rel="noopener noreferrer" className="hover:underline">Credentialing & Enrollment</Link>
             </li>
             <li>
-              <Link href="/PracticeAudit" className="hover:underline">Practice Audit</Link>
+              <Link href="/PracticeAudit" target="_blank" rel="noopener noreferrer" className="hover:underline">Practice Audit</Link>
             </li>
             <li>
-              <Link href="/PatientHelpDesk" className="hover:underline">Patient Help Desk</Link>
+              <Link href="/PatientHelpDesk" target="_blank" rel="noopener noreferrer" className="hover:underline">Patient Help Desk</Link>
             </li>
           </ul>
         </div>
@@ -79,13 +79,13 @@ export default function Footer() {
           <h3 className="text-lg font-semibold mb-2">Company</h3>
           <ul className="text-xs text-gray-400 space-y-1">
             <li>
-              <Link href="/About" className="hover:underline">About Us</Link>
+              <Link href="/About" target="_blank" rel="noopener noreferrer" className="hover:underline">About Us</Link>
             </li>
             <li>
-              <Link href="/ContactUs" className="hover:underline">Contact Us</Link>
+              <Link href="/ContactUs" target="_blank" rel="noopener noreferrer" className="hover:underline">Contact Us</Link>
             </li>
             <li>
-              <Link href="/WhyRCM" className="hover:underline">Why WeCare Centric</Link>
+              <Link href="/WhyWeCareRCM" target="_blank" rel="noopener noreferrer" className="hover:underline">Why WeCare Centric</Link>
             </li>
           </ul>
         </div>
@@ -97,17 +97,17 @@ export default function Footer() {
             <ul className="text-xs text-gray-400 space-y-1">
 
               <li>
-                <Link href="/FAQs" className="hover:underline">FAQs</Link>
+                <Link href="/FAQs" target="_blank" rel="noopener noreferrer" className="hover:underline">FAQs</Link>
               </li>
               <li>
-                <Link href="/Support" className="hover:underline">Contact Support</Link>
+                <Link href="/Support" target="_blank" rel="noopener noreferrer" className="hover:underline">Contact Support</Link>
               </li>
               <li>
-                <Link href="/GetAQuote" className="hover:underline">Get A Quote</Link>
+                <Link href="/GetAQuote" target="_blank" rel="noopener noreferrer" className="hover:underline">Get A Quote</Link>
               </li>
 
               <li>
-                <Link href="/PrivacyPolicy" className="hover:underline">Privacy Policy</Link>
+                <Link href="/PrivacyPolicy" target="_blank" rel="noopener noreferrer" className="hover:underline">Privacy Policy</Link>
               </li>
 
               <li>
