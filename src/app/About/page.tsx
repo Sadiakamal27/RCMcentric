@@ -280,8 +280,8 @@ function AboutPage() {
                 </h3>
                 <p className="text-gray-600">
                   Customers are the center of our universe. We built this
-                  business to service their needs. As a team, we're winning when
-                  they are winning. We're happy when they are happy.
+                  business to service their needs. As a team, we&apos;re winning when
+                  they are winning. We&apos;re happy when they are happy.
                 </p>
               </CardContent>
             </Card>
@@ -383,7 +383,8 @@ function AboutPage() {
       <section className="bg-white py-20 px-5">
         <div
           ref={lastref}
-          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+          className={`max-w-7xl mx-auto flex flex-col
+             md:flex-row items-center gap-10 transition-all duration-500 ${isLastVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
           <div className="w-full md:w-1/2 text-left">
