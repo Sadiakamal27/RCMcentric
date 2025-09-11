@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useIntersectionObserver } from "@/hook/UseIntersectionObserver";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SolutionsSection from '@/components/SolutionsSection';
 import SolutionsAndServices from '@/components/SolutionsAndServices';
@@ -14,6 +14,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronDown, ChevronUp } from "lucide-react";
+
+
 
 const features = [
     {
@@ -120,6 +122,24 @@ const faqs: FAQItem[] = [
 
 function page() {
 
+    const [selected, setSelected] = useState<string[]>([])
+
+    const toggleSelection = (value: string) => {
+        setSelected((prev) =>
+            prev.includes(value)
+                ? prev.filter((v) => v !== value)
+                : [...prev, value]
+        )
+    }
+    
+    const options = [
+        "Billing Services",
+        "Credentialing",
+        "Claims Coding",
+        "Pricing",
+        "Other",
+    ]
+
     const [partnerRef, partnerVisible] = useIntersectionObserver({
         threshold: 0.01, // triggers when just 1% visible
         rootMargin: "0px",
@@ -142,6 +162,8 @@ function page() {
 
     const [index, setIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
+
+    const [isSubmitting, setIsSubmitting] = useState(false)
 
     useEffect(() => {
         const checkMobile = () => {
@@ -361,7 +383,7 @@ function page() {
                                 Outsource Your Healthcare IT Support to Get These Benefits!
                             </h2>
                             <p className="mt-2 text-gray-600 mb-4">
-                                Partner with RCM Centric's IT support experts to enhance the reliability of your IT ecosystem and ensure timely handling of IT support requests. By leveraging our expertise,
+                                Partner with WeCare RCM's IT support experts to enhance the reliability of your IT ecosystem and ensure timely handling of IT support requests. By leveraging our expertise,
                                 you can maintain the satisfaction of patients and medical staff while delivering quality healthcare services.
                             </p>
                         </div>
@@ -638,297 +660,297 @@ function page() {
 
             {/* IT Help Desk Outsourcing Section */}
             <section className="bg-blue-700 py-16">
-            <div
+                <div
                     ref={c1Ref}
                     className={`max-w-7xl mx-auto px-4 transition-all duration-500 ease-out transform ${c1Visible ? "animate-slide-up-fast" : "slide-up-hidden"
                         }`}
                 >
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex flex-col lg:flex-row gap-12">
-                        {/* Left Column */}
-                        <div className="flex-1">
-                            {/* Heading and Red Line */}
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                IT Help Desk Outsourcing
-                            </h2>
-                            <div className="w-20 h-1 bg-red-500 mb-6"></div>
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="flex flex-col lg:flex-row gap-12">
+                            {/* Left Column */}
+                            <div className="flex-1">
+                                {/* Heading and Red Line */}
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                    IT Help Desk Outsourcing
+                                </h2>
+                                <div className="w-20 h-1 bg-red-500 mb-6"></div>
 
-                            {/* Description */}
-                            <p className="text-white text-lg mb-8">
-                                Scale your team faster by outsourcing your help desk team. Adjust available time according to your business hours.
-                            </p>
+                                {/* Description */}
+                                <p className="text-white text-lg mb-8">
+                                    Scale your team faster by outsourcing your help desk team. Adjust available time according to your business hours.
+                                </p>
 
-                            {/* Six White Boxes in 3x2 Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-                                {/* Box 1 */}
-                                <div className="bg-white rounded-none p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Expert Teams</h3>
-                                            <p className="text-gray-600 text-sm">Our teams are ready to help customers with any issue.</p>
+                                {/* Six White Boxes in 3x2 Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+                                    {/* Box 1 */}
+                                    <div className="bg-white rounded-none p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">Expert Teams</h3>
+                                                <p className="text-gray-600 text-sm">Our teams are ready to help customers with any issue.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Box 2 */}
-                                <div className="bg-white rounded-none  p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Dedicated Manager</h3>
-                                            <p className="text-gray-600 text-sm">Get a dedicated team manager for all outsourced projects.</p>
+                                    {/* Box 2 */}
+                                    <div className="bg-white rounded-none  p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">Dedicated Manager</h3>
+                                                <p className="text-gray-600 text-sm">Get a dedicated team manager for all outsourced projects.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Box 3 */}
-                                <div className="bg-white rounded-none  p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Expertise</h3>
-                                            <p className="text-gray-600 text-sm">We have expertise in delivering customer service.</p>
+                                    {/* Box 3 */}
+                                    <div className="bg-white rounded-none  p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">Expertise</h3>
+                                                <p className="text-gray-600 text-sm">We have expertise in delivering customer service.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Box 4 */}
-                                <div className="bg-white rounded-none  p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">24/7 Support</h3>
-                                            <p className="text-gray-600 text-sm">We operate 24/7/365, including holidays.</p>
+                                    {/* Box 4 */}
+                                    <div className="bg-white rounded-none  p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">24/7 Support</h3>
+                                                <p className="text-gray-600 text-sm">We operate 24/7/365, including holidays.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Box 5 */}
-                                <div className="bg-white rounded-none  p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Personal Approach</h3>
-                                            <p className="text-gray-600 text-sm">We find an approach to every client's needs.</p>
+                                    {/* Box 5 */}
+                                    <div className="bg-white rounded-none  p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">Personal Approach</h3>
+                                                <p className="text-gray-600 text-sm">We find an approach to every client's needs.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                {/* Box 6 */}
-                                <div className="bg-white rounded-none  p-6 shadow-lg">
-                                    <div className="flex items-start gap-4">
-                                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">Effective Support Tools</h3>
-                                            <p className="text-gray-600 text-sm">We implement best and up-to-date tools into our work.</p>
+                                    {/* Box 6 */}
+                                    <div className="bg-white rounded-none  p-6 shadow-lg">
+                                        <div className="flex items-start gap-4">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">Effective Support Tools</h3>
+                                                <p className="text-gray-600 text-sm">We implement best and up-to-date tools into our work.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Right Column */}
-                        <div className="flex-1 flex flex-col">
-                            {/* Heading and Red Line */}
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                                Features
-                            </h2>
-                            <div className="w-20 h-1 bg-red-500 mb-6"></div>
+                            {/* Right Column */}
+                            <div className="flex-1 flex flex-col">
+                                {/* Heading and Red Line */}
+                                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                                    Features
+                                </h2>
+                                <div className="w-20 h-1 bg-red-500 mb-6"></div>
 
-                            {/* Bullet Points */}
-                            <ul className="space-y-8 flex-grow">
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Handling both long- and short term projects</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Hand-picking an experienced team for your project</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Offering flexible service packages</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Tracking regular KPI statistics</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Providing detailed QA reports regularly</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Ensuring a first-month-free policy (for team setup)</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Providing the teams with pre-launch training</span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                        </svg>
-                                    </div>
-                                    <span className="text-white">Conducting customer satisfaction surveys</span>
-                                </li>
-                            </ul>
+                                {/* Bullet Points */}
+                                <ul className="space-y-8 flex-grow">
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Handling both long- and short term projects</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Hand-picking an experienced team for your project</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Offering flexible service packages</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Tracking regular KPI statistics</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Providing detailed QA reports regularly</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Ensuring a first-month-free policy (for team setup)</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Providing the teams with pre-launch training</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-white">Conducting customer satisfaction surveys</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </section>
 
 
             <section className="py-12 bg-white">
-            <div
+                <div
                     ref={c2Ref}
                     className={`max-w-7xl mx-auto px-4 transition-all duration-500 ease-out transform ${c2Visible ? "animate-slide-up-fast" : "slide-up-hidden"
                         }`}
                 >
-                <div className="max-w-7xl mx-auto px-4">
-                    {/* Heading */}
-                    <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
-                        Why Outsource Healthcare IT Support to WeCare Centric
-                    </h2>
-                    <div className="h-[2px] w-16 bg-red-500 mt-2 mb-8"></div>
+                    <div className="max-w-7xl mx-auto px-4">
+                        {/* Heading */}
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
+                            Why Outsource Healthcare IT Support to WeCare Centric
+                        </h2>
+                        <div className="h-[2px] w-16 bg-red-500 mt-2 mb-8"></div>
 
-                    {/* Slider */}
-                    <div className="relative overflow-hidden">
-                        <div
-                            className="flex gap-4 md:gap-6 transition-transform duration-1000 ease-in-out"
-                            style={{
-                                transform: `translateX(-${index * (cardWidth + cardGap)}px)`,
-                                width: `${loopedItems.length * (cardWidth + cardGap) - cardGap}px`, // Ensure full width for all items
-                            }}
-                        >
-                            {loopedItems.map((item, i) => (
-                                <div
-                                    key={i}
-                                    className="flex-shrink-0 w-48 md:w-56 bg-white shadow-md rounded-lg p-4 md:p-6 flex flex-col items-center justify-center min-h-[100px] md:min-h-[120px]"
-                                >
-                                    <img src={item.icon} alt="" className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4" />
-                                    <p className="text-gray-600 text-center text-sm md:text-base">{item.text}</p>
+                        {/* Slider */}
+                        <div className="relative overflow-hidden">
+                            <div
+                                className="flex gap-4 md:gap-6 transition-transform duration-1000 ease-in-out"
+                                style={{
+                                    transform: `translateX(-${index * (cardWidth + cardGap)}px)`,
+                                    width: `${loopedItems.length * (cardWidth + cardGap) - cardGap}px`, // Ensure full width for all items
+                                }}
+                            >
+                                {loopedItems.map((item, i) => (
+                                    <div
+                                        key={i}
+                                        className="flex-shrink-0 w-48 md:w-56 bg-white shadow-md rounded-lg p-4 md:p-6 flex flex-col items-center justify-center min-h-[100px] md:min-h-[120px]"
+                                    >
+                                        <img src={item.icon} alt="" className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4" />
+                                        <p className="text-gray-600 text-center text-sm md:text-base">{item.text}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+
+                        <div className='mt-8'>
+
+                            <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+                                {/* Left column: Bullet points */}
+                                <div className="flex-1">
+                                    <ul className="space-y-4 text-gray-700">
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            <span className='font-bold  mr-1'>16 years </span> {" "}
+                                            <span>of expertise in IT support.</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            Working experience with <span className='font-bold  mr-1 ml-1'>HIPAA</span>
+                                            and <span className='font-bold  mr-1 ml-1'>FDA.</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            <span className='font-bold  mr-1 ml-1'>Mature</span> quality and security management systems.
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            Certified support teams for each <span className='font-bold  mr-1 ml-1'>Client.</span>
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            Ready to fulfill <span className='font-bold  mr-1 ml-1'>Test Tasks</span> and share case studies.
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            Utilizing latest <span className='font-bold  mr-1 ml-1'>Technology</span> to improve productivity.
+                                        </li>
+                                        <li className="flex items-start">
+                                            <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
+                                            <span className='font-bold  mr-1 ml-1'> Secure</span> Cloud databases, warehouses and storage.
+                                        </li>
+                                    </ul>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-
-                    <div className='mt-8'>
-
-                        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
-                            {/* Left column: Bullet points */}
-                            <div className="flex-1">
-                                <ul className="space-y-4 text-gray-700">
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        <span className='font-bold  mr-1'>16 years </span> {" "}
-                                        <span>of expertise in IT support.</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        Working experience with <span className='font-bold  mr-1 ml-1'>HIPAA</span>
-                                        and <span className='font-bold  mr-1 ml-1'>FDA.</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        <span className='font-bold  mr-1 ml-1'>Mature</span> quality and security management systems.
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        Certified support teams for each <span className='font-bold  mr-1 ml-1'>Client.</span>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        Ready to fulfill <span className='font-bold  mr-1 ml-1'>Test Tasks</span> and share case studies.
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        Utilizing latest <span className='font-bold  mr-1 ml-1'>Technology</span> to improve productivity.
-                                    </li>
-                                    <li className="flex items-start">
-                                        <span className="w-2 h-2 bg-blue-600 rounded-none mt-2 mr-2"></span>
-                                        <span className='font-bold  mr-1 ml-1'> Secure</span> Cloud databases, warehouses and storage.
-                                    </li>
-                                </ul>
+                                {/* Right column: Image */}
+                                <div className="flex-1 flex justify-center">
+                                    <Image
+                                        src="/IT-Support-Serviceslast-2048x1475.png" // Replace with the actual image path
+                                        alt="IT Support Illustration"
+                                        width={500}
+                                        height={300}
+                                        className="object-contain"
+                                    />
+                                </div>
                             </div>
-                            {/* Right column: Image */}
-                            <div className="flex-1 flex justify-center">
-                                <Image
-                                    src="/IT-Support-Serviceslast-2048x1475.png" // Replace with the actual image path
-                                    alt="IT Support Illustration"
-                                    width={500}
-                                    height={300}
-                                    className="object-contain"
-                                />
-                            </div>
+
+
+
                         </div>
-
-
-
                     </div>
                 </div>
-</div>
             </section>
 
             {/* New Healthcare IT Support Section */}
             <section className="py-16 bg-white">
-                
+
                 <div className="max-w-7xl mx-auto px-4">
                     {/* Section Heading */}
                     <div className="text-center mb-12">
@@ -1019,61 +1041,142 @@ function page() {
                         <div className="flex-1">
                             <h2 className="text-2xl text-gray-600 font-semibold mb-6">GET YOUR FREE TRIAL TODAY!</h2>
 
-                            <form className="space-y-4">
+                            <form
+                                className="space-y-4"
+                                onSubmit={async (e) => {
+                                    e.preventDefault();
+                                    const form = e.currentTarget;
+                                    setIsSubmitting(true); // show spinner
+
+                                    // 👇 Run built-in validation
+                                    if (!form.checkValidity()) {
+                                        form.reportValidity(); // shows default browser error messages
+                                        setIsSubmitting(false);
+                                        return; // stop here
+                                    }
+
+                                    const formData = new FormData(form);
+                                    const data = Object.fromEntries(formData.entries());
+
+                                    try {
+                                        const res = await fetch("/api/send", {
+                                            method: "POST",
+                                            headers: { "Content-Type": "application/json" },
+                                            body: JSON.stringify(data),
+                                        });
+
+                                        if (res.ok) {
+                                            alert("✅ Your request has been sent successfully!");
+                                            form.reset();
+                                        } else {
+                                            alert("❌ Failed to send. Please try again.");
+                                        }
+                                    } catch (err) {
+                                        console.error(err);
+                                        alert("❌ Something went wrong. Try again later.");
+                                    } finally {
+                                        setIsSubmitting(false); // stop spinner
+                                    }
+                                }}
+                            >
+                                {/* Hidden field to identify this form */}
+                                <Input
+                                    type="hidden"
+                                    name="formName"
+                                    value="Support Services Form"
+                                />
+
+
                                 {/* Name & Phone */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <Input
+                                        name="fullName"
+                                        type="text"
+                                        required
                                         placeholder="Full Name *"
                                         className="h-12 border border-gray-400 mb-4 rounded-none
-                                        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                        text-gray-500 placeholder:text-gray-400"
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
                                     />
                                     <Input
-                                        className="h-12 border border-gray-400 mb-4 rounded-none
-                                        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-700
-                                        text-gray-500 placeholder:text-gray-400"
+                                        name="phoneNumber"
+                                        type="tel"
                                         placeholder="Phone Number"
+                                        className="h-12 border border-gray-400 mb-4 rounded-none
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-700
+      text-gray-500 placeholder:text-gray-400"
                                     />
                                 </div>
 
                                 {/* Email & Practice Name */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <Input
+                                        name="email"
+                                        type="email"
+                                        required
                                         className="h-12 border border-gray-400 rounded-none
-                                        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                        text-gray-500 placeholder:text-gray-400"
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
                                         placeholder="Email Address *"
                                     />
                                     <Input
+                                        name="businessName"
+                                        type="text"
+                                        required
                                         className="h-12 border border-gray-400 rounded-none
-                                        focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                        text-gray-500 placeholder:text-gray-400"
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
                                         placeholder="Practice / Business Name *"
                                     />
                                 </div>
 
                                 {/* Checkbox Options */}
                                 <div>
-                                    <p className="text-1xl mb-2 mt-10 font-bold text-blue-700">What would you like to know? *</p>
+
+                                    <p className="text-1xl mb-2 mt-10 font-bold text-blue-700">
+                                        What would you like to know? *
+                                    </p>
+
                                     <div className="flex flex-wrap gap-4">
-                                        {["Billing Services", "Credentialing", "Claims Coding", "Pricing", "Other"].map((label) => (
-                                            <label key={label} className="flex items-center gap-2">
-                                                <Checkbox id={label} className="rounded-sm border border-gray-400
-                                                data-[state=checked]:bg-white data-[state=checked]:text-blue-500
-                                                focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
-                                                <span>{label}</span>
-                                            </label>
-                                        ))}
+                                        {options.map((item, index) => {
+                                            const checked = selected.includes(item)
+                                            return (
+                                                <label key={item} className="flex items-center space-x-2">
+                                                    {/* UI checkbox */}
+                                                    <Checkbox
+                                                        id={item}
+                                                        checked={checked}
+                                                        onCheckedChange={() => toggleSelection(item)}
+                                                        required={selected.length === 0 && index === 0}
+                                                    />
+                                                    <span className="text-gray-700">{item}</span>
+                                                </label>
+                                            )
+                                        })}
                                     </div>
+
+                                    {/* ✅ Hidden input that carries selection and enforces required */}
+                                    <Input
+                                        type="text"
+                                        name="interest"
+                                        value={selected.join(", ")} // comma-separated list
+                                        required
+                                        readOnly
+                                        className="hidden"
+                                    />
+
                                 </div>
+
+
 
                                 {/* Message */}
                                 <div>
                                     <Textarea
+                                        name="message"
                                         className="h-35 border border-gray-400 rounded-none
-                                        ring-0 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 
-                                        focus:outline-none transition-all duration-200
-                                        text-gray-500 placeholder:text-gray-400"
+      ring-0 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 
+      focus:outline-none transition-all duration-200
+      text-gray-500 placeholder:text-gray-400"
                                         placeholder="Type your message here... (Optional)"
                                         maxLength={25}
                                     />
@@ -1082,18 +1185,42 @@ function page() {
 
                                 {/* Privacy */}
                                 <div className="flex items-start gap-2">
-                                    <Checkbox id="privacy" className="rounded-sm border border-gray-400
-                                    data-[state=checked]:bg-white data-[state=checked]:text-blue-500
-                                    focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
+                                    <Checkbox
+                                        id="privacy"
+                                        name="privacy"
+                                        value="accepted"
+                                        required
+                                        className="rounded-sm border border-gray-400
+      data-[state=checked]:bg-white data-[state=checked]:text-blue-500
+      focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                                    />
                                     <label htmlFor="privacy" className="text-sm text-gray-700">
                                         By sending this form, I confirm that I have read and accept the{" "}
-                                        <span className="text-blue-600 underline">Privacy Policy</span>.
+                                        <span className="text-blue-600 underline">
+                                            <Link href="/PrivacyPolicy" target="_blank" rel="noopener noreferrer">
+
+                                                Privacy Policy
+                                            </Link></span>.
                                     </label>
                                 </div>
 
-                                <Button className="bg-blue-600 font-semibold text-white 
-                                hover:text-white hover:bg-red-400 rounded-sm">Submit Now</Button>
+                                {/* Button */}
+                                <Button
+                                    disabled={isSubmitting}
+                                    className="bg-blue-600 font-semibold text-white 
+    hover:text-white hover:bg-red-400 rounded-sm flex items-center gap-2"
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="h-5 w-5 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        "Submit Now"
+                                    )}
+                                </Button>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -1153,24 +1280,6 @@ function page() {
                     })}
                 </div>
             </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
