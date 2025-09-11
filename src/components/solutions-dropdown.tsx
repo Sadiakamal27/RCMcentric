@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ExternalLink, BarChart3, FileText, Award, Headphones, Settings, ChevronDown } from "lucide-react"
+import { ExternalLink,  ChevronDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -41,7 +41,8 @@ export function SolutionsDropdown() {
               <div className="text-center space-y-4">
                 <h3 className="text-lg font-bold">A Complete Provider Centric Solution</h3>
                 <p className="text-blue-100 leading-tight text-sm">
-                  Get everything needed for your practice performance under WeCare RCM's professional provider centric
+                  Get everything needed for your practice performance under WeCare RCM&apos;s
+                   professional provider centric
                   solutions.
                 </p>
                 <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
@@ -144,9 +145,10 @@ export function SolutionsDropdown() {
                 <div>
                   <Link href="/PatientHelpDesk" target="_blank" rel="noopener noreferrer">
 
-                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">Patient Help Desk</h4>
+                    <h4 className="text-sm font-semibold text-blue-600 group-hover:text-blue-700">
+                      Patient Help Desk</h4>
                     <p className="text-gray-600 text-xs mt-0.5">
-                      WeCare RCM provides dedicated Help desk services for your patient's queries.
+                      WeCare RCM provides dedicated Help desk services for your patient&apos;s queries.
                     </p>
                   </Link>
                 </div>
