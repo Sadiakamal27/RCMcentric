@@ -19,7 +19,6 @@ export default function TalkToSales() {
 
   const { handleSubmit, loading } = useFormSubmit()
 
-
   // ✅ states to store values of shadcn Selects
   const [jobRole, setJobRole] = useState("")
   const [numProviders, setNumProviders] = useState("")
@@ -113,135 +112,76 @@ export default function TalkToSales() {
                 className="focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-gray-400 border-gray-300"
               />
 
-              {/* ✅ Job Role */}
-              <Select onValueChange={(val) => {
-                setJobRole(val)
-                const hidden = document.getElementById("jobRole") as HTMLInputElement
-                if (hidden) hidden.value = val
-              }} required>
-                <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
-          focus:outline-none focus:ring-0 focus:ring-offset-0
-          data-[state=open]:ring-0 data-[state=open]:outline-none
-          focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <SelectValue placeholder="Job Role *" />
-                </SelectTrigger>
-                <SelectContent className="bg-white w-[260px] mt-2 border-t-0 border-black rounded-none" align="start">
-                  <SelectItem value="physician" className="hover:bg-blue-600 hover:text-white">Physician / Practice</SelectItem>
-                  <SelectItem value="manager" className="hover:bg-blue-600 hover:text-white">Practice Manager</SelectItem>
-                  <SelectItem value="admin" className="hover:bg-blue-600 hover:text-white">Laboratory</SelectItem>
-                  <SelectItem value="consultant" className="hover:bg-blue-600 hover:text-white">Consultant</SelectItem>
-                  <SelectItem value="hospital" className="hover:bg-blue-600 hover:text-white">Hospital</SelectItem>
-                  <SelectItem value="billing" className="hover:bg-blue-600 hover:text-white">Billing Company</SelectItem>
-                  <SelectItem value="other" className="hover:bg-blue-600 hover:text-white">Other</SelectItem>
-                </SelectContent>
-              </Select>
-              <Input
-                id="jobRole"
-                type="text"
-                name="jobRole"
-                required
-                defaultValue=""
-                className="hidden"
-              />
+<div className="space-y-4"> {/* Vertical stacking with spacing */}
+  {/* Job Role Select */}
+  <div className="mb-4">
+    <label className="block text-sm font-medium text-gray-700">
+      Job Role <span className="text-red-500">*</span>
+    </label>
+    <Select name="jobRole" required>
+      <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+        focus:outline-none focus:ring-0 focus:ring-offset-0
+        data-[state=open]:ring-0 data-[state=open]:outline-none
+        focus-visible:ring-0 focus-visible:ring-offset-0">
+        <SelectValue placeholder="Select Job Role" />
+      </SelectTrigger>
+      <SelectContent className="bg-white w-full mt-2 border-t-0 border-black rounded-none" align="start">
+        <SelectItem value="physician" className="hover:bg-blue-600 hover:text-white cursor-pointer">Physician / Practice</SelectItem>
+        <SelectItem value="manager" className="hover:bg-blue-600 hover:text-white cursor-pointer">Practice Manager</SelectItem>
+        <SelectItem value="admin" className="hover:bg-blue-600 hover:text-white cursor-pointer">Laboratory</SelectItem>
+        <SelectItem value="consultant" className="hover:bg-blue-600 hover:text-white cursor-pointer">Consultant</SelectItem>
+        <SelectItem value="hospital" className="hover:bg-blue-600 hover:text-white cursor-pointer">Hospital</SelectItem>
+        <SelectItem value="billing" className="hover:bg-blue-600 hover:text-white cursor-pointer">Billing Company</SelectItem>
+        <SelectItem value="other" className="hover:bg-blue-600 hover:text-white cursor-pointer">Other</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
 
-              {/* ✅ Number of Providers */}
-              <Select
-                onValueChange={(val) => {
-                  setJobRole(val)
-                  const hidden = document.getElementById("numProviders") as HTMLInputElement
-                  if (hidden) hidden.value = val
-                }} required>
-                <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+  {/* Grid for Number of Providers and Monthly Collection */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+    <div className="mb-4">
+      <label className="block text-sm font-medium text-gray-700">
+        Number of Providers <span className="text-red-500">*</span>
+      </label>
+      <Select name="numProviders" required>
+        <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
           focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <SelectValue placeholder="Number of Providers *" />
-                </SelectTrigger>
-                <SelectContent className="bg-white w-[260px] mt-2 border-t-0 border-black rounded-none">
-                  <SelectItem value="1" className="hover:bg-blue-600 hover:text-white">1 Provider</SelectItem>
-                  <SelectItem value="2" className="hover:bg-blue-600 hover:text-white">2 Providers</SelectItem>
-                  <SelectItem value="3-5" className="hover:bg-blue-600 hover:text-white">3-5 Providers</SelectItem>
-                  <SelectItem value="6-10" className="hover:bg-blue-600 hover:text-white">6-10 Providers</SelectItem>
-                  <SelectItem value="10+" className="hover:bg-blue-600 hover:text-white">More Than 10 Providers</SelectItem>
-                </SelectContent>
-              </Select>
-              <Input
-                id="numProviders"
-                type="text"
-                name="numProviders"
-                required
-                defaultValue=""
-                className="hidden"
-              />
-              {/* ✅ Services Interest */}
-              <Select  
-              onValueChange={(val) => {
-                setJobRole(val)
-                const hidden = document.getElementById("serviceInterest") as HTMLInputElement
-                if (hidden) hidden.value = val
-              }} required>
-                <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
+          <SelectValue placeholder="Select Number of Providers" />
+        </SelectTrigger>
+        <SelectContent className="bg-white w-full mt-2 border-t-0 border-black rounded-none">
+          <SelectItem value="1" className="hover:bg-blue-600 hover:text-white cursor-pointer">1 Provider</SelectItem>
+          <SelectItem value="2-5" className="hover:bg-blue-600 hover:text-white cursor-pointer">2-5 Providers</SelectItem>
+          <SelectItem value="6-10" className="hover:bg-blue-600 hover:text-white cursor-pointer">6-10 Providers</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+
+    <div className="mb-4">
+      <label className="block text-sm font-medium text-gray-700">
+        Monthly Collection <span className="text-red-500">*</span>
+      </label>
+      <Select name="monthlyCollection" required>
+        <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
           focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <SelectValue placeholder="Services Interest *" />
-                </SelectTrigger>
-                <SelectContent className="bg-white w-[260px] mt-2 border-t-0 border-black rounded-none">
-                  <SelectItem value="billing" className="hover:bg-blue-600 hover:text-white">Medical Billing Services</SelectItem>
-                  <SelectItem value="coding" className="hover:bg-blue-600 hover:text-white">Medical Coding Services</SelectItem>
-                  <SelectItem value="dental billing" className="hover:bg-blue-600 hover:text-white">Dental Billing Services</SelectItem>
-                  <SelectItem value="credentialing" className="hover:bg-blue-600 hover:text-white">Credentialing & Enrollment</SelectItem>
-                  <SelectItem value="hospital billing" className="hover:bg-blue-600 hover:text-white">Hospital Billing</SelectItem>
-                  <SelectItem value="audit" className="hover:bg-blue-600 hover:text-white">Practice Audit</SelectItem>
-                  <SelectItem value="dme" className="hover:bg-blue-600 hover:text-white">DME Billing</SelectItem>
-                  <SelectItem value="telehealth" className="hover:bg-blue-600 hover:text-white">Telehealth Billing</SelectItem>
-                  <SelectItem value="helpdesk" className="hover:bg-blue-600 hover:text-white">Patient Help Desk</SelectItem>
-                  <SelectItem value="ar" className="hover:bg-blue-600 hover:text-white">A/R Recovery</SelectItem>
-                  <SelectItem value="other" className="hover:bg-blue-600 hover:text-white">Other Services</SelectItem>
-                </SelectContent>
-              </Select>
-              <Input
-                id="setServiceInterest"
-                type="text"
-                name="setServiceInterest"
-                required
-                defaultValue=""
-                className="hidden"
-              />
-              {/* ✅ Monthly Collection */}
-              <Select 
-              onValueChange={(val) => {
-                setJobRole(val)
-                const hidden = document.getElementById("monthlyCollection") as HTMLInputElement
-                if (hidden) hidden.value = val
-              }} required>
-                <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
-          focus:outline-none focus:ring-0 focus:ring-offset-0
-          data-[state=open]:ring-0 data-[state=open]:outline-none
-          focus-visible:ring-0 focus-visible:ring-offset-0">
-                  <SelectValue placeholder="Monthly Collection *" />
-                </SelectTrigger>
-                <SelectContent className="bg-white w-[260px] mt-2 border-t-0 border-black rounded-none">
-                  <SelectItem value="under20k" className="hover:bg-blue-600 hover:text-white">Under $20K</SelectItem>
-                  <SelectItem value="20-50k" className="hover:bg-blue-600 hover:text-white">$20K - $50K</SelectItem>
-                  <SelectItem value="50-100k" className="hover:bg-blue-600 hover:text-white">$50K - $100K</SelectItem>
-                  <SelectItem value="100-500k" className="hover:bg-blue-600 hover:text-white">$100K - $500K</SelectItem>
-                  <SelectItem value="500k-1M" className="hover:bg-blue-600 hover:text-white">$500K - $1M</SelectItem>
-                  <SelectItem value="1M+" className="hover:bg-blue-600 hover:text-white">Over $1M</SelectItem>
-                </SelectContent>
-              </Select>
-              <Input
-                id="setMonthlyCollection"
-                type="text"
-                name="setMonthlyCollection"
-                required
-                defaultValue=""
-                className="hidden"
-              />
+          <SelectValue placeholder="Select Monthly Collection" />
+        </SelectTrigger>
+        <SelectContent className="bg-white w-full mt-2 border-t-0 border-black rounded-none">
+          <SelectItem value="0-50k" className="hover:bg-blue-600 hover:text-white cursor-pointer">$0 - $50k</SelectItem>
+          <SelectItem value="50k-100k" className="hover:bg-blue-600 hover:text-white cursor-pointer">$50k - $100k</SelectItem>
+          <SelectItem value="100k+" className="hover:bg-blue-600 hover:text-white cursor-pointer">$100k+</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  </div>
+</div>
               {/* ✅ Submit Button with loader */}
               <Button
                 type="submit"
-                className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-blue-800 cursor-pointer text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
                 disabled={loading}
               >
                 {loading ? (
