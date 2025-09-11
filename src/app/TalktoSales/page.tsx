@@ -12,12 +12,13 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { useFormSubmit } from "@/hook/useFormSubmit"
+
 
 export default function TalkToSales() {
 
+  const { handleSubmit, loading } = useFormSubmit()
 
-
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   // ✅ states to store values of shadcn Selects
   const [jobRole, setJobRole] = useState("")
@@ -77,45 +78,7 @@ export default function TalkToSales() {
             </h3>
             <form
               className="space-y-4"
-              onSubmit={async (e) => {
-                e.preventDefault()
-                const form = e.currentTarget
-                setIsSubmitting(true)
-            
-                if (!form.checkValidity()) {
-                  form.reportValidity()
-                  setIsSubmitting(false)
-                  return
-                }
-            
-                const formData = new FormData(form)
-            
-                // 🔑 Only keep what backend expects
-                const payload = {
-                  formName: formData.get("formName") as string, // hidden input is already there
-                  email: formData.get("workEmail") as string,   // map workEmail → email
-                }
-            
-                try {
-                  const res = await fetch("/api/send", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload),
-                  })
-            
-                  if (res.ok) {
-                    alert("✅ Your request has been sent successfully!")
-                    form.reset()
-                  } else {
-                    alert("❌ Failed to send. Please try again.")
-                  }
-                } catch (err) {
-                  console.error(err)
-                  alert("❌ Something went wrong. Try again later.")
-                } finally {
-                  setIsSubmitting(false)
-                }
-              }}
+              onSubmit={handleSubmit}
             >
               {/* Hidden field to identify the form */}
               <input type="hidden" name="formName" value="WeCare RCM Request Form" />
@@ -151,7 +114,11 @@ export default function TalkToSales() {
               />
 
               {/* ✅ Job Role */}
-              <Select value={jobRole} onValueChange={setJobRole}>
+              <Select onValueChange={(val) => {
+                setJobRole(val)
+                const hidden = document.getElementById("jobRole") as HTMLInputElement
+                if (hidden) hidden.value = val
+              }} required>
                 <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -168,10 +135,22 @@ export default function TalkToSales() {
                   <SelectItem value="other" className="hover:bg-blue-600 hover:text-white">Other</SelectItem>
                 </SelectContent>
               </Select>
-              <input type="hidden" name="jobRole" value={jobRole} required />
+              <Input
+                id="jobRole"
+                type="text"
+                name="jobRole"
+                required
+                defaultValue=""
+                className="hidden"
+              />
 
               {/* ✅ Number of Providers */}
-              <Select value={numProviders} onValueChange={setNumProviders}>
+              <Select
+                onValueChange={(val) => {
+                  setJobRole(val)
+                  const hidden = document.getElementById("numProviders") as HTMLInputElement
+                  if (hidden) hidden.value = val
+                }} required>
                 <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -186,10 +165,21 @@ export default function TalkToSales() {
                   <SelectItem value="10+" className="hover:bg-blue-600 hover:text-white">More Than 10 Providers</SelectItem>
                 </SelectContent>
               </Select>
-              <input type="hidden" name="numProviders" value={numProviders} required />
-
+              <Input
+                id="numProviders"
+                type="text"
+                name="numProviders"
+                required
+                defaultValue=""
+                className="hidden"
+              />
               {/* ✅ Services Interest */}
-              <Select value={serviceInterest} onValueChange={setServiceInterest}>
+              <Select  
+              onValueChange={(val) => {
+                setJobRole(val)
+                const hidden = document.getElementById("serviceInterest") as HTMLInputElement
+                if (hidden) hidden.value = val
+              }} required>
                 <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -210,10 +200,21 @@ export default function TalkToSales() {
                   <SelectItem value="other" className="hover:bg-blue-600 hover:text-white">Other Services</SelectItem>
                 </SelectContent>
               </Select>
-              <input type="hidden" name="serviceInterest" value={serviceInterest} required />
-
+              <Input
+                id="setServiceInterest"
+                type="text"
+                name="setServiceInterest"
+                required
+                defaultValue=""
+                className="hidden"
+              />
               {/* ✅ Monthly Collection */}
-              <Select value={monthlyCollection} onValueChange={setMonthlyCollection}>
+              <Select 
+              onValueChange={(val) => {
+                setJobRole(val)
+                const hidden = document.getElementById("monthlyCollection") as HTMLInputElement
+                if (hidden) hidden.value = val
+              }} required>
                 <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -229,15 +230,21 @@ export default function TalkToSales() {
                   <SelectItem value="1M+" className="hover:bg-blue-600 hover:text-white">Over $1M</SelectItem>
                 </SelectContent>
               </Select>
-              <input type="hidden" name="monthlyCollection" value={monthlyCollection} required />
-
+              <Input
+                id="setMonthlyCollection"
+                type="text"
+                name="setMonthlyCollection"
+                required
+                defaultValue=""
+                className="hidden"
+              />
               {/* ✅ Submit Button with loader */}
               <Button
                 type="submit"
                 className="w-full sm:w-auto bg-blue-800 text-white rounded-b-md font-bold hover:bg-red-500 flex items-center justify-center gap-2"
-                disabled={isSubmitting}
+                disabled={loading}
               >
-                {isSubmitting ? (
+                {loading ? (
                   <>
                     <Loader2 className="h-5 w-5 animate-spin" />
                     Sending...
