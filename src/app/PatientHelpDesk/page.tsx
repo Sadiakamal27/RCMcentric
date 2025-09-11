@@ -9,6 +9,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from "@/components/ui/input"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Textarea } from "@/components/ui/textarea"
+import { Loader2 } from "lucide-react";
 
 const cardData = [
     {
@@ -48,6 +49,27 @@ const cardData = [
 
 
 export default function page() {
+
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+
+    const [selected, setSelected] = useState<string[]>([])
+
+    const toggleSelection = (value: string) => {
+        setSelected((prev) =>
+            prev.includes(value)
+                ? prev.filter((v) => v !== value)
+                : [...prev, value]
+        )
+    }
+    
+    const options = [
+        "Billing Services",
+        "Credentialing",
+        "Claims Coding",
+        "Pricing",
+        "Other",
+    ]
 
 
     const [index, setIndex] = useState(0);
@@ -527,79 +549,185 @@ export default function page() {
                     <div className="flex-1">
                         <h2 className="text-2xl text-gray-600 font-semibold mb-6">GET YOUR FREE TRIAL TODAY!</h2>
 
-                        <form className="space-y-4">
-                            {/* Name & Phone */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4  ">
+                        <form
+                                className="space-y-4"
+                                onSubmit={async (e) => {
+                                    e.preventDefault();
+                                    const form = e.currentTarget;
+                                    setIsSubmitting(true); // show spinner
+
+                                    // 👇 Run built-in validation
+                                    if (!form.checkValidity()) {
+                                        form.reportValidity(); // shows default browser error messages
+                                        setIsSubmitting(false);
+                                        return; // stop here
+                                    }
+
+                                    const formData = new FormData(form);
+                                    const data = Object.fromEntries(formData.entries());
+
+                                    try {
+                                        const res = await fetch("/api/send", {
+                                            method: "POST",
+                                            headers: { "Content-Type": "application/json" },
+                                            body: JSON.stringify(data),
+                                        });
+
+                                        if (res.ok) {
+                                            alert("✅ Your request has been sent successfully!");
+                                            form.reset();
+                                        } else {
+                                            alert("❌ Failed to send. Please try again.");
+                                        }
+                                    } catch (err) {
+                                        console.error(err);
+                                        alert("❌ Something went wrong. Try again later.");
+                                    } finally {
+                                        setIsSubmitting(false); // stop spinner
+                                    }
+                                }}
+                            >
+                                {/* Hidden field to identify this form */}
                                 <Input
-                                    placeholder="Full Name *"
-                                    className=" h-12 border  border-gray-400   mb-4 rounded-none
-                                 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                  text-gray-500 placeholder:text-gray-400"
+                                    type="hidden"
+                                    name="formName"
+                                    value="Support Services Form"
                                 />
-                                <Input
-                                    className=" h-12 border border-gray-400  mb-4 rounded-none
-                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-700
-                                 text-gray-500 placeholder:text-gray-400"
-                                    placeholder="Phone Number" />
-                            </div>
 
-                            {/* Email & Practice Name */}
-                            <div className="grid grid-cols-1  sm:grid-cols-2 gap-4">
-                                <Input
-                                    className=" h-12  border border-gray-400 rounded-none
-                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                 text-gray-500 placeholder:text-gray-400"
-                                    placeholder="Email Address *" />
-                                <Input
-                                    className=" h-12 border border-gray-400 rounded-none
-                                focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
-                                 text-gray-500 placeholder:text-gray-400"
-                                    placeholder="Practice / Business Name *" />
-                            </div>
 
-                            {/* Checkbox Options */}
-                            <div>
-                                <p className=" text-1xl mb-2 mt-10 font-bold text-blue-700">What would you like to know? *</p>
-                                <div className="flex flex-wrap gap-4">
-                                    {["Billing Services", "Credentialing", "Claims Coding", "Pricing", "Other"].map((label) => (
-                                        <label key={label} className="flex items-center gap-2 ">
-                                             <Checkbox id={label} className="rounded-sm border border-gray-400
-                                              data-[state=checked]:bg-white data-[state=checked]:text-blue-500
-                                              focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
-                                            <span>{label}</span>
-                                        </label>
-                                    ))}
+                                {/* Name & Phone */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <Input
+                                        name="fullName"
+                                        type="text"
+                                        required
+                                        placeholder="Full Name *"
+                                        className="h-12 border border-gray-400 mb-4 rounded-none
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
+                                    />
+                                    <Input
+                                        name="phoneNumber"
+                                        type="tel"
+                                        placeholder="Phone Number"
+                                        className="h-12 border border-gray-400 mb-4 rounded-none
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-700
+      text-gray-500 placeholder:text-gray-400"
+                                    />
                                 </div>
-                            </div>
 
-                            {/* Message */}
-                            <div >
-                                <Textarea
-                                    className="h-35 border border-gray-400 rounded-none
-                                          ring-0 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 
-                                          focus:outline-none transition-all duration-200
-                                           text-gray-500 placeholder:text-gray-400"
-                                    placeholder="Type your message here... (Optional)"
-                                    maxLength={25}
-                                />
+                                {/* Email & Practice Name */}
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <Input
+                                        name="email"
+                                        type="email"
+                                        required
+                                        className="h-12 border border-gray-400 rounded-none
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
+                                        placeholder="Email Address *"
+                                    />
+                                    <Input
+                                        name="businessName"
+                                        type="text"
+                                        required
+                                        className="h-12 border border-gray-400 rounded-none
+      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500
+      text-gray-500 placeholder:text-gray-400"
+                                        placeholder="Practice / Business Name *"
+                                    />
+                                </div>
 
-                                <p className="text-xs text-gray-500 mt-3">0 of 25 max characters.</p>
-                            </div>
+                                {/* Checkbox Options */}
+                                <div>
 
-                            {/* Privacy */}
-                            <div className="flex items-start gap-2 ">
-                                <Checkbox id="privacy" className=" rounded-sm border border-gray-400
-                                              data-[state=checked]:bg-white data-[state=checked]:text-blue-500
-                                              focus:ring-1 focus:ring-blue-500 focus:border-blue-500 " />
-                                <label htmlFor="privacy" className="text-sm text-gray-700">
-                                    By sending this form, I confirm that I have read and accept the{" "}
-                                    <span className="text-blue-600 underline">Privacy Policy</span>.
-                                </label>
-                            </div>
+                                    <p className="text-1xl mb-2 mt-10 font-bold text-blue-700">
+                                        What would you like to know? *
+                                    </p>
 
-                            <Button className="bg-blue-600 font-semibold text-white 
-                            hover:text-white hover:bg-red-400 rounded-sm">Submit Now</Button>
-                        </form>
+                                    <div className="flex flex-wrap gap-4">
+                                        {options.map((item, index) => {
+                                            const checked = selected.includes(item)
+                                            return (
+                                                <label key={item} className="flex items-center space-x-2">
+                                                    {/* UI checkbox */}
+                                                    <Checkbox
+                                                        id={item}
+                                                        checked={checked}
+                                                        onCheckedChange={() => toggleSelection(item)}
+                                                        required={selected.length === 0 && index === 0}
+                                                    />
+                                                    <span className="text-gray-700">{item}</span>
+                                                </label>
+                                            )
+                                        })}
+                                    </div>
+
+                                    {/* ✅ Hidden input that carries selection and enforces required */}
+                                    <Input
+                                        type="text"
+                                        name="interest"
+                                        value={selected.join(", ")} // comma-separated list
+                                        required
+                                        readOnly
+                                        className="hidden"
+                                    />
+
+                                </div>
+
+
+
+                                {/* Message */}
+                                <div>
+                                    <Textarea
+                                        name="message"
+                                        className="h-35 border border-gray-400 rounded-none
+      ring-0 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 
+      focus:outline-none transition-all duration-200
+      text-gray-500 placeholder:text-gray-400"
+                                        placeholder="Type your message here... (Optional)"
+                                        maxLength={25}
+                                    />
+                                    <p className="text-xs text-gray-500 mt-3">0 of 25 max characters.</p>
+                                </div>
+
+                                {/* Privacy */}
+                                <div className="flex items-start gap-2">
+                                    <Checkbox
+                                        id="privacy"
+                                        name="privacy"
+                                        value="accepted"
+                                        required
+                                        className="rounded-sm border border-gray-400
+      data-[state=checked]:bg-white data-[state=checked]:text-blue-500
+      focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                                    />
+                                    <label htmlFor="privacy" className="text-sm text-gray-700">
+                                        By sending this form, I confirm that I have read and accept the{" "}
+                                        <span className="text-blue-600 underline">
+                                            <Link href="/PrivacyPolicy" target="_blank" rel="noopener noreferrer">
+
+                                                Privacy Policy
+                                            </Link></span>.
+                                    </label>
+                                </div>
+
+                                {/* Button */}
+                                <Button
+                                    disabled={isSubmitting}
+                                    className="bg-blue-600 font-semibold text-white 
+    hover:text-white hover:bg-red-400 rounded-sm flex items-center gap-2"
+                                >
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 className="h-5 w-5 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        "Submit Now"
+                                    )}
+                                </Button>
+                            </form>
                     </div>
                 </div>
             </section>
