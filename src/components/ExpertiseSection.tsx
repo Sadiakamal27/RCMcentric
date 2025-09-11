@@ -52,7 +52,7 @@ function ExpertiseSection() {
                   name="email"
                   placeholder="Work Email"
                   required
-                  className="w-full border border-gray-400 focus:border-gray-300 focus:ring-0 focus:outline-none text-sm"
+                  className="w-full border border-gray-700 focus:border-gray-300 focus:ring-0 focus:outline-none text-sm"
                 />
               </div>
 
