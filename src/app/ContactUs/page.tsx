@@ -61,12 +61,12 @@ export default function ContactSection() {
 
   return (
     <>
-      <div className="relative bg-blue-800 text-white  py-20 px-10 md:px-12">
+      <div className="relative bg-blue-800 text-white  py-30 px-10 md:px-12">
         {/* Content */}
-        <div className="relative z-10 max-w-4xl pl-29  text-left">
-          <h2 className="text-5xl font-extrabold mb-4">Contact Us</h2>
-          <hr className="w-16 h-0.5 bg-white mb-6" />
-          <p className="text-base md:text-lg">
+        <div className=" z-10 max-w-full px-4 sm:px-6 md:px-8 lg:pl-0 lg:pr-0 lg:max-w-2xl text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h2>
+          <hr className="w-12 sm:w-16 h-0.5 bg-white mb-6" />
+          <p className="text-sm sm:text-base md:text-lg">
             Feel free to contact us anytime through the form.
             <br /> We will respond to your inquiry as quickly as possible.
           </p>
@@ -112,7 +112,8 @@ export default function ContactSection() {
               }
               finally {
                 // ✅ stop loading AFTER popup has been shown
-                setIsSubmitting(false)}
+                setIsSubmitting(false)
+              }
             }}
           >
             {/* Hidden field to identify this form */}
