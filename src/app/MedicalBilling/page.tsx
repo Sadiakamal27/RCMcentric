@@ -35,7 +35,7 @@ export default function MedicalBillingPage() {
             <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-600">Medical Billing Services</h1>
           </div>
           <p className="text-gray-700 text-base sm:text-lg mb-8">
-            RCM Centric provides customized medical billing service solutions from charge entry to analytics and reporting for all medical specialists and practices.
+            WeCare RCM provides customized medical billing service solutions from charge entry to analytics and reporting for all medical specialists and practices.
           </p>
           <div className="w-full max-w-md mx-auto lg:mx-0">
             <h3 className="text-base sm:text-xl text-center text-gray-500 sm:text-left mb-2">Find Solution by your speciality</h3>
@@ -120,7 +120,7 @@ export default function MedicalBillingPage() {
             </h2>
             <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
             <p className="text-gray-700 mb-6 text-center md:text-left">
-              Being a leading medical billing company in the USA, we know from experience that healthcare professionals often worry about things they should not. Therefore, we come to the provider’s aid and care for the billing matters. We process each claim after quality and complaint checks to ensure you get maximum reimbursement. This way, you can entirely focus on delivering quality care while RCM Centric’s teams work on your practice billing and coding.
+              Being a leading medical billing company in the USA, we know from experience that healthcare professionals often worry about things they should not. Therefore, we come to the provider’s aid and care for the billing matters. We process each claim after quality and complaint checks to ensure you get maximum reimbursement. This way, you can entirely focus on delivering quality care while WeCare Rcm’s teams work on your practice billing and coding.
             </p>
             <Link href="/TalktoSales">
               <Button className="border-2 bg-blue-600 text-white rounded-full hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto">
