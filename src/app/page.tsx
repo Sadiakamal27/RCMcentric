@@ -11,8 +11,8 @@ import {
   CalendarClock,
   Trophy,
   ExternalLink,
- 
-  
+
+
 } from "lucide-react";
 
 import { ImageComparisonSlider } from "@/components/image-comaprison-slider";
@@ -45,12 +45,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10 lg:mb-16">
             {/* Left Content */}
             <div className="text-white space-y-8 order-2 lg:order-1">
-              <div className="space-y-4">
+              <div className="space-y-4 ">
                 <p className="text-white text-base sm:text-lg">Provider Practice Centric</p>
                 <h1 className="text-2xl sm:text-3xl lg:text-3xl font-bold leading-tight">
-                  <div className="w-1 h-20 sm:h-28 bg-red-500 mt-1 inline-block align-top"></div>
-                  <div className="ml-2 sm:ml-4 inline-block align-top">
-                    Top-tier Revenue <br className="hidden sm:block" /> Cycle Management <br className="hidden sm:block" /> For Each Medical Specialty
+                  <div className="flex items-center mb-4">
+                    <div className="w-1 h-32 bg-red-400 mr-3"></div>
+                    <div className="ml-2 sm:ml-4 inline-block align-top">
+                      Top-tier Revenue <br className="hidden sm:block" /> Cycle Management <br className="hidden sm:block" /> For Each Medical Specialty
+                    </div>
                   </div>
                 </h1>
               </div>
@@ -58,24 +60,24 @@ export default function HomePage() {
                 <div className="space-y-4 text-white">
                   <p className="text-sm sm:text-base">
                     For over 10 years, our {" "}
-                    <Link href="/">
-                    <span className="text-red-400 font-semibold">medical billing company in the USA</span>
+                    <Link href="/MedicalBilling" target="_blank" rel="noopener noreferrer" >
+                      <span className="text-red-400 font-semibold">medical billing company in the USA</span>
                     </Link>
                     {" "}
-                     have been helping physicians, clinics, group practices, and hospital-owned physician groups with their medical billing and coding tasks.
-                    Establish and grow a healthy practice with RCM Centric's advanced healthcare medical billing services & coding, including unique strategy and integrated technology.
+                    have been helping physicians, clinics, group practices, and hospital-owned physician groups with their medical billing and coding tasks.
+                    Establish and grow a healthy practice with WeCare RCM's advanced healthcare medical billing services & coding, including unique strategy and integrated technology.
                   </p>
                 </div>
               </div>
               {/* Form Section */}
               <div className="w-full max-w-md mx-auto lg:mx-0">
-              <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left">
-          Get a Solution for Your Medical Practice
-        </h3>
-                <SolutionSection 
-                buttonText=" →  Get Solution"
-                buttonClassName=" text-white bg-red-500 hover:bg-white hover:text-blue-700"
-                
+                <h3 className="text-lg sm:text-xl font-semibold text-center sm:text-left">
+                  Get a Solution for Your Medical Practice
+                </h3>
+                <SolutionSection
+                  buttonText=" →  Get Solution"
+                  buttonClassName=" text-white bg-red-500 hover:bg-white hover:text-blue-700"
+
                 />
               </div>
             </div>
@@ -97,8 +99,8 @@ export default function HomePage() {
                   />
                 ) : (
                   <>
-                    <img
-                      src="/v1.png?height=400&width=600"
+                    <Image
+                      src="/v1.png"
                       alt="Video testimonial thumbnail"
                       width={600}
                       height={400}
@@ -107,7 +109,7 @@ export default function HomePage() {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Button
                         size="lg"
-                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/90 hover:bg-white text-blue-600 shadow-lg"
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full cursor-pointer bg-white/90 hover:bg-white text-blue-600 shadow-lg"
                         onClick={handlePlay}
                       >
                         <Play className="w-6 h-6 ml-1" fill="currentColor" />
@@ -168,7 +170,7 @@ export default function HomePage() {
           </div>
         </div>
 
-       
+
       </section>
 
       {/* Features Section */}
@@ -281,7 +283,7 @@ export default function HomePage() {
       {/* Services Description */}
 
       <SolutionsAndServices />
-     
+
 
       {/* Centric Solution Section */}
       <section className="bg-white py-10 sm:py-16 lg:py-24">
@@ -349,10 +351,10 @@ export default function HomePage() {
 
           {/* Call to Action Button */}
           <div className="text-center">
-          <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-blue-600 hover:bg-red-500 cursor-pointer text-white px-8 py-3 text-base sm:text-md w-full sm:w-auto">
-              Talk to an Expert <ExternalLink className="w-5 h-5 ml-2" />
-            </Button>
+            <Link href="/TalktoSales" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-blue-600 hover:bg-red-500 cursor-pointer text-white px-8 py-3 text-base sm:text-md w-full sm:w-auto">
+                Talk to an Expert <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
             </Link>
           </div>
         </div>
@@ -363,10 +365,10 @@ export default function HomePage() {
       <RCMBenefitSection />
 
       <ExpertiseSection />
-      
 
 
-     
+
+
 
 
     </div>
