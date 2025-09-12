@@ -49,8 +49,8 @@ function page() {
               />
             </div>
           </div>
-          <div className="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-lg text-gray-800">
-            <p className="mb-4 font-bold text-gray-600">
+          <div className="w-full md:w-1/2 bg-white p-4 sm:p-6 rounded-lg shadow-lg text-gray-800">
+            <p className="mb-4 font-bold text-gray-600 text-sm sm:text-base text-center md:text-left">
               Please enter your practice details to see estimated prices for our
               services
             </p>
