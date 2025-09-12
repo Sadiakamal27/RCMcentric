@@ -48,20 +48,23 @@ export default function SolutionsSection({
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    
+    // Convert FormData to object to capture all form fields
+    const data = Object.fromEntries(formData.entries());
 
-    const email =
-      (formData.get("email") as string) ||
-      (formData.get("workEmail") as string) ||
-      null;
+    // Add formName if not present
+    if (!data.formName) {
+      data.formName = "Solutions Section Contact Form";
+    }
+
+    // Debug: Log the data being sent
+    console.log("Form data being sent:", data);
 
     try {
       const res = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          formName: "Solutions Form", // ✅ static name
-        }),
+        body: JSON.stringify(data), // Send all form data
       });
 
       const result = await res.json();
@@ -278,29 +281,37 @@ export default function SolutionsSection({
 
                   {/* Form */}
                   <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
+                    <input type="hidden" name="formName" value="Solutions Section Contact Form" />
                     <input
                       type="text"
+                      name="fullName"
                       placeholder="Full Name *"
+                      required
                       className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
                     />
                     <input
                       type="tel"
+                      name="phoneNumber"
                       placeholder="Phone Number *"
+                      required
                       className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
                     />
                     <input
                       type="email"
-                      name="email"   // ✅ add this so we can extract
+                      name="email"
                       placeholder="Work Email *"
                       required
                       className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
                     />
                     <input
                       type="text"
+                      name="practiceName"
                       placeholder="Practice Name *"
+                      required
                       className="w-full border border-gray-200 px-3 py-2 sm:py-2.5 rounded text-sm sm:text-base"
                     />
                     <textarea
+                      name="message"
                       placeholder="Enter your message here (Optional)"
                       className="w-full border border-gray-200 px-3 py-2 sm:py-3 rounded text-sm sm:text-base"
                     ></textarea>

@@ -8,6 +8,24 @@ import { Loader2 } from "lucide-react";
 function page() {
 
   const { handleSubmit, loading } = useFormSubmit()
+  
+  // States for select values
+  const [jobRole, setJobRole] = useState("")
+  const [numProviders, setNumProviders] = useState("")
+  const [monthlyCollection, setMonthlyCollection] = useState("")
+
+  // Handle select changes
+  const handleJobRoleChange = (value: string) => {
+    setJobRole(value)
+  }
+
+  const handleNumProvidersChange = (value: string) => {
+    setNumProviders(value)
+  }
+
+  const handleMonthlyCollectionChange = (value: string) => {
+    setMonthlyCollection(value)
+  }
 
   return (
     <div>
@@ -44,6 +62,11 @@ function page() {
               >
                 {/* Hidden field to identify this form */}
                 <input type="hidden" name="formName" value="Pricing Form" />
+                
+                {/* Hidden inputs for select values */}
+                <input type="hidden" name="jobRole" value={jobRole} />
+                <input type="hidden" name="numProviders" value={numProviders} />
+                <input type="hidden" name="monthlyCollection" value={monthlyCollection} />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                   <div className="mb-4">
@@ -114,7 +137,7 @@ function page() {
                     <label className="block text-sm font-medium text-gray-700">
                       Job Role <span className="text-red-500">*</span>
                     </label>
-                    <Select name="jobRole" required>
+                    <Select onValueChange={handleJobRoleChange} required>
                       <SelectTrigger className="w-full  border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
         focus:outline-none focus:ring-0 focus:ring-offset-0
         data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -139,7 +162,7 @@ function page() {
                     <label className="block text-sm font-medium text-gray-700">
                       Number of Providers <span className="text-red-500">*</span>
                     </label>
-                    <Select name="numProviders" required>
+                    <Select onValueChange={handleNumProvidersChange} required>
                       <SelectTrigger className="w-full  border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
         focus:outline-none focus:ring-0 focus:ring-offset-0
         data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -158,7 +181,7 @@ function page() {
                     <label className="block text-sm font-medium text-gray-700">
                       Monthly Collection <span className="text-red-500">*</span>
                     </label>
-                    <Select name="monthlyCollection" required>
+                    <Select onValueChange={handleMonthlyCollectionChange} required>
                       <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
         focus:outline-none focus:ring-0 focus:ring-offset-0
         data-[state=open]:ring-0 data-[state=open]:outline-none

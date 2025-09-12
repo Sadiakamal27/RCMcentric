@@ -25,6 +25,19 @@ export default function TalkToSales() {
   const [serviceInterest, setServiceInterest] = useState("")
   const [monthlyCollection, setMonthlyCollection] = useState("")
 
+  // Handle select changes and update hidden inputs
+  const handleJobRoleChange = (value: string) => {
+    setJobRole(value)
+  }
+
+  const handleNumProvidersChange = (value: string) => {
+    setNumProviders(value)
+  }
+
+  const handleMonthlyCollectionChange = (value: string) => {
+    setMonthlyCollection(value)
+  }
+
 
 
 
@@ -81,6 +94,11 @@ export default function TalkToSales() {
             >
               {/* Hidden field to identify the form */}
               <input type="hidden" name="formName" value="WeCare RCM Request Form" />
+              
+              {/* Hidden inputs for select values */}
+              <input type="hidden" name="jobRole" value={jobRole} />
+              <input type="hidden" name="numProviders" value={numProviders} />
+              <input type="hidden" name="monthlyCollection" value={monthlyCollection} />
 
               <Input
                 name="fullName"
@@ -118,7 +136,7 @@ export default function TalkToSales() {
     <label className="block text-sm font-medium text-gray-700">
       Job Role <span className="text-red-500">*</span>
     </label>
-    <Select name="jobRole" required>
+    <Select onValueChange={handleJobRoleChange} required>
       <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
         focus:outline-none focus:ring-0 focus:ring-offset-0
         data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -143,7 +161,7 @@ export default function TalkToSales() {
       <label className="block text-sm font-medium text-gray-700">
         Number of Providers <span className="text-red-500">*</span>
       </label>
-      <Select name="numProviders" required>
+      <Select onValueChange={handleNumProvidersChange} required>
         <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
@@ -162,7 +180,7 @@ export default function TalkToSales() {
       <label className="block text-sm font-medium text-gray-700">
         Monthly Collection <span className="text-red-500">*</span>
       </label>
-      <Select name="monthlyCollection" required>
+      <Select onValueChange={handleMonthlyCollectionChange} required>
         <SelectTrigger className="w-full border-l-0 border-r-0 border-gray-300 border-t-0 text-gray-500
           focus:outline-none focus:ring-0 focus:ring-offset-0
           data-[state=open]:ring-0 data-[state=open]:outline-none
