@@ -37,7 +37,7 @@ function Header() {
         className={`${isScrolled
           ? "fixed top-0 left-0 w-full z-40 bg-white shadow-md"
           : "relative"
-          } bg-white border-b border-gray-100 px-2 sm:px-4 py-4 transition-all duration-300`}
+          } bg-white border-b border-gray-100 px-2 sm:px-4 py-4 transition-all duration-200`}
       >
         {/* Mobile Only: Logo, Get Pricing, Hamburger */}
         <div className="flex items-center justify-between w-full lg:hidden">
@@ -45,10 +45,10 @@ function Header() {
             <Image
               src="/wclogomain.png"
               alt="WeCare RCM Logo"
-              width={120}
-              height={40}
+              width={150}
+              height={50}
               priority // Preload logo
-              className="h-8 w-auto animate-logo-slide"
+              className="h-10 sm:h-12 w-auto animate-logo-slide"
             />
           </Link>
           <Link href="/Pricing">
@@ -70,9 +70,9 @@ function Header() {
                     <Image
                       src="/wclogomain.png"
                       alt="WeCare RCM Logo"
-                      width={120}
-                      height={40}
-                      className="h-8 w-auto"
+                      width={150}
+                      height={50}
+                      className="h-10 sm:h-12 w-auto"
                     />
                   </Link>
                   <DrawerClose asChild>
@@ -170,10 +170,10 @@ function Header() {
                 <Image
                   src="/wclogomain.png"
                   alt="WeCare RCM Logo"
-                  width={120}
-                  height={40}
+                  width={150}
+                  height={50}
                   unoptimized
-                  className="h-8 w-auto animate-logo-slide"
+                  className="h-10 sm:h-12 w-auto animate-logo-slide"
                 />
               </Link>
             </div>
