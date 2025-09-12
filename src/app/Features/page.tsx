@@ -309,7 +309,7 @@ export default function FeaturesPage() {
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">Go Smooth</h3>
                                 <div className="w-10 h-1 bg-red-300 mb-2 rounded"></div>
-                                <p className="text-gray-600 text-sm">With RCM Centric, your practice will achieve the results set for success in a short time.</p>
+                                <p className="text-gray-600 text-sm">With WeCare RCM, your practice will achieve the results set for success in a short time.</p>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">Modernize</h3>
@@ -319,7 +319,7 @@ export default function FeaturesPage() {
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">Practice Health</h3>
                                 <div className="w-10 h-1 bg-red-300 mb-2 rounded"></div>
-                                <p className="text-gray-600 text-sm">We are improving the financial health of your practice by managing everything at RCM Centric.</p>
+                                <p className="text-gray-600 text-sm">We are improving the financial health of your practice by managing everything at WeCare RCM.</p>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">Increased Revenue</h3>
@@ -341,7 +341,7 @@ export default function FeaturesPage() {
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">24/7 Support</h3>
                                 <div className="w-10 h-1 bg-red-300 mb-2 rounded"></div>
-                                <p className="text-gray-600 text-sm">Agents are available 24/7 for RCM Centric's clients to provide quick solutions or status.</p>
+                                <p className="text-gray-600 text-sm">Agents are available 24/7 for WeCare RCM's clients to provide quick solutions or status.</p>
                             </div>
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent ">
                                 <h3 className="font-bold text-gray-900 mb-1">Online Ticketing</h3>
@@ -372,7 +372,7 @@ export default function FeaturesPage() {
                     </section>
                     {/* Example Section 6 */}
                     <section ref={sectionRefs[5]} className="bg-white rounded-2xl  p-6 mb-8 scroll-mt-24">
-                        <h2 className="text-2xl font-bold text-blue-800 mb-2">HIPAA Compliant Cloud Centric Solution</h2>
+                        <h2 className="text-2xl font-bold text-blue-800 mb-2">HIPAA Compliant Cloud-Centric Solution</h2>
                         <p className="text-gray-600 mb-4">Manage your important documents at our HIPAA-compliant Cloud servers.</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div className="bg-white rounded-xl p-4 shadow-sm hover:shadow-lg transition-shadow border border-transparent">
@@ -453,11 +453,11 @@ export default function FeaturesPage() {
                     {/* Left: Text and Button */}
                     <div className="flex-1 max-w-xl text-left">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                            Engage WeCare Centric For Your Specialty Billing Needs
+                            Engage WeCare RCM For Your Specialty Billing Needs
                         </h2>
                         <div className="w-24 h-1 bg-red-500 mb-6"></div>
                         <p className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl">
-                            We’ll move your practice documents to our Cloud Centric from any
+                            We'll move your practice documents to our Cloud WeCare RCM from any
                             server or drive for FREE, so you don’t have to worry about migration
                             complexities & technicalities of moving your practice.
                         </p>
@@ -473,7 +473,7 @@ export default function FeaturesPage() {
                     </div>
                     {/* Right: Image */}
                     <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-                        <img src="/new_migration_image1.png" alt="Cloud Centric Peace of Mind" className="max-w-full h-auto" />
+                        <img src="/new_migration_image1.png" alt="Cloud WeCare RCM Peace of Mind" className="max-w-full h-auto" />
                     </div>
                 </div>
             </section>

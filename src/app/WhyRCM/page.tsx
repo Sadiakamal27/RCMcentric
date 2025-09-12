@@ -129,7 +129,7 @@ export default function Home() {
             {
               image: "/Stable-IT-processes-01.svg",
               title: "Exceptional Customer Experience & Patient Help Desk Solution",
-              content: "At RCM Centric, we prioritize delivering exceptional customer experiences. Our dedicated team is committed to providing prompt and friendly customer support, addressing any concerns or questions you may have. We strive to maintain open lines of communication, ensuring that you are always informed about the status of your billing and receivables. Our aim is to get maximum reimbursement for our clients.",
+              content: "At WeCare RCM, we prioritize delivering exceptional customer experiences. Our dedicated team is committed to providing prompt and friendly customer support, addressing any concerns or questions you may have. We strive to maintain open lines of communication, ensuring that you are always informed about the status of your billing and receivables. Our aim is to get maximum reimbursement for our clients.",
             },
           ].map((card, idx) => (
             <Card key={idx} className="shadow-lg border-none">

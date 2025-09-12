@@ -59,7 +59,7 @@ const benefits = [
     number: '4',
     title: 'Denial Management',
     description:
-      'The team here at RCM Centric timely reports if they find any problems related to submissions, including errors and omissions. It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.',
+      'The team here at WeCare RCM timely reports if they find any problems related to submissions, including errors and omissions. It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.',
   },
   {
     number: '5',
@@ -114,7 +114,7 @@ export default function MedicalCodingPage() {
               <h1 className="text-3xl sm:text-5xl font-extrabold text-white">Medical Coding Services</h1>
             </div>
             <p className="text-gray-100 text-base sm:text-lg mb-8">
-              RCM Centric provides customized medical coding service solutions for
+              WeCare RCM provides customized medical coding service solutions for
               all medical specialists and practices, ensuring accuracy and compliance.
             </p>
             <div className="w-full max-w-md lg:mx-0">
@@ -235,12 +235,12 @@ export default function MedicalCodingPage() {
               <div className="mb-2 text-red-400 font-medium text-sm md:text-base">BENEFITS OF OUR SERVICES</div>
               <h2 className="text-xl sm:text-2xl md:text-4xl font-bold mb-4">Benefits of Outsourcing</h2>
               <p className="mb-6 text-sm md:text-base leading-relaxed">
-                Here is how medical billing solutions by RCM Centric will assist you as a provider.
+                Here is how medical billing solutions by WeCare RCM will assist you as a provider.
                 You will get most of the benefits for free with the services of your choice. We always deliver the best results
                 to boost your monthly collection and streamline the revenue process.
               </p>
               <p className="font-bold mb-6 text-sm md:text-base">
-                It's just like outsourcing the results. RCM Centric will be responsible for the delivery and compliance.
+                It's just like outsourcing the results. WeCare RCM will be responsible for the delivery and compliance.
               </p>
             </div>
           </div>

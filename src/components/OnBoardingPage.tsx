@@ -77,7 +77,7 @@ export default function OnboardingPage() {
           <h2 className="text-red-600 text-sm sm:text-sm tracking-wide mb-2">WELCOME TO A SMOOTH START</h2>
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-700 leading-tight mb-4">Effortless Onboarding and Seamless Transition</h1>
           <p className="text-gray-700 mb-6 text-sm sm:text-base">
-            At WeCare Centric, we understand that switching to a new billing service can seem daunting. That’s why we’ve designed our onboarding and transition process to be as simple and stress-free as possible. Here’s how we ensure an effortless start for your practice:
+            At WeCare RCM, we understand that switching to a new billing service can seem daunting. That's why we've designed our onboarding and transition process to be as simple and stress-free as possible. Here's how we ensure an effortless start for your practice:
           </p>
           <ul className="list-none mb-6">
             <li className="flex items-center mb-2 text-sm sm:text-base text-gray-700">

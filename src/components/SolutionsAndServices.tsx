@@ -17,7 +17,7 @@ interface SolutionsAndServicesProps {
 }
 
 function SolutionsAndServices({
-  heading = "Centric Solutions & Services",
+  heading = "WeCare RCM Solutions & Services",
   headingClassName = "text-4xl lg:text-5xl font-bold text-gray-700 mb-6",
   subheading = "Unlock explosive revenue growth and empower your practice with accurate claim processing. Connect with our team to learn how honest and reliable medical claims solutions can help your business succeed.",
   subheadingClassName = "text-gray-600 text-lg leading-relaxed",
@@ -99,7 +99,7 @@ function SolutionsAndServices({
                 </h3>
                 <p className="text-gray-600  group-hover:text-blue-100 text-sm mb-4 leading-relaxed transition-colors flex-grow">
                   Outsourcing your medical coding services to expert coders at
-                  RCM Centric enables you to optimize your revenue while
+                  WeCare RCM enables you to optimize your revenue while
                   reducing compliance risks.
                 </p>
                 <div className="mt-auto flex justify-center">
@@ -161,7 +161,7 @@ function SolutionsAndServices({
                   HOSPITAL BILLING SERVICES
                 </h3>
                 <p className="text-gray-600 group-hover:text-blue-100 text-sm mb-4 leading-relaxed transition-colors flex-grow">
-                  Working with RCM Centric, you enjoy the long-term benefits of
+                  Working with WeCare RCM, you enjoy the long-term benefits of
                   our revenue cycle specialists providing efficient billing
                   services to hospitals.
                 </p>
@@ -285,7 +285,7 @@ function SolutionsAndServices({
                   PATIENT HELP DESK SERVICES
                 </h3>
                 <p className="text-gray-600 group-hover:text-blue-100 text-sm mb-4 leading-relaxed transition-colors flex-grow">
-                  RCM Centric provides dedicated help desk services for
+                  WeCare RCM provides dedicated help desk services for
                   hospitals, medical centers, health clinics, and private
                   doctor's practices throughout the United States.
                 </p>

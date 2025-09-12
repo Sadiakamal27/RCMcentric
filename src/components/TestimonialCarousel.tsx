@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "The credentialing process was seamless and efficient. RCM Centric handled everything professionally and got us enrolled much faster than we expected.",
+    quote: "The credentialing process was seamless and efficient. WeCare RCM handled everything professionally and got us enrolled much faster than we expected.",
     name: "Dr. Michael Rodriguez",
     title: "Cardiologist",
     image: "/provider.jpg"

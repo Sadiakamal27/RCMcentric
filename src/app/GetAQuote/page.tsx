@@ -11,13 +11,13 @@ function page() {
 
   return (
     <div>
-      <section className="min-h-screen py-12 bg-blue-800  text-white">
-        <div className="max-w-7xl mx-auto mb-3 px-1 mt-10 flex flex-col md:flex-row items-center justify-center">
-          <div className="mb-8 md:mb-0 md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4">Get a Free Quote</h2>
-            <hr className="w-29 h-1 mt-3 bg-white mb-6" />
-            <p className="mb-6 p-1 ">
-              Let us help you find the best plan for your practice needs. We’ll respond to your quote within 24 hours –
+      <section className="min-h-screen py-12 bg-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get a Free Quote</h2>
+            <hr className="w-16 sm:w-20 h-1 mt-3 bg-white mb-6 mx-auto md:mx-0" />
+            <p className="mb-6 text-sm sm:text-base leading-relaxed">
+              Let us help you find the best plan for your practice needs. We'll respond to your quote within 24 hours –
               providing you multiple benefits and options to streamline your practice.
             </p>
             <div className="relative">

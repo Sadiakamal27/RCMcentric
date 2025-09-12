@@ -25,7 +25,7 @@ const topCategories = [
   },
   {
     title: "Talk to Sales",
-    desc: "Talk or schedule with CRM expert to get started with RCM Centric.",
+    desc: "Talk or schedule with CRM expert to get started with WeCare RCM.",
     image: "/customer-service.png",
     href: "/TalktoSales",
   },
@@ -61,15 +61,17 @@ export default function ContactSection() {
 
   return (
     <>
-      <div className="relative bg-blue-800 text-white  py-30 px-10 md:px-12">
+      <div className="relative bg-blue-800 text-white py-30 px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Content */}
-        <div className=" z-10 max-w-full px-4 sm:px-6 md:px-8 lg:pl-0 lg:pr-0 lg:max-w-2xl text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h2>
-          <hr className="w-12 sm:w-16 h-0.5 bg-white mb-6" />
-          <p className="text-sm sm:text-base md:text-lg">
-            Feel free to contact us anytime through the form.
-            <br /> We will respond to your inquiry as quickly as possible.
-          </p>
+        <div className="z-10 max-w-7xl mx-auto">
+          <div className="max-w-2xl">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h2>
+            <hr className="w-12 sm:w-16 h-0.5 bg-white mb-6" />
+            <p className="text-sm sm:text-base md:text-lg">
+              Feel free to contact us anytime through the form.
+              <br /> We will respond to your inquiry as quickly as possible.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -221,10 +223,10 @@ export default function ContactSection() {
 
         </div>
 
-        {/* Right Section - Connect with RCM Centric */}
+        {/* Right Section - Connect with WeCare RCM */}
         <div className="w-full md:w-1/2 bg-white p-6 sm:p-10 rounded-lg shadow-md">
           <h2 className="text-2xl font-semibold text-gray-800 mb-5">
-            Connect with WeCare Centric
+            Connect with WeCare RCM
           </h2>
           <hr className="w-12 h-0.5 bg-red-500 mb-4" />
           <div className="space-y-4 mt-8">

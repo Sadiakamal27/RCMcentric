@@ -7,7 +7,7 @@ const cards = [
   
   {
     title: "Talk to Sales",
-    desc: "Get everything needed for your practice performance under RCM Centric.",
+    desc: "Get everything needed for your practice performance under WeCare RCM.",
     image: "/Talk-to-Sales.png",
     href: "/TalktoSales",
   },
@@ -19,7 +19,7 @@ const cards = [
   },
   {
     title: "Services Features",
-    desc: "View all RCM Centric's features and explore more about our services.",
+    desc: "View all WeCare RCM's features and explore more about our services.",
     image: "/SErvices-and-features-.png",
     href: "/Features",
   },

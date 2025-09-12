@@ -212,7 +212,7 @@ function page() {
                     Healthcare IT Support Services
                 </h1>
                 <p className="text-white text-base sm:text-lg  p-10 mx-auto  mb-15 ">
-                    Ensure Seamless IT Operations for Healthcare Providers with RCM Centric’s Expert IT Support Services. With over 10+ years of<br /> experience in healthcare IT, RCM Centric has been
+                    Ensure Seamless IT Operations for Healthcare Providers with WeCare RCM's Expert IT Support Services. With over 10+ years of<br /> experience in healthcare IT, WeCare RCM has been
                     dedicated to delivering reliable and efficient
                     IT support services to healthcare organizations,<br /> private practices, hospitals, and clinics.
                 </p>
@@ -265,16 +265,16 @@ function page() {
                     {/* Right: Text */}
                     <div className="flex-1">
                         <h2 className="text-2xl sm:text-4xl font-bold text-gray-800 mb-4 text-center md:text-left">
-                            Partner with RCM Centric for Reliable Healthcare IT Support
+                            Partner with WeCare RCM for Reliable Healthcare IT Support
                         </h2>
                         <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
                         <p className="text-gray-700 mb-6 text-center md:text-left">
-                            By partnering with RCM Centric, you gain a trusted ally in managing your healthcare
+                            By partnering with WeCare RCM, you gain a trusted ally in managing your healthcare
                             IT infrastructure. Our experienced team is committed to delivering exceptional
                             support services tailored to the specific needs of healthcare organizations.
                         </p>
                         <p className="font-semibold text-gray-500 mb-5">
-                            Contact us today to learn more about how RCM Centric’s IT support services
+                            Contact us today to learn more about how WeCare RCM's IT support services
                             can enhance the performance and reliability of your healthcare IT systems.
                         </p>
                         <Link href="/TalktoSales">
@@ -308,7 +308,7 @@ function page() {
                             <p className="text-gray-600">
                                 Are you seeking to maximize the efficiency and reliability of your healthcare IT
                                 infrastructure? Discover the numerous benefits that healthcare IT support brings
-                                and how RCM Centric can empower your organization to thrive in the digital age.
+                                and how WeCare RCM can empower your organization to thrive in the digital age.
                             </p>
                         </div>
                     </div>
@@ -865,7 +865,7 @@ function page() {
                     <div className="max-w-7xl mx-auto px-4">
                         {/* Heading */}
                         <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
-                            Why Outsource Healthcare IT Support to WeCare Centric
+                            Why Outsource Healthcare IT Support to WeCare RCM
                         </h2>
                         <div className="h-[2px] w-16 bg-red-500 mt-2 mb-8"></div>
 

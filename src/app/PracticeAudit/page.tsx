@@ -191,7 +191,7 @@ function page() {
                         </h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mt-2">
                             Empower Your Practice With{" "}
-                            <span className="text-blue-700 hover:text-red-500 mr-1 ml-1">WeCare Centric's</span>{" "}
+                            <span className="text-blue-700 hover:text-red-500 mr-1 ml-1">WeCare RCM's</span>{" "}
 
                         </h2>
 
@@ -203,7 +203,7 @@ function page() {
                             <div className="w-1 h-35 bg-red-500"></div>
                             <p className="text-gray-600 mb-5 max-w-lg">
                                 A thorough audit of your practice can uncover hidden errors and inefficiencies,
-                                leading to significant improvements. RCM Centric’s practice audit focuses on
+                                leading to significant improvements. WeCare RCM's practice audit focuses on
                                 addressing minor operational challenges to streamline workflows and optimize
                                 performance With customized solutions tailored to your needs,
                                 we ensure accurate claims submission, compliance adherence, and improved revenue management.
@@ -347,14 +347,14 @@ function page() {
                             </h3>
                         </div>
 
-                        {/* Centric Card */}
+                        {/* WeCare RCM Card */}
                         <div className="bg-gray-50 rounded-lg p-6 sm:p-8 text-center border border-gray-200 hover:shadow-lg transition-shadow">
                             <div className="mb-4 sm:mb-6">
                                 <span className="text-5xl sm:text-6xl font-bold text-gray-700">C</span>
                                 <span className="text-5xl sm:text-6xl font-bold text-red-500">.</span>
                             </div>
                             <h3 className="text-base sm:text-lg font-medium text-gray-600 leading-relaxed">
-                                Centric Solution By Specialty Focused
+                                WeCare RCM Solution By Specialty Focused
                             </h3>
                         </div>
 
@@ -474,13 +474,13 @@ function page() {
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mb-4">
                                 Outsourcing your {" "}
                                 <span className="text-blue-800  mr-1 ml-1">Practice Audit</span>{" "}
-                                to WeCare Centric Saves you
+                                to WeCare RCM Saves you
                                 <span className="text-blue-800  mr-1 ml-1">
                                     up-to 47%</span>{" "}
                                 on your Operational cost
                             </h2>
                             <p className="text-gray-700 mb-4">
-                                Outsourcing your practice audit to RCM Centric can result
+                                Outsourcing your practice audit to WeCare RCM can result
                                 in significant cost savings, reducing operational expenses by up to 47%.
                             </p>
 

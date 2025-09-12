@@ -50,7 +50,7 @@ function page() {
                             <p className="text-gray-600 mb-5 max-w-lg">
                                 DME (Durable Medical Equipment) and Ambulatory Billing Services require
                                 specialized attention due to complex regulations and coding requirements.
-                                WeCare Centric streamlines the DME and Ambulatory billing process with
+                                WeCare RCM streamlines the DME and Ambulatory billing process with
                                 expert coding and compliance management. Our team ensures accurate claims submission,
                                 reducing denials and speeding up reimbursements.
                                 We provide detailed reporting, giving practitioner’s insights into their financial performance.  </p>
@@ -111,14 +111,14 @@ function page() {
                             </h3>
                         </div>
 
-                        {/* Centric Card */}
+                        {/* WeCare RCM Card */}
                         <div className="bg-gray-50 rounded-lg p-6 sm:p-8 text-center border border-gray-200 hover:shadow-lg transition-shadow">
                             <div className="mb-4 sm:mb-6">
                                 <span className="text-5xl sm:text-6xl font-bold text-gray-700">C</span>
                                 <span className="text-5xl sm:text-6xl font-bold text-red-500">.</span>
                             </div>
                             <h3 className="text-base sm:text-lg font-medium text-gray-600 leading-relaxed">
-                                Centric Solution By Specialty Focused
+                                WeCare RCM Solution By Specialty Focused
                             </h3>
                         </div>
 
@@ -177,11 +177,11 @@ function page() {
 
 
 
-                                These Challenges Might be looking very hard to overcome but RCM Centric has cater solution for all of them.
+                                These Challenges Might be looking very hard to overcome but WeCare RCM has cater solution for all of them.
                                 We can help you elevate your Practice and Take the burden of administrative tasks off of your shoulders.
                             </p>
                             <p className="text-gray-700 mb-4">
-                                These Challenges Might be looking very hard to overcome but RCM Centric has cater solution for all of them.
+                                These Challenges Might be looking very hard to overcome but WeCare RCM has cater solution for all of them.
                                 We can help you elevate your Practice and Take the burden of administrative tasks off of your shoulders.
                             </p>
 
@@ -216,7 +216,7 @@ function page() {
 
                         {/* Main Heading */}
                         <h2 className="text-xl sm:text-2xl font-bold text-gray-700 mt-5 mb-5">
-                            WeCare Centric for Unmatched DME & Ambulatory Billing
+                            WeCare RCM for Unmatched DME & Ambulatory Billing
                         </h2>
                     </div>
                     <div className="flex items-center justify-center my-4 sm:my-6">
@@ -521,7 +521,7 @@ function page() {
                                 className={`text-gray-700 text-base md:text-md leading-relaxed mb-8 transition-all duration-1000 ease-out transform 
           ${refs6isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
                             >
-                                By partnering with RCM Centric, practitioners gain access to these advanced technologies without the need for costly in-house infrastructure. Our expert team manages every aspect of the billing process, allowing practitioners to focus on patient care. With automated systems that optimize billing workflows and ensure compliance, you can expect minimized denials, faster cash flow, and transparent financial insights to drive your practice forward.
+                                By partnering with WeCare RCM, practitioners gain access to these advanced technologies without the need for costly in-house infrastructure. Our expert team manages every aspect of the billing process, allowing practitioners to focus on patient care. With automated systems that optimize billing workflows and ensure compliance, you can expect minimized denials, faster cash flow, and transparent financial insights to drive your practice forward.
                             </p>
 
                             {/* Benefits List (static, no animation) */}

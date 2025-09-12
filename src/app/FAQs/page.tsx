@@ -35,7 +35,7 @@ const infoCards = [
   
   {
     title: "Talk to Sales",
-    desc: "Get everything needed for your practice performance under RCM Centric.",
+    desc: "Get everything needed for your practice performance under WeCare RCM.",
     image: "/Talk-to-Sales.png",
     href: "/TalktoSales",
   },
@@ -99,7 +99,7 @@ export default function FAQsPage() {
       {/* Features and Benefits Link */}
       <div className="py-8 text-center bg-white">
         <span className="font-semibold text-gray-700">
-          New to WeCare Centric?{" "}
+          New to WeCare RCM?{" "}
           <span className="inline-block bg-black text-white text-xs px-2 py-1 rounded ml-1 mr-2 align-middle">NEW</span>
         </span>
         <span>

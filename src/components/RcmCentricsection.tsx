@@ -30,7 +30,7 @@ const features = [
     icon: "/go-smooth.svg?height=64&width=64",
     alt: "GO SMOOTH",
     title: "GO SMOOTH",
-    description: "With RCM Centric, your practice will achieve the results set for success in a short time.",
+    description: "With WeCare RCM, your practice will achieve the results set for success in a short time.",
   },
 ];
 

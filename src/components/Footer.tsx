@@ -28,7 +28,7 @@ export default function Footer() {
               variant="outline"
               className="bg-blue-600 text-lg w-full md:w-110 border border-none text-white hover:bg-red-500 px-6 py-2 rounded"
             >
-              Get Started with WeCare Centric
+              Get Started with WeCare RCM
             </Button>
           </Link>
           <p className="text-lg text-gray-400 mt-1">or see our plans & pricing</p>
@@ -85,7 +85,7 @@ export default function Footer() {
               <Link href="/ContactUs" target="_blank" rel="noopener noreferrer" className="hover:underline">Contact Us</Link>
             </li>
             <li>
-              <Link href="/WhyWeCareRCM" target="_blank" rel="noopener noreferrer" className="hover:underline">Why WeCare Centric</Link>
+              <Link href="/WhyWeCareRCM" target="_blank" rel="noopener noreferrer" className="hover:underline">Why WeCare RCM</Link>
             </li>
           </ul>
         </div>
@@ -143,13 +143,14 @@ export default function Footer() {
       </div>
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto mt-6 flex flex-col md:flex-row justify-between items-center text-xs border-t border-gray-600 pt-4 px-2 sm:px-0">
-  <div className="flex space-x-8"> {/* Applies equal gap between all children */}
+  <div className="flex flex-wrap justify-center sm:justify-start gap-4 sm:gap-8"> {/* Applies equal gap between all children */}
     <Link href="/" className="flex items-center">
       <Image
         src="/wclogomain.png"
-        alt="RCM Centric Logo"
+        alt="WeCare RCM Logo"
         width={130}
         height={20}
+        className="w-24 sm:w-32 h-auto"
       />
     </Link>
 
@@ -164,6 +165,7 @@ export default function Footer() {
         alt="Credentialing & Enrollment Logo"
         width={130}
         height={20}
+        className="w-24 sm:w-32 h-auto"
       />
     </a>
 
@@ -172,6 +174,7 @@ export default function Footer() {
       alt="HIPAA Complaint Logo"
       width={80}
       height={20}
+      className="w-16 sm:w-20 h-auto"
     />
 
     <Image
@@ -179,10 +182,11 @@ export default function Footer() {
       alt="HIPAA Complaint Logo"
       width={140}
       height={20}
+      className="w-28 sm:w-36 h-auto"
     />
   </div>
 
-  <p className="mt-2 md:mt-0">© 2025 RCM Centric | All Rights Reserved.</p>
+  <p className="mt-2 md:mt-0">© 2025 WeCare RCM | All Rights Reserved.</p>
 </div>
 
     </footer>

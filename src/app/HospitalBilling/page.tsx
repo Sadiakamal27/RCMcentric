@@ -102,7 +102,7 @@ function page() {
           ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0"}`}
                         >Comprehensive Solutions for Medical Billing</h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
-                            Explore WeCare <span className='text-red-500 hover:text-blue-700  mr-1 ml-1'> Centric's Innovative</span> Hospital Billing Solutions
+                            Explore WeCare <span className='text-red-500 hover:text-blue-700  mr-1 ml-1'> RCM's Innovative</span> Hospital Billing Solutions
                         </h2>
                         <div className="h-[2px] w-16 bg-red-500 mt-2 mb-4 mx-auto md:mx-0 md:ml-0"></div>
                         <p className="text-gray-600 mb-6 max-w-lg">
@@ -162,7 +162,7 @@ function page() {
                     <div className="flex-1 text-center md:text-left">
                         <h3 className="text-sm text-gray-500">Maximizing Efficiency and Revenue</h3>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-700 mt-4">
-                            Benefits of Outsourcing Your Billing Services to WeCare Centric
+                            Benefits of Outsourcing Your Billing Services to WeCare RCM
                         </h2>
                         <div className="h-[2px] w-16 bg-red-500 mt-6 mb-4 mx-auto md:mx-0 md:ml-0"></div>
                         <p className="text-gray-600">	Outsourcing your hospital billing services offers several key

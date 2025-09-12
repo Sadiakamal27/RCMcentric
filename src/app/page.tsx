@@ -46,7 +46,7 @@ export default function HomePage() {
             {/* Left Content */}
             <div className="text-white space-y-8 order-2 lg:order-1">
               <div className="space-y-4 ">
-                <p className="text-white text-base sm:text-lg">Provider Practice Centric</p>
+                <p className="text-white text-base sm:text-lg">Provider Practice WeCare RCM</p>
                 <h1 className="text-2xl sm:text-3xl lg:text-3xl font-bold leading-tight">
                   <div className="flex items-center mb-4">
                     <div className="w-1 h-32 bg-red-400 mr-3"></div>
@@ -194,7 +194,7 @@ export default function HomePage() {
                 <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
                   Maximize Profitability & <br className="hidden sm:block" />
                   Minimize Errors With <br className="hidden sm:block" />
-                  <span className="text-blue-600">RCM Centric</span>
+                  <span className="text-blue-600">WeCare RCM</span>
                 </h2>
               </div>
 
@@ -254,14 +254,14 @@ export default function HomePage() {
               </h3>
             </div>
 
-            {/* Centric Card */}
+            {/* WeCare RCM Card */}
             <div className="bg-gray-50 rounded-lg p-6 sm:p-8 text-center border border-gray-200 hover:shadow-lg transition-shadow">
               <div className="mb-4 sm:mb-6">
                 <span className="text-5xl sm:text-6xl font-bold text-gray-700">C</span>
                 <span className="text-5xl sm:text-6xl font-bold text-red-500">.</span>
               </div>
               <h3 className="text-base sm:text-lg font-medium text-gray-600 leading-relaxed">
-                Centric Solution By Specialty Focused
+                WeCare RCM Solution By Specialty Focused
               </h3>
             </div>
 
@@ -285,19 +285,19 @@ export default function HomePage() {
       <SolutionsAndServices />
 
 
-      {/* Centric Solution Section */}
+      {/* WeCare RCM Solution Section */}
       <section className="bg-white py-10 sm:py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-2 sm:px-4">
           {/* Header Content */}
           <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-8">
-              A Centric Solution For Your Practice Needs
+              A WeCare RCM Solution For Your Practice Needs
             </h2>
             <p className="text-gray-600 text-sm sm:text-lg leading-relaxed">
               At WeCare RCM, we recognize that Practices, Facilities, and
               Hospitals must be as flexible as their patients. And that's a <strong>challenge</strong> we readily embrace. So whether you're a
               doctor trying to <strong>streamline your collection</strong> or a
-              hospital looking to optimize a patient's <strong>claims capacity</strong>, RCM Centric has the expertise to
+              hospital looking to optimize a patient's <strong>claims capacity</strong>, WeCare RCM has the expertise to
               get you on your way with advanced medical billing & <strong>coding strategies</strong>.
             </p>
           </div>
@@ -327,8 +327,8 @@ export default function HomePage() {
               <ImageComparisonSlider
                 beforeImage="/w_rcm.jpg"
                 afterImage="/with_rcm.jpg"
-                beforeLabel="Without RCM Centric"
-                afterLabel="With RCM Centric"
+                beforeLabel="Without WeCare RCM"
+                afterLabel="With WeCare RCM"
               />
             </div>
 

@@ -514,7 +514,7 @@ export default function page() {
                         <h1 className="text-3xl font-semibold  justify-between p-9px mb-10">
                             <span className="text-gray-800">  Outsourcing your </span>{" "}
                             <span className="text-blue-600 font-semibold">Patient Help Desk</span>{" "}
-                            <span className="text-gray-800"> to WeCare Centric save you </span>{" "}
+                            <span className="text-gray-800"> to WeCare RCM save you </span>{" "}
                             <span className="text-blue-600 font-semibold">Up to 47%</span>{" "}
                             <span className="text-gray-800"> on your operational costs.</span>
                         </h1>

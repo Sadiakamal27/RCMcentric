@@ -280,10 +280,10 @@ export default function MedicalBillingPage() {
             <div className="mb-2 text-red-400 font-medium">BENEFITS OF OUR SERVICES</div>
             <h2 className="text-2xl sm:text-4xl font-bold mb-4">Benefits of Outsourcing</h2>
             <p className="mb-6">
-              Here is how medical billing solutions by RCM Centric will assist you as a provider. You will get most of the benefits for free with the services of your choice. We always deliver the best results to boost your monthly collection and streamline the revenue process.
+              Here is how medical billing solutions by WeCare RCM will assist you as a provider. You will get most of the benefits for free with the services of your choice. We always deliver the best results to boost your monthly collection and streamline the revenue process.
             </p>
             <p className="font-bold mb-6">
-              It’s just like outsourcing the results. RCM Centric will be responsible for the delivery and compliance.
+              It's just like outsourcing the results. WeCare RCM will be responsible for the delivery and compliance.
             </p>
             <Link href="/TalktoSales">
               <Button className="border border-white text-white font-semibold hover:bg-red-500 hover:outline-none hover:border-none  px-8 py-3 rounded-full transition flex items-center w-full sm:w-auto">
@@ -350,7 +350,7 @@ export default function MedicalBillingPage() {
             <div>
               <h3 className="font-semibold mb-2">Denial Management</h3>
               <p className="text-sm">
-                The team here at RCM Centric timely reports if they find any problems related to submissions, including errors and omissions.
+                The team here at WeCare RCM timely reports if they find any problems related to submissions, including errors and omissions.
                 It is our transparent approach that keeps our providers updated about the status of claims and reasons for delays.
               </p>
             </div>
@@ -405,7 +405,7 @@ export default function MedicalBillingPage() {
             </h2>
             <div className="w-16 h-1 bg-red-400 mb-4 mx-auto md:mx-0"></div>
             <p className="text-gray-700 mb-6 text-center md:text-left">
-              Whether you need to grow your team’s capability with technical skills, boost revenue, or want a team that can hold things operating smoothly and growing as fast as you can say what’s next, RCM Centric augment provides the suitable talent and strategic resolutions to develop, scale, and manage your medical practice – at pace.
+              Whether you need to grow your team's capability with technical skills, boost revenue, or want a team that can hold things operating smoothly and growing as fast as you can say what's next, WeCare RCM augment provides the suitable talent and strategic resolutions to develop, scale, and manage your medical practice – at pace.
             </p>
             <Link href="/TalktoSales">
               <Button className="border-2 bg-blue-600 text-white rounded-full hover:bg-red-500 hover:border-red-500 hover:text-white px-8 py-3 w-full sm:w-auto">

@@ -29,16 +29,16 @@ function page() {
 
   return (
     <div>
-      <section className="min-h-screen py-12 bg-blue-800  text-white">
-        <div className="max-w-7xl mx-auto mb-3 px-1 mt-10 flex flex-col md:flex-row items-center justify-center">
-          <div className="mb-8 md:mb-0 md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4">Get Pricing Details</h2>
-            <hr className="w-29 h-1 mt-3 bg-white mb-6" />
-            <p className="mb-6 p-1 ">
+      <section className="min-h-screen py-12 bg-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Get Pricing Details</h2>
+            <hr className="w-16 sm:w-20 h-1 mt-3 bg-white mb-6 mx-auto md:mx-0" />
+            <p className="mb-6 text-sm sm:text-base leading-relaxed">
               For more than 10 years, we've been helping physicians, clinics,
               group practices, and hospital-owned physician groups with their
               medical billing and coding tasks. Establish and grow a healthy
-              practice with RCM Centric's unique strategy and integrated
+              practice with WeCare RCM's unique strategy and integrated
               technology.
             </p>
             <div className="relative">

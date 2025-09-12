@@ -32,9 +32,9 @@ function CounterBox({
 
   return (
     <div className="bg-white text-pink-600 font-bold border border-dashed rounded-lg border-pink-700
-     text-center w-51 h-30 gap-3 flex flex-col items-center justify-center  ">
-      <span className="text-5xl">{count}+</span>
-      <span className="text-sm font-medium mt-1">{label}</span>
+     text-center w-full h-20 sm:h-24 md:h-30 gap-2 sm:gap-3 flex flex-col items-center justify-center p-2 sm:p-4">
+      <span className="text-3xl sm:text-4xl md:text-5xl">{count}+</span>
+      <span className="text-xs sm:text-sm font-medium mt-1 text-center leading-tight">{label}</span>
     </div>
   );
 }
@@ -52,7 +52,7 @@ export function SuccessSection() {
         isSuccessVisible ? "animate-slide-up" : "slide-up-hidden"
       }`}
     >
-      <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-40">
+      <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-40">
         {/* Left Content */}
         <div className="w-full md:w-1/2">
           <h4 className="uppercase text-pink-600 font-semibold tracking-widest mb-4">
@@ -90,15 +90,15 @@ export function SuccessSection() {
         </div>
 
         {/* Right Side - Success Bar + Counters */}
-        <div className=" w-100 space-y-4">
+        <div className="w-full md:w-1/2 space-y-4 sm:space-y-6">
           {/* Success Bar */}
           <div>
-            <div className="text-gray-800 font-bold mb-2 text-lg">
+            <div className="text-gray-800 font-bold mb-2 text-base sm:text-lg">
               Success Rate
             </div>
-            <div className=" bg-gray-300 h-8 w-105  overflow-hidden relative">
+            <div className="bg-gray-300 h-6 sm:h-8 w-full overflow-hidden relative rounded-full">
               <div
-                className="bg-blue-600 h-20 w-20  transition-all duration-1000"
+                className="bg-blue-600 h-full transition-all duration-1000 rounded-full"
                 style={{ width: isSuccessVisible ? "90%" : "0%" }}
               ></div>
             </div>
@@ -106,8 +106,8 @@ export function SuccessSection() {
 
           {/* Counters */}
           {isSuccessVisible && (
-            <div className="grid grid-cols-2 font-bold    gap-8">
-              <CounterBox  targetNumber={12} label="Years of Service" />
+            <div className="grid grid-cols-2 font-bold gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+              <CounterBox targetNumber={12} label="Years of Service" />
               <CounterBox targetNumber={45} label="Specialty Experts" />
               <CounterBox targetNumber={48} label="States Covered" />
               <CounterBox targetNumber={20} label="Revenue Increased" />

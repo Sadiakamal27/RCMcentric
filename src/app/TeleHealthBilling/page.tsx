@@ -28,7 +28,7 @@ function page() {
                         <p className="text-gray-700 text-base sm:text-lg mb-8">
                             Telehealth is the use of digital communication technologies to provide healthcare
                             services and consultations remotely, enabling patients to receive medical care from any location.
-                            WeCare Centric helps practitioners improve telehealth services by providing expert support in navigating telehealth billing
+                            WeCare RCM helps practitioners improve telehealth services by providing expert support in navigating telehealth billing
                             regulations and offering customized solutions to optimize revenue cycle management.
                         </p>
                         <div className="w-full max-w-md mx-auto lg:mx-0 flex flex-wrap sm:flex-nowrap gap-4">
@@ -423,7 +423,7 @@ function page() {
                 {/* Heading */}
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        Streamline Your Telehealth Billing with RCM Centric
+                        Streamline Your Telehealth Billing with WeCare RCM
                     </h2>
                     <p className="mt-4 text-gray-600 text-lg">
                         Effortlessly manage and process telehealth claims with our specialized

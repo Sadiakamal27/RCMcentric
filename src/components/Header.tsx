@@ -44,7 +44,7 @@ function Header() {
           <Link href="/">
             <Image
               src="/wclogomain.png"
-              alt="RCM Centric Logo"
+              alt="WeCare RCM Logo"
               width={120}
               height={40}
               priority // Preload logo
@@ -69,7 +69,7 @@ function Header() {
                   <Link href="/">
                     <Image
                       src="/wclogomain.png"
-                      alt="RCM Centric Logo"
+                      alt="WeCare RCM Logo"
                       width={120}
                       height={40}
                       className="h-8 w-auto"
@@ -169,7 +169,7 @@ function Header() {
               <Link href="/" className="flex items-center space-x-2">
                 <Image
                   src="/wclogomain.png"
-                  alt="RCM Centric Logo"
+                  alt="WeCare RCM Logo"
                   width={120}
                   height={40}
                   unoptimized

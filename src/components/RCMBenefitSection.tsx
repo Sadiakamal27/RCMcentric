@@ -57,7 +57,7 @@ export default function RCMBenefitSection() {
               Here's How WeCare RCM Can Benefit Your Practice
             </h2>
             <p className="text-gray-300 text-lg">
-              For ambitious practices around the United States, WeCare Centric
+              For ambitious practices around the United States, WeCare RCM
               makes moving revenue growth as simple, borderless, and
               approachable as the rest of the healthcare technology. Our teams
               are experienced in each medical specialty to streamline your
@@ -195,11 +195,11 @@ export default function RCMBenefitSection() {
           </div>
         </div>
 
-        {/* Centric One Section */}
+        {/* WeCare RCM One Section */}
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row flex-wrap md:flex-nowrap items-center justify-between gap-6 sm:gap-8 py-8 sm:py-12 border-b border-[#1f2c4a]">
           {/* Left Section */}
           <div className="flex-1 max-w-xl">
-            <h2 className="text-4xl font-bold text-white mb-2">Centric One</h2>
+            <h2 className="text-4xl font-bold text-white mb-2">WeCare RCM One</h2>
             <p className="text-white text-sm mb-6">
               The operating system for healthcare providers
             </p>
