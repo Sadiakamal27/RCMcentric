@@ -36,11 +36,11 @@ body {
   }
 
   .animate-slide-up-medium {
-    animation: slideUp 1.8s ease-out forwards;
+    animation: slideUp 0.8s ease-out forwards;
   }
 
   .animate-slide-up-fast {
-    animation: slideUp 0.8s ease-out forwards;
+    animation: slideUp 0.4s ease-out forwards;
   }
  
 .outline-text {
@@ -326,7 +326,7 @@ body {
 }
 
 .animate-logo-slide {
-  animation: logo-slide 4s ease-in-out infinite;
+  animation: logo-slide 2s ease-in-out infinite;
 }
 
 
