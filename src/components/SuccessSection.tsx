@@ -32,9 +32,9 @@ function CounterBox({
 
   return (
     <div className="bg-white text-pink-600 font-bold border border-dashed rounded-lg border-pink-700
-     text-center w-full h-20 sm:h-24 md:h-30 gap-2 sm:gap-3 flex flex-col items-center justify-center p-2 sm:p-4">
-      <span className="text-3xl sm:text-4xl md:text-5xl">{count}+</span>
-      <span className="text-xs sm:text-sm font-medium mt-1 text-center leading-tight">{label}</span>
+     text-center w-full h-16 sm:h-20 md:h-24 lg:h-28 gap-1 sm:gap-2 flex flex-col items-center justify-center p-2 sm:p-3 md:p-4">
+      <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{count}+</span>
+      <span className="text-xs sm:text-sm font-medium text-center leading-tight px-1">{label}</span>
     </div>
   );
 }
@@ -48,11 +48,11 @@ export function SuccessSection() {
   return (
     <section
       ref={successRef}
-      className={`bg-white py-20 px-5 transition-all duration-700 ${
+      className={`bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5 transition-all duration-400 ${
         isSuccessVisible ? "animate-slide-up" : "slide-up-hidden"
       }`}
     >
-      <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-40">
+      <div className="container max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
         {/* Left Content */}
         <div className="w-full md:w-1/2">
           <h4 className="uppercase text-pink-600 font-semibold tracking-widest mb-4">
@@ -106,7 +106,7 @@ export function SuccessSection() {
 
           {/* Counters */}
           {isSuccessVisible && (
-            <div className="grid grid-cols-2 font-bold gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 font-bold gap-2 sm:gap-3 md:gap-4 lg:gap-6">
               <CounterBox targetNumber={12} label="Years of Service" />
               <CounterBox targetNumber={45} label="Specialty Experts" />
               <CounterBox targetNumber={48} label="States Covered" />
