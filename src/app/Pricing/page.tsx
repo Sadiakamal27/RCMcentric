@@ -29,12 +29,12 @@ function page() {
 
   return (
     <div>
-      <section className="min-h-screen py-12 bg-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8 md:mt-10 flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8">
-          <div className="mb-6 sm:mb-8 md:mb-0 md:w-1/2 text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Get Pricing Details</h2>
-            <hr className="w-16 sm:w-20 h-1 mt-3 bg-white mb-4 sm:mb-6 mx-auto md:mx-0" />
-            <p className="mb-6 text-sm sm:text-base md:text-lg leading-relaxed px-4 sm:px-2 md:px-0 max-w-lg mx-auto md:mx-0">
+      <section className="min-h-screen py-8 sm:py-12 bg-blue-800 text-white">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 mt-4 sm:mt-6 md:mt-8 flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
+          <div className="mb-4 sm:mb-6 md:mb-0 md:w-1/2 text-center md:text-left w-full">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 px-2 sm:px-0">Get Pricing Details</h2>
+            <hr className="w-12 sm:w-16 md:w-20 h-1 mt-2 sm:mt-3 bg-white mb-3 sm:mb-4 md:mb-6 mx-auto md:mx-0" />
+            <p className="mb-4 sm:mb-6 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed px-6 sm:px-4 md:px-2 lg:px-0 max-w-md sm:max-w-lg mx-auto md:mx-0 text-center md:text-left">
               For more than 10 years, we've been helping physicians, clinics,
               group practices, and hospital-owned physician groups with their
               medical billing and coding tasks. Establish and grow a healthy
