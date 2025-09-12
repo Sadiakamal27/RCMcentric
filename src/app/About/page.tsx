@@ -52,20 +52,20 @@ function AboutPage() {
   });
   return (
     <>
-      <section className="relative bg-gradient-to-br from-blue-700 to-blue-500 text-white py-40 px-5 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-700 to-blue-500 text-white py-16 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-5 overflow-hidden">
         {/* Background Rocket (Pseudo-element or placeholder) */}
         <div className="absolute top-1/2 right-10 transform -translate-y-1/2 w-32 h-32 bg-pink-600 rotate-45 clip-polygon"></div>
         <div className="absolute top-2/3 right-20 transform -translate-y-1/3 w-16 h-16 bg-gray-300 rounded-full"></div>
         <div className="absolute top-3/4 right-16 transform -translate-y-1/4 w-12 h-12 bg-gray-300 rounded-full"></div>
 
         {/* Content */}
-        <div className="max-w-7xl mx-auto relative z-10 text-left px-4 sm:px-6 md:px-10">
+        <div className="max-w-7xl mx-auto relative z-10 text-left px-2 sm:px-4 md:px-6 lg:px-10">
           <h3 className="text-xs sm:text-sm uppercase tracking-widest mb-2">
             Building What's Next
           </h3>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">We are WeCare RCM</h1>
-          <hr className="w-12 sm:w-16 h-1 bg-white mb-4 sm:mb-6" />
-          <p className="text-base sm:text-lg max-w-2xl">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">We are WeCare RCM</h1>
+          <hr className="w-12 sm:w-16 h-1 bg-white mb-3 sm:mb-4 md:mb-6" />
+          <p className="text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed">
             We strive for excellence in all that we do. Each employee's
             contribution is vital towards delivering an exceptional customer
             service experience to our clients.
@@ -73,11 +73,11 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 px-5">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5">
         {/* Slide-up on entire container */}
         <div
           ref={ref}
-          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 
+          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-6 sm:gap-8 md:gap-10 transition-all duration-300 
             ${isVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
@@ -139,7 +139,7 @@ function AboutPage() {
 
       <div ref={imageRef} className="h-full w-full">
         <section
-          className={`bg-white py-0 px-3 transition-all duration-700 ${isImageVisible ? "animate-slide-up-fast" : "opacity-0"
+          className={`bg-white py-0 px-3 transition-all duration-400 ${isImageVisible ? "animate-slide-up-fast" : "opacity-0"
             }`}
         >
           <div className="max-w-7xl mx-auto">
@@ -154,57 +154,57 @@ function AboutPage() {
         </section>
       </div>
       <SuccessSection />
-      <section className="bg-white py-20 px-5">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5">
         <div
           ref={respectRef}
-          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 transition-all duration-500 ${isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+          className={`max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 sm:gap-8 md:gap-10 transition-all duration-300 ${isRespectVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
-          <div className="w-full md:w-1/2 text-left">
-            <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold outline-text">1</div>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800">Respect</h3>
-            <hr className="w-12 sm:w-16 h-1 bg-pink-600 mb-4 sm:mb-6" />
-            <p className="text-gray-600 text-base sm:text-lg">
+          <div className="w-full md:w-1/2 text-left order-2 md:order-1">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold outline-text leading-none">1</div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-800">Respect</h3>
+            <hr className="w-12 sm:w-16 h-1 bg-pink-600 mb-3 sm:mb-4 md:mb-6" />
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
               We build a culture of mutual appreciation, respect, and
               importance. We pridefully act towards others while celebrating
               diversity and endorsement in everything we do.
             </p>
           </div>
-          <div className="w-full md:w-1/2 bg-white rounded-[40px] p-4 sm:p-6 md:p-10 relative flex items-center justify-center md:justify-end">
+          <div className="w-full md:w-1/2 bg-white rounded-[40px] p-3 sm:p-4 md:p-6 lg:p-10 relative flex items-center justify-center md:justify-end order-1 md:order-2">
             <Image
               src="/respect.png"
               alt="Team Member"
               width={550}
               height={400}
-              className="mt-6 rounded-lg w-full h-auto max-w-md sm:max-w-lg md:max-w-none"
+              className="rounded-lg w-full h-auto max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-none"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 px-5">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5">
         {/* Slide-up on entire container */}
         <div
           ref={integrityRef}
-          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10 transition-all duration-500 ${isIntegrityVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+          className={`flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-6 sm:gap-8 md:gap-10 transition-all duration-300 ${isIntegrityVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
-          <div className="w-full md:w-1/2 bg-white rounded-[40px] p-4 sm:p-6 md:p-10 relative flex items-center justify-center md:justify-start">
+          <div className="w-full md:w-1/2 bg-white rounded-[40px] p-3 sm:p-4 md:p-6 lg:p-10 relative flex items-center justify-center md:justify-start order-1 md:order-1">
             <Image
               src="/integrity.png"
               alt="Team Member"
               width={550}
               height={400}
-              className="mt-6 rounded-lg w-full h-auto max-w-md sm:max-w-lg md:max-w-none"
+              className="rounded-lg w-full h-auto max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-none"
             />
           </div>
-          <div className="w-full md:w-1/2 text-right">
-            <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold outline-text">2</div>
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+          <div className="w-full md:w-1/2 text-left md:text-right order-2 md:order-2">
+            <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold outline-text leading-none">2</div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-800">
               Collaboration
             </h3>
-            <hr className="w-12 sm:w-16 h-1 bg-pink-600 mb-4 sm:mb-6 mr-0 ml-auto" />
-            <p className="text-gray-600 text-base sm:text-lg">
+            <hr className="w-12 sm:w-16 h-1 bg-pink-600 mb-3 sm:mb-4 md:mb-6 mr-0 md:ml-auto" />
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
               We foster a spirit of teamwork and collaboration, working together
               to achieve common goals and drive innovation across all levels.
             </p>
@@ -212,26 +212,26 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 px-5">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5">
         <div className="max-w-7xl mx-auto">
           <div
             ref={titleRef}
-            className={`transition-all duration-500 ${isTitleVisible
+            className={`transition-all duration-300 ${isTitleVisible
                 ? "animate-slide-up-fast opacity-100"
                 : "opacity-0 translate-y-10"
               }`}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4 sm:mb-6">Our Values</h2>
-            <hr className="w-12 sm:w-16 mx-auto mb-3 border-t-2 border-red-500" />
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4 md:mb-6">Our Values</h2>
+            <hr className="w-12 sm:w-16 mx-auto mb-3 sm:mb-4 border-t-2 border-red-500" />
           </div>
           <div
             ref={subtitleRef}
-            className={`transition-all duration-500 ${isSubtitleVisible
+            className={`transition-all duration-300 ${isSubtitleVisible
                 ? "animate-slide-up-fast opacity-100"
                 : "opacity-0 translate-y-10"
               }`}
           >
-            <p className="text-center text-gray-600 mb-10">
+            <p className="text-center text-gray-600 text-sm sm:text-base mb-6 sm:mb-8 md:mb-10 px-4">
               Our integrity ensures our credibility and results. Honor your
               commitments and take ownership of your actions. Our words and
               deeds are true and reliable.
@@ -240,66 +240,66 @@ function AboutPage() {
           <div
             ref={valuesRef1}
             className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-            gap-4 sm:gap-6 transition-all duration-500 ${isValuesVisible1 ? "animate-slide-up-fast" : "slide-up-hidden"
+            gap-3 sm:gap-4 md:gap-6 transition-all duration-300 ${isValuesVisible1 ? "animate-slide-up-fast" : "slide-up-hidden"
               }`}
           >
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Caring.svg"
                     alt="Empathy First"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Caring above all else
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Our foundation is built on a culture of helping each other out
                   and genuinely caring about one another and the work we do. We
                   are one team with one dream with advanced skills.{" "}
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Customer-is-business.svg"
                     alt="Client Focus"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Customer is the business
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Customers are the center of our universe. We built this
                   business to service their needs. As a team, we&apos;re winning when
                   they are winning. We&apos;re happy when they are happy.
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Think-big.svg"
                     alt="Innovate Boldly"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Think BIG and start small
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   We think big, and believe that anything is possible. We know
                   success is found in the steps along the way and encourage big,
                   audacious thinking but a process-oriented approach to get
@@ -310,66 +310,66 @@ function AboutPage() {
           </div>
           <div
             ref={valuesRef2}
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 sm:gap-6 transition-all duration-500 ${isValuesVisible2 ? "animate-slide-up-fast" : "slide-up-hidden"
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-3 sm:mt-4 gap-3 sm:gap-4 md:gap-6 transition-all duration-300 ${isValuesVisible2 ? "animate-slide-up-fast" : "slide-up-hidden"
               }`}
           >
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Chase-Excellence.svg"
                     alt="Pursue Mastery"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Chase excellence
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   Exceptional results require exceptional thinking and effort.
                   We push ourselves and each other to make incredible things
                   happen.
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Outcomes.svg"
                     alt="Impact Over Effort"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Outcomes, not outputs
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   We focus on what we do best to increase inputs, not outputs,
                   for success. By focusing our efforts on high leverage actions
                   and strengths, we can achieve optimal results.
                 </p>
               </CardContent>
             </Card>
-            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center">
-              <CardContent className="p-3 sm:p-4 md:p-6">
-                <div className="flex justify-center mb-3 sm:mb-4">
+            <Card className="border-pink-300 p-3 sm:p-4 md:p-5 text-center h-full">
+              <CardContent className="p-2 sm:p-3 md:p-4 lg:p-6 flex flex-col h-full">
+                <div className="flex justify-center mb-2 sm:mb-3 md:mb-4">
                   <Image
                     src="/Enjoy-the-ride.svg"
                     alt="Celebrate Joy"
                     width={40}
                     height={40}
-                    className="object-contain sm:w-12 sm:h-12"
+                    className="object-contain w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
                   />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-blue-700 mb-2">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-700 mb-2">
                   Enjoy the ride
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600">
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 flex-grow">
                   We enjoy our work, and we have fun doing it. Life is too short
                   to not have fun. We take pride in making sure we laugh along
                   the way.
@@ -380,11 +380,11 @@ function AboutPage() {
         </div>
       </section>
       
-      <section className="bg-white py-20 px-5">
+      <section className="bg-white py-12 sm:py-16 md:py-20 px-4 sm:px-5">
         <div
           ref={lastref}
           className={`max-w-7xl mx-auto flex flex-col
-             md:flex-row items-center gap-10 transition-all duration-500 ${isLastVisible ? "animate-slide-up-fast" : "slide-up-hidden"
+             md:flex-row items-center gap-6 sm:gap-8 md:gap-10 transition-all duration-300 ${isLastVisible ? "animate-slide-up-fast" : "slide-up-hidden"
             }`}
         >
           <div className="w-full md:w-1/2 text-left">
